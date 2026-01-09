@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Table Tennis Timetable Newcastle | Mon, Wed, Sat">
+  <div class="bg-white py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-extrabold text-gray-900 text-center mb-8">Weekly Timetable</h1>
+      
+      <div class="space-y-6">
+        <!-- Monday -->
+        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500 shadow-sm hover:shadow-md transition">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <h2 class="text-xl font-bold text-gray-900">Monday</h2>
+            <span class="text-blue-600 font-bold text-lg mt-1 sm:mt-0">6:30 PM - 10:00 PM</span>
+          </div>
+          <p class="text-gray-600 mt-2">Social & Competition Play</p>
+        </div>
+
+        <!-- Wednesday -->
+        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500 shadow-sm hover:shadow-md transition">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <h2 class="text-xl font-bold text-gray-900">Wednesday</h2>
+            <span class="text-blue-600 font-bold text-lg mt-1 sm:mt-0">6:30 PM - 10:00 PM</span>
+          </div>
+          <p class="text-gray-600 mt-2">Social Play & Practice</p>
+        </div>
+
+        <!-- Saturday -->
+        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-green-500 shadow-sm hover:shadow-md transition">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <h2 class="text-xl font-bold text-gray-900">Saturday</h2>
+            <span class="text-green-600 font-bold text-lg mt-1 sm:mt-0">2:30 PM - 6:00 PM</span>
+          </div>
+          <p class="text-gray-600 mt-2">Open Session (All Levels)</p>
+        </div>
+        
+        <!-- Sunday -->
+         <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-300 shadow-sm">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <h2 class="text-xl font-bold text-gray-500">Sunday</h2>
+            <span class="text-gray-500 font-medium italic mt-1 sm:mt-0">Check for updates</span>
+          </div>
+          <p class="text-gray-500 mt-2">Occasional tournaments. Email us to join the mailing list.</p>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-blue-50 p-4 rounded-md text-blue-800 text-center border border-blue-100">
+        <p class="font-medium">Please arrive 10 minutes early to sign in and pay at the front desk.</p>
+      </div>
+      
+       <div class="mt-8 text-center">
+        <a href="/location" class="text-blue-600 hover:text-blue-800 font-medium flex items-center justify-center gap-1">
+            Get Directions to PCYC 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

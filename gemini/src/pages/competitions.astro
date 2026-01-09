@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Table Tennis Competitions Newcastle | Draws & Results">
+    <div class="bg-white py-12 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-8">Competitions</h1>
+            
+            <div class="bg-white shadow overflow-hidden sm:rounded-lg border border-gray-200">
+                <div class="px-4 py-5 sm:px-6 border-b border-gray-200 bg-gray-50 flex justify-between items-center">
+                    <div>
+                         <h3 class="text-lg leading-6 font-medium text-gray-900">Current Season Draws</h3>
+                        <p class="mt-1 max-w-2xl text-sm text-gray-500">Latest updates from the club.</p>
+                    </div>
+                    <button id="refresh-btn" class="text-sm text-blue-600 hover:text-blue-800 font-medium">Refresh</button>
+                </div>
+                
+                <div id="loading" class="p-12 text-center">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                    <p class="mt-4 text-gray-500">Loading latest draws...</p>
+                </div>
+
+                <div id="error-message" class="hidden p-12 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p class="text-red-600 font-medium">Unable to load competition data.</p>
+                    <p class="text-gray-500 mt-2 max-w-sm mx-auto">This could be due to network issues or the schedule being updated. Please check our Facebook page for the latest updates.</p>
+                    <a href="https://facebook.com" target="_blank" class="mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Go to Facebook
+                    </a>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table id="comps-table" class="hidden min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Event Name</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Division</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200" id="table-body">
+                            <!-- Rows will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<script>
+    // Placeholder URL - will likely fail and show fallback, which is expected behavior for now
+    const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-PLACEHOLDER/pub?output=csv';
+
+    async function fetchCompetitions() {
+        const loading = document.getElementById('loading');
+        const errorMsg = document.getElementById('error-message');
+        const table = document.getElementById('comps-table');
+        const tableBody = document.getElementById('table-body');
+        
+        if (!loading || !errorMsg || !table || !tableBody) return;
+
+        // Reset state
+        loading.classList.remove('hidden');
+        errorMsg.classList.add('hidden');
+        table.classList.add('hidden');
+        tableBody.innerHTML = '';
+
+        try {
+            // Using a timeout to simulate loading for demo if needed, but standard fetch is fine
+            const response = await fetch(SHEET_URL);
+            
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            
+            const text = await response.text();
+            
+            // Simple CSV parser
+            // Handle potentially different line endings
+            const rows = text.split(/\r?\n/).map(row => row.split(','));
+            
+            // Assume first row is header, skip it. 
+            if (rows.length < 2) {
+                renderTable([]);
+            } else {
+                 // Filter out empty rows
+                 const data = rows.slice(1).filter(r => r.length > 1 && r[0].trim() !== ''); 
+                 renderTable(data);
+            }
+            
+            loading.classList.add('hidden');
+            table.classList.remove('hidden');
+
+        } catch (error) {
+            console.error('Fetch error:', error);
+            // Show error message
+            loading.classList.add('hidden');
+            errorMsg.classList.remove('hidden');
+        }
+    }
+
+    function renderTable(rows: string[][]) {
+        const tableBody = document.getElementById('table-body');
+        if(!tableBody) return;
+
+        if (rows.length === 0) {
+             tableBody.innerHTML = '<tr><td colspan="4" class="px-6 py-4 text-center text-gray-500 italic">No active competitions scheduled at the moment.</td></tr>';
+             return;
+        }
+
+        rows.forEach(row => {
+            // Ensure we have enough columns
+            const date = row[0] || '';
+            const name = row[1] || '';
+            const division = row[2] || '';
+            const status = row[3] || 'Closed'; // Default to closed if missing
+
+            const tr = document.createElement('tr');
+            
+            // Clean up text (remove quotes if CSV has them)
+            const clean = (str: string) => str ? str.replace(/^"|"$/g, '').trim() : '';
+            const statusText = clean(status);
+            const isOpen = statusText.toLowerCase() === 'open';
+
+            tr.innerHTML = `
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${clean(date)}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">${clean(name)}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${clean(division)}</td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${isOpen ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                        ${statusText}
+                    </span>
+                </td>
+            `;
+            tableBody.appendChild(tr);
+        });
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', fetchCompetitions);
+    const refreshBtn = document.getElementById('refresh-btn');
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', fetchCompetitions);
+    }
+</script>

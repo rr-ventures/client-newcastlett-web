@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HomeVariantA from '../components/HomeVariantA.astro';
+import HomeVariantB from '../components/HomeVariantB.astro';
+import { FEATURE_FLAGS } from '../config';
+
+const showVariantB = FEATURE_FLAGS.USE_EMOTION_HOMEPAGE;
+---
+
+<Layout title="Table Tennis Newcastle | PCYC Broadmeadow Club | NPTTC">
+  {showVariantB ? <HomeVariantB /> : <HomeVariantA />}
+</Layout>
