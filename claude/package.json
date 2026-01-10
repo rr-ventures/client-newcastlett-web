@@ -1,0 +1,16 @@
+{
+  "name": "npttc-claude",
+  "version": "1.0.0",
+  "description": "Newcastle PCYC Table Tennis Club website - Claude version",
+  "private": true,
+  "scripts": {
+    "start": "npx serve -s . -l ${PORT:-3000}",
+    "dev": "npx serve -s . -l 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
