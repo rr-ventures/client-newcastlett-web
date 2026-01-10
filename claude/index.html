@@ -27,18 +27,28 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/css/main.css">
   
-  <!-- Schema.org structured data -->
+  <!-- Schema.org structured data - LocalBusiness & SportsClub -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SportsActivityLocation",
+    "@type": ["LocalBusiness", "SportsClub", "SportsActivityLocation"],
     "name": "Newcastle PCYC Table Tennis Club",
+    "alternateName": "NPTTC",
     "description": "Table tennis club at PCYC Newcastle offering casual play, coaching, and competitions. First session free. All skill levels welcome.",
+    "image": "https://npttc.com.au/images/og-image.jpg",
+    "logo": "https://npttc.com.au/images/logo.svg",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "PCYC Newcastle",
       "addressLocality": "Broadmeadow",
       "addressRegion": "NSW",
+      "postalCode": "2292",
       "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-32.923",
+      "longitude": "151.735"
     },
     "email": "enquiries@npttc.com.au",
     "url": "https://npttc.com.au",
@@ -47,6 +57,9 @@
       "https://www.facebook.com/groups/742238756140959"
     ],
     "sport": "Table Tennis",
+    "priceRange": "$",
+    "paymentAccepted": "Cash, Card, EFTPOS",
+    "currenciesAccepted": "AUD",
     "areaServed": [
       {"@type": "City", "name": "Newcastle", "containedInPlace": {"@type": "State", "name": "New South Wales"}},
       {"@type": "City", "name": "Maitland", "containedInPlace": {"@type": "State", "name": "New South Wales"}},
@@ -57,6 +70,25 @@
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "18:30", "closes": "22:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "18:30", "closes": "22:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "14:30", "closes": "18:00" }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "name": "First Session Free",
+      "description": "Your first table tennis session is completely free. No booking required.",
+      "price": "0",
+      "priceCurrency": "AUD"
+    },
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free Parking",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Equipment Available",
+        "value": true
+      }
     ]
   }
   </script>
@@ -131,6 +163,10 @@
         <a href="/location.html">Location & Contact</a>
       </nav>
       
+      <a href="#timetable" class="btn btn-primary btn-sm header-cta" data-track="cta_click" data-track-params='{"cta_location": "header"}'>
+        First Session Free
+      </a>
+      
       <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -150,24 +186,19 @@
   </header>
   
   <main id="main">
-    <!-- Hero Section (Variant A: Logistics-Led) -->
-    <section class="hero" id="hero-variant-a">
+    <!-- Hero Section - Professional Full-Width Design -->
+    <section class="hero" id="hero-section" style="background-image: url('/images/hero-image.jpg');">
       <div class="hero-content">
         <div>
-          <div class="hero-badge" style="display: inline-block; background: #059669; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem;">
-            🎉 Come & try — first session free
-          </div>
           <h1>Table Tennis in Newcastle</h1>
           <p class="hero-subtitle">Casual play, coaching & competitions at PCYC Broadmeadow. All skill levels welcome. Welcoming players from across the Hunter region.</p>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-            <a href="#timetable" class="btn btn-primary" data-track="cta_click" data-track-params='{"cta_location": "hero"}'>See When We Play ↓</a>
-            <a href="/what-to-expect.html" class="btn btn-outline" data-track="cta_click">What to Expect</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <div class="img-placeholder">
-            📸 Hero image: Players mid-rally<br>
-            <small>(hero-action-shot.jpg)</small>
+          <div class="hero-buttons">
+            <a href="#timetable" class="btn btn-primary" data-track="cta_click" data-track-params='{"cta_location": "hero"}'>
+              Book Free Session
+            </a>
+            <a href="/timetable.html" class="btn btn-outline" data-track="cta_click" data-track-params='{"cta_location": "hero_secondary"}'>
+              View Timetable
+            </a>
           </div>
         </div>
       </div>

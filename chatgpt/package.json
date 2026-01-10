@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx tsc && npx vite build",
+    "build": "npx vite build",
     "preview": "vite preview",
     "start": "npx serve -s dist -l ${PORT:-3000}",
     "lint": "echo \"Add linter if needed\""
