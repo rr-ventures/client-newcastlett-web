@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const guides = [
+  {
+    slug: "indoor-activities-newcastle",
+    title: "Indoor Activities in Newcastle: Table Tennis at PCYC Broadmeadow",
+    excerpt: "Looking for something to do indoors in Newcastle? Discover why table tennis is a great option for all ages and fitness levels.",
+  },
+  {
+    slug: "table-tennis-near-maitland",
+    title: "Table Tennis Near Maitland: A Welcoming Club in Broadmeadow",
+    excerpt: "Live in Maitland and want to play table tennis? Newcastle PCYC is just a short drive away.",
+  },
+];
+---
+
+<Layout 
+  title="Table Tennis Guides | Newcastle PCYC Table Tennis Club"
+  description="Helpful guides about table tennis in Newcastle and the Hunter region. Indoor activities, beginner tips, and more."
+>
+  <!-- Hero -->
+  <div class="bg-blue-900 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <h1 class="text-4xl font-extrabold">Guides & Resources</h1>
+      <p class="mt-4 text-xl text-blue-200">Helpful information about table tennis in Newcastle and the Hunter region</p>
+    </div>
+  </div>
+
+  <!-- Guides List -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="space-y-6">
+      {guides.map((guide) => (
+        <a href={`/guides/${guide.slug}`} class="block bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:border-blue-300 transition">
+          <h3 class="text-xl font-bold text-blue-900 mb-2">{guide.title}</h3>
+          <p class="text-gray-600">{guide.excerpt}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-blue-900 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <h2 class="text-3xl font-bold">Ready to Play?</h2>
+      <p class="mt-4 text-blue-200 mb-8">Your first session is free — just show up!</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/timetable" class="bg-white text-blue-900 px-6 py-3 rounded-md font-medium hover:bg-blue-50 transition" data-track="timetable_view">See the Timetable</a>
+        <a href="/expect" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-blue-900 transition" data-track="cta_click">What to Expect</a>
+      </div>
+    </div>
+  </section>
+</Layout>
