@@ -1,0 +1,9 @@
+# Railway/Nixpacks configuration for static site
+[phases.setup]
+nixPkgs = ["nodejs-18_x"]
+
+[phases.build]
+cmds = ["echo 'Static site - no build needed'"]
+
+[start]
+cmd = "npx serve -s . -l ${PORT:-3000}"
