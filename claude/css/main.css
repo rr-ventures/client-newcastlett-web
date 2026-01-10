@@ -1,18 +1,18 @@
 /* Newcastle PCYC Table Tennis Club - Main Stylesheet */
 
-/* CSS Variables for consistent theming */
+/* CSS Variables for consistent theming - Professional Sports Club */
 :root {
-  --color-primary: #0B3D91; /* Deep Blue from logo - trust, professionalism */
-  --color-primary-dark: #082952;
-  --color-primary-light: #1e5ab8;
-  --color-secondary: #059669; /* Green - action, go */
-  --color-secondary-dark: #047857;
-  --color-accent: #EA5B0C; /* Vibrant Orange - CTA accent */
+  --color-primary: #1a1a1a; /* Deep Charcoal/Black - professional, authoritative */
+  --color-primary-dark: #000000;
+  --color-primary-light: #2d2d2d;
+  --color-secondary: #dc2626; /* Bold Red - energy, sport, action */
+  --color-secondary-dark: #b91c1c;
+  --color-accent: #dc2626; /* Red for all CTAs - club color */
   --color-text: #1f2937;
   --color-text-light: #6b7280;
   --color-bg: #ffffff;
   --color-bg-alt: #f9fafb;
-  --color-bg-dark: #111827;
+  --color-bg-dark: #1a1a1a;
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -36,8 +36,8 @@ body {
   font-family: var(--font-sans);
   color: var(--color-text);
   background-color: var(--color-bg);
-  line-height: 1.6;
-  font-size: 16px;
+  line-height: 1.7;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -58,26 +58,40 @@ body {
   top: 0;
 }
 
-/* Typography */
+/* Typography - Professional & Bold */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-text);
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.375rem; }
 
 @media (min-width: 768px) {
-  h1 { font-size: 3.5rem; }
-  h2 { font-size: 2.5rem; }
-  h3 { font-size: 1.75rem; }
+  h1 { font-size: 4.5rem; }
+  h2 { font-size: 3rem; }
+  h3 { font-size: 2rem; }
+  h4 { font-size: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 5.5rem; }
+  h2 { font-size: 3.5rem; }
 }
 
 p {
   margin-bottom: 1rem;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.125rem;
+  }
 }
 
 a {
@@ -247,10 +261,10 @@ a:hover {
   color: var(--color-primary);
 }
 
-/* Hero Section - Professional Full-Width Design */
+/* Hero Section - Professional Sports Club Design */
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   color: white;
@@ -261,7 +275,7 @@ a:hover {
   background-repeat: no-repeat;
 }
 
-/* Gradient overlay for text readability */
+/* Dark gradient overlay for professional look */
 .hero::before {
   content: '';
   position: absolute;
@@ -271,9 +285,9 @@ a:hover {
   bottom: 0;
   background: linear-gradient(
     to right,
-    rgba(11, 61, 145, 0.95) 0%,
-    rgba(11, 61, 145, 0.85) 50%,
-    rgba(11, 61, 145, 0.4) 100%
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.3) 100%
   );
   z-index: 1;
 }
@@ -282,8 +296,8 @@ a:hover {
   .hero::before {
     background: linear-gradient(
       to bottom,
-      rgba(11, 61, 145, 0.9) 0%,
-      rgba(11, 61, 145, 0.7) 100%
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.6) 100%
     );
   }
 }
@@ -318,8 +332,8 @@ a:hover {
 
 .hero h1 {
   color: white;
-  margin-bottom: 1.5rem;
-  font-size: 2.75rem;
+  margin-bottom: 2rem;
+  font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -327,28 +341,34 @@ a:hover {
 
 @media (min-width: 768px) {
   .hero h1 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .hero h1 {
-    font-size: 4.5rem;
+    font-size: 6rem;
   }
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   opacity: 0.95;
-  margin-bottom: 2.5rem;
-  line-height: 1.7;
+  margin-bottom: 3rem;
+  line-height: 1.8;
   font-weight: 400;
 }
 
 @media (min-width: 768px) {
   .hero-subtitle {
-    font-size: 1.375rem;
-    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-subtitle {
+    font-size: 1.625rem;
   }
 }
 
@@ -402,19 +422,21 @@ a:hover {
   outline-offset: 2px;
 }
 
-/* Primary CTA - Vibrant Orange for maximum visibility */
+/* Primary CTA - Bold Red for professional sports club */
 .btn-primary {
-  background: var(--color-accent);
+  background: var(--color-secondary);
   color: white;
-  box-shadow: 0 4px 6px -1px rgba(234, 91, 12, 0.3), 0 2px 4px -2px rgba(234, 91, 12, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.3), 0 2px 4px -2px rgba(220, 38, 38, 0.3);
   font-weight: 700;
+  font-size: 1.0625rem;
+  padding: 1.125rem 2.25rem;
 }
 
 .btn-primary:hover {
-  background: #d14e08;
+  background: var(--color-secondary-dark);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 12px -2px rgba(234, 91, 12, 0.4), 0 4px 6px -2px rgba(234, 91, 12, 0.4);
+  box-shadow: 0 8px 12px -2px rgba(220, 38, 38, 0.4), 0 4px 6px -2px rgba(220, 38, 38, 0.4);
 }
 
 .btn-primary:active {
@@ -522,41 +544,51 @@ a:hover {
 }
 
 .section-header h2 {
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.75rem;
   font-weight: 800;
 }
 
 @media (min-width: 768px) {
   .section-header h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-header h2 {
+    font-size: 4rem;
   }
 }
 
 .section-header p {
   color: var(--color-text-light);
-  font-size: 1.1875rem;
-  max-width: 700px;
+  font-size: 1.25rem;
+  max-width: 800px;
   margin: 1rem auto 0;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-/* Timetable - Modern Professional Design */
+/* Timetable - Professional Full-Width Design */
 .timetable {
   background: white;
-  border-radius: 16px;
-  box-shadow: var(--shadow-lg);
+  border: 2px solid #e5e7eb;
   overflow: hidden;
-  max-width: 800px;
-  margin: 0 auto;
-  border: 1px solid #e5e7eb;
+  width: 100%;
+  max-width: 100%;
 }
 
 .timetable-row {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  border-bottom: 1px solid #e5e7eb;
-  transition: background-color 0.2s ease;
+  grid-template-columns: 200px 1fr;
+  border-bottom: 2px solid #e5e7eb;
+  transition: background-color 0.15s ease;
+}
+
+@media (max-width: 767px) {
+  .timetable-row {
+    grid-template-columns: 120px 1fr;
+  }
 }
 
 .timetable-row:last-child {
@@ -564,107 +596,109 @@ a:hover {
 }
 
 .timetable-row:not(.header):hover {
-  background: #fafbfc;
+  background: #f9fafb;
 }
 
 .timetable-row.header {
   background: var(--color-primary);
   color: white;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.125rem;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.05em;
 }
 
 .timetable-cell {
-  padding: 1.5rem 2rem;
+  padding: 2rem 2.5rem;
   display: flex;
   align-items: center;
 }
 
 @media (max-width: 767px) {
   .timetable-cell {
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem 1.25rem;
   }
 }
 
 .timetable-day {
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: var(--color-text);
 }
 
 .timetable-row:not(.header) .timetable-cell:last-child {
-  font-size: 1.0625rem;
-  color: var(--color-text-light);
+  font-size: 1.125rem;
+  color: var(--color-text);
   font-weight: 500;
 }
 
 .timetable-note {
-  text-align: center;
-  padding: 1.25rem 1.5rem;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  color: var(--color-primary);
-  font-size: 0.9375rem;
+  padding: 1.5rem 2.5rem;
+  background: #f9fafb;
+  color: var(--color-text-light);
+  font-size: 1rem;
   font-weight: 500;
-  border-top: 2px solid #e0f2fe;
+  border-top: 2px solid #e5e7eb;
+  font-style: italic;
 }
 
-/* Fear Killer / Features - Modern Cards */
+/* Features - Professional Clean Cards */
 .features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 @media (min-width: 768px) {
   .features {
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 3rem;
   }
 }
 
 .feature {
-  text-align: center;
-  padding: 2rem 1.5rem;
+  text-align: left;
+  padding: 2.5rem 2rem;
   background: white;
-  border-radius: 16px;
+  border-radius: 4px;
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
-  border: 1px solid #f3f4f6;
+  border-left: 4px solid var(--color-secondary);
 }
 
 .feature:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
-  border-color: var(--color-primary-light);
 }
 
 .feature-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 1.25rem;
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  box-shadow: var(--shadow-sm);
+  display: none;
 }
 
 .feature h4 {
-  margin-bottom: 0.75rem;
-  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-text);
 }
 
+@media (min-width: 768px) {
+  .feature h4 {
+    font-size: 1.375rem;
+  }
+}
+
 .feature p {
   color: var(--color-text-light);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .feature p {
+    font-size: 1.0625rem;
+  }
 }
 
 /* Pricing Cards - Enhanced Professional Design */
@@ -698,18 +732,18 @@ a:hover {
 }
 
 .pricing-card.featured::before {
-  content: 'RECOMMENDED';
+  content: 'FIRST VISIT';
   position: absolute;
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--color-accent);
+  background: var(--color-secondary);
   color: white;
   padding: 0.375rem 1rem;
-  border-radius: 20px;
+  border-radius: 2px;
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
 }
 
 .pricing-card:hover {
@@ -739,7 +773,7 @@ a:hover {
 }
 
 .pricing-card.featured .pricing-value {
-  color: var(--color-accent);
+  color: var(--color-secondary);
 }
 
 .pricing-value span {
@@ -801,17 +835,7 @@ a:hover {
 }
 
 .location-icon {
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: white;
-  font-size: 1.25rem;
-  box-shadow: var(--shadow-sm);
+  display: none;
 }
 
 .location-item strong {
