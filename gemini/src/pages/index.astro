@@ -7,19 +7,37 @@ const pageDescription = "Newcastle's premier table tennis club. A friendly, comp
 
 // Schedule Data
 const sessions = [
-    { day: "Monday", time: "6:30 PM", type: "Social & Competition", desc: "Graded competition play + social tables." },
-    { day: "Wednesday", time: "6:30 PM", type: "Social & Practice", desc: "Open practice for all levels." },
-    { day: "Saturday", time: "2:30 PM", type: "Open Session", desc: "Relaxed weekend hits." },
+    { 
+        day: "Monday", 
+        time: "6:30 PM", 
+        type: "Social & Competition", 
+        desc: "Graded competition play + social tables.",
+        image: "/images/group-photo-2.jpg"
+    },
+    { 
+        day: "Wednesday", 
+        time: "6:30 PM", 
+        type: "Social & Practice", 
+        desc: "Open practice for all levels.",
+        image: "/images/group-photo-3.jpg"
+    },
+    { 
+        day: "Saturday", 
+        time: "2:30 PM", 
+        type: "Open Session", 
+        desc: "Relaxed weekend hits.",
+        image: "/images/group-photo-4.jpg"
+    },
 ];
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
   
   <!-- Hero Section -->
-  <section class="relative bg-brand-900 text-white overflow-hidden h-[600px] flex items-center">
+  <section class="relative bg-neutral-900 text-white overflow-hidden h-[600px] flex items-center">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-900 via-brand-900/80 to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-900/80 to-transparent z-10"></div>
         <img 
             src="/images/hero-image.jpg" 
             alt="Table tennis action at Newcastle PCYC" 
@@ -29,21 +47,26 @@ const sessions = [
 
     <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="max-w-2xl">
-            <span class="inline-block py-1 px-3 rounded bg-accent-600 text-white text-xs font-bold tracking-wider uppercase mb-4">
-                Est. 1996
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight drop-shadow-lg">
-                The Hunter's Home of <br />
-                <span class="text-brand-200">Table Tennis</span>
+            <div class="flex items-center gap-3 mb-4">
+                <span class="inline-block py-1 px-3 rounded bg-brand-600 text-white text-xs font-bold tracking-wider uppercase">
+                    Est. 1996
+                </span>
+                <span class="inline-block py-1 px-3 rounded border border-white/30 text-white text-xs font-bold tracking-wider uppercase backdrop-blur-sm">
+                    PCYC Broadmeadow
+                </span>
+            </div>
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-white mb-6 leading-none drop-shadow-xl">
+                THE HUNTER'S <br />
+                <span class="text-brand-500">HOME OF TABLE TENNIS</span>
             </h1>
-            <p class="text-lg sm:text-xl text-brand-100 mb-8 leading-relaxed max-w-xl drop-shadow-md">
-                Join a passionate community of players at PCYC Broadmeadow. From casual social hits to competitive league play, we welcome everyone to the table.
+            <p class="text-lg sm:text-xl text-neutral-200 mb-8 leading-relaxed max-w-xl drop-shadow-md font-light">
+                Join a passionate community of players. From casual social hits to competitive league play, we welcome everyone to the table.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="/timetable" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded text-brand-900 bg-white hover:bg-brand-50 transition shadow-lg">
+                <a href="/timetable" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold uppercase tracking-wide rounded text-white bg-brand-600 hover:bg-brand-700 transition shadow-lg hover:shadow-brand-600/25">
                     Come & Try (Free)
                 </a>
-                <a href="/about" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-base font-bold rounded text-white hover:bg-white/10 transition">
+                <a href="/about" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-base font-bold uppercase tracking-wide rounded text-white hover:bg-white hover:text-neutral-900 transition">
                     About the Club
                 </a>
             </div>
@@ -55,17 +78,15 @@ const sessions = [
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-            <div class="mb-12 lg:mb-0">
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                    <img src="/images/group-photo.jpg" alt="Newcastle Table Tennis Club Members" class="w-full h-auto" />
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                        <p class="text-white font-medium">Our members at the annual championship</p>
-                    </div>
-                </div>
+            <div class="mb-12 lg:mb-0 order-2 lg:order-1">
+                 <div class="relative">
+                    <div class="absolute inset-0 bg-brand-600 transform translate-x-3 translate-y-3 rounded-xl"></div>
+                    <img src="/images/group-photo.jpg" alt="Newcastle Table Tennis Club Members" class="relative rounded-xl shadow-xl w-full h-auto z-10" />
+                 </div>
             </div>
-            <div>
-                <h2 class="text-3xl font-bold text-brand-900 mb-6">More Than Just a Sports Club</h2>
-                <div class="prose prose-lg text-gray-600">
+            <div class="order-1 lg:order-2">
+                <h2 class="text-4xl font-heading font-bold text-neutral-900 mb-6 uppercase">More Than Just a Sports Club</h2>
+                <div class="prose prose-lg text-neutral-600">
                     <p class="mb-4">
                         Newcastle PCYC Table Tennis Club is a volunteer-run community dedicated to the sport we love. We believe table tennis is for everyone—whether you're 8 or 80.
                     </p>
@@ -73,26 +94,26 @@ const sessions = [
                         We pride ourselves on a culture that balances competitive spirit with genuine friendship. New players are often surprised by how quickly they find a "home" here.
                     </p>
                     
-                    <div class="border-l-4 border-accent-500 pl-6 py-2 bg-brand-50 rounded-r-lg">
-                        <p class="text-brand-800 italic font-medium">
+                    <div class="border-l-4 border-brand-600 pl-6 py-2 bg-neutral-50">
+                        <p class="text-neutral-800 italic font-medium">
                             "I joined for the ping pong, but stayed for the people. It's the highlight of my week."
                         </p>
                         <p class="text-sm text-brand-600 mt-2 font-bold">— Michael, Member since 2018</p>
                     </div>
                 </div>
                 
-                <div class="mt-8 pt-8 border-t border-gray-100 flex gap-8">
+                <div class="mt-8 pt-8 border-t border-neutral-100 flex gap-8">
                     <div>
-                        <span class="block text-3xl font-bold text-brand-900">3</span>
-                        <span class="text-sm text-gray-500 uppercase tracking-wide">Sessions/Week</span>
+                        <span class="block text-4xl font-heading font-bold text-neutral-900">3</span>
+                        <span class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Sessions/Week</span>
                     </div>
                     <div>
-                        <span class="block text-3xl font-bold text-brand-900">12+</span>
-                        <span class="text-sm text-gray-500 uppercase tracking-wide">Pro Tables</span>
+                        <span class="block text-4xl font-heading font-bold text-neutral-900">12+</span>
+                        <span class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Pro Tables</span>
                     </div>
                      <div>
-                        <span class="block text-3xl font-bold text-brand-900">100+</span>
-                        <span class="text-sm text-gray-500 uppercase tracking-wide">Active Members</span>
+                        <span class="block text-4xl font-heading font-bold text-neutral-900">100+</span>
+                        <span class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Members</span>
                     </div>
                 </div>
             </div>
@@ -100,64 +121,74 @@ const sessions = [
     </div>
   </section>
 
-  <!-- Schedule Preview (Clean List Style) -->
-  <section class="py-20 bg-brand-50 border-y border-brand-100">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-brand-900">Join a Session</h2>
-            <p class="mt-3 text-brand-600">No booking required. Just arrive 15 minutes early.</p>
+  <!-- Schedule Preview (Visual Cards) -->
+  <section class="py-24 bg-neutral-100 border-y border-neutral-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-heading font-bold text-neutral-900 uppercase">Weekly Sessions</h2>
+            <p class="mt-3 text-lg text-neutral-600 max-w-2xl mx-auto">We play three times a week. No booking required—just show up 15 minutes early.</p>
         </div>
 
-        <div class="bg-white rounded-xl shadow-sm border border-brand-100 overflow-hidden">
-            {sessions.map((session, index) => (
-                <div class={`p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-brand-50/50 transition-colors ${index !== sessions.length - 1 ? 'border-b border-gray-100' : ''}`}>
-                    <div class="flex items-center gap-6">
-                        <div class="w-16 text-center">
-                            <span class="block text-xs font-bold text-gray-400 uppercase tracking-wider">Day</span>
-                            <span class="block text-lg font-bold text-brand-900">{session.day.substring(0,3)}</span>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-brand-900">{session.type}</h3>
-                            <p class="text-gray-500 text-sm">{session.desc}</p>
+        <div class="grid md:grid-cols-3 gap-8">
+            {sessions.map((session) => (
+                <div class="group relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden relative">
+                         <div class="absolute inset-0 bg-neutral-900/20 group-hover:bg-neutral-900/10 transition-colors z-10"></div>
+                        <img src={session.image} alt={`${session.day} Session`} class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute top-4 right-4 z-20">
+                             <span class="bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide shadow-sm">
+                                {session.day}
+                             </span>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto mt-2 sm:mt-0">
-                        <span class="text-brand-600 font-semibold bg-brand-50 px-3 py-1 rounded-full text-sm">
-                            {session.time}
-                        </span>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-heading font-bold text-neutral-900 uppercase">{session.type}</h3>
+                        </div>
+                        <p class="text-neutral-500 text-sm mb-6 h-10">{session.desc}</p>
+                        <div class="flex items-center justify-between border-t border-neutral-100 pt-4">
+                            <span class="flex items-center text-neutral-700 font-bold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                {session.time}
+                            </span>
+                            <span class="text-brand-600 text-sm font-bold uppercase tracking-wider group-hover:underline">
+                                Details &rarr;
+                            </span>
+                        </div>
                     </div>
+                    <a href="/timetable" class="absolute inset-0 z-30"><span class="sr-only">View {session.day} session details</span></a>
                 </div>
             ))}
         </div>
         
-        <div class="mt-8 text-center">
-            <a href="/timetable" class="text-brand-700 font-semibold hover:text-brand-900 hover:underline">
-                View Full Timetable &rarr;
+        <div class="mt-12 text-center">
+            <a href="/timetable" class="inline-block border-2 border-neutral-900 text-neutral-900 font-bold uppercase tracking-wide py-3 px-8 rounded hover:bg-neutral-900 hover:text-white transition">
+                View Full Timetable
             </a>
         </div>
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="relative py-24 bg-brand-900 overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  <!-- CTA Section -->
+  <section class="relative py-24 bg-brand-700 overflow-hidden">
+    <!-- Abstract Pattern -->
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
     
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Your First Visit is On Us</h2>
+        <h2 class="text-4xl font-heading font-bold text-white mb-6 uppercase">Ready to hit?</h2>
         <p class="text-xl text-brand-100 mb-10 max-w-2xl mx-auto">
-            We know walking into a new club can be daunting. That's why we invite you to come and play your first session for free—no strings attached.
+            Your first session is completely free. We'll provide the racket and balls—just bring comfortable clothes and non-marking shoes.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="/timetable" class="inline-block bg-accent-500 text-brand-900 font-bold py-4 px-8 rounded shadow-lg hover:bg-accent-400 transition transform hover:-translate-y-1">
-                See When We Play
+            <a href="/timetable" class="inline-block bg-white text-brand-900 font-bold py-4 px-8 rounded shadow-lg uppercase tracking-wide hover:bg-neutral-100 transition transform hover:-translate-y-1">
+                Claim Free Session
             </a>
-            <a href="/location" class="inline-block bg-transparent border-2 border-brand-700 text-white font-bold py-4 px-8 rounded hover:bg-brand-800 transition">
+            <a href="/location" class="inline-block bg-transparent border-2 border-brand-200 text-white font-bold py-4 px-8 rounded uppercase tracking-wide hover:bg-brand-800 hover:border-brand-800 transition">
                 Find Our Venue
             </a>
         </div>
-        <p class="mt-6 text-brand-400 text-sm">
-            Rackets and balls available to borrow at the venue.
-        </p>
     </div>
   </section>
 

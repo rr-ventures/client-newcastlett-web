@@ -6,83 +6,111 @@ const sessions = [
         day: "Monday", 
         time: "6:30 PM - 10:00 PM", 
         title: "Social & Competition",
-        description: "Organized competition play for graded players, plus social tables for casual hits.",
-        tag: "Competition"
+        description: "Our flagship night. Organized competition play for graded players, plus social tables for casual hits. A great atmosphere to test your skills.",
+        tag: "Competition",
+        image: "/images/group-photo-2.jpg",
+        location: "PCYC Broadmeadow"
     },
     { 
         day: "Wednesday", 
         time: "6:30 PM - 10:00 PM", 
         title: "Social & Practice",
-        description: "Open practice session. Coaching tips often available. Great for improving skills.",
-        tag: "Social"
+        description: "Open practice session. Perfect for working on your game, getting coaching tips, or just having a fun hit with friends. All levels welcome.",
+        tag: "Social",
+        image: "/images/group-photo-3.jpg",
+        location: "PCYC Broadmeadow"
     },
     { 
         day: "Saturday", 
         time: "2:30 PM - 6:00 PM", 
         title: "Open Session",
-        description: "Relaxed weekend session suitable for families, beginners, and regular members.",
-        tag: "All Levels"
+        description: "Relaxed weekend session suitable for families, beginners, and regular members. The perfect time to introduce yourself to the club.",
+        tag: "All Levels",
+        image: "/images/group-photo-4.jpg",
+        location: "PCYC Broadmeadow"
     },
 ];
 ---
 
 <Layout title="Weekly Timetable | Newcastle Table Tennis" description="Play table tennis in Newcastle on Monday nights, Wednesday nights, and Saturday afternoons. See our full schedule.">
   <div class="bg-neutral-50 min-h-screen py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-12">
-        <h1 class="text-3xl md:text-4xl font-bold text-neutral-900 tracking-tight mb-4">Weekly Session Times</h1>
-        <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
-            We play three times a week at PCYC Broadmeadow. No booking required—just turn up and play.
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-heading font-bold text-neutral-900 uppercase tracking-tight mb-4">Weekly Schedule</h1>
+        <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
+            Three sessions a week. No booking required—just turn up and play.
         </p>
       </div>
       
-      <div class="bg-white rounded-2xl shadow-sm border border-neutral-200 overflow-hidden divide-y divide-neutral-100">
-        {sessions.map(session => (
-            <div class="p-6 md:p-8 hover:bg-neutral-50 transition-colors group">
-                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                    <div class="flex-grow">
-                        <div class="flex items-center gap-3 mb-2">
-                            <h2 class="text-2xl font-bold text-neutral-900">{session.day}</h2>
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700 border border-primary-100">
-                                {session.tag}
+      <div class="space-y-12 max-w-5xl mx-auto">
+        {sessions.map((session, index) => (
+            <div class={`flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-neutral-200 overflow-hidden ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                <!-- Image Side -->
+                <div class="md:w-2/5 h-64 md:h-auto relative">
+                    <img src={session.image} alt={`${session.day} Session`} class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden"></div>
+                    <div class="absolute bottom-4 left-4 md:hidden">
+                        <span class="bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide">
+                            {session.day}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="hidden md:block">
+                            <span class="bg-neutral-900 text-white text-sm font-bold px-4 py-1.5 rounded uppercase tracking-wider">
+                                {session.day}
                             </span>
                         </div>
-                        <div class="flex items-center text-primary-600 font-semibold mb-3">
-                            <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            {session.time}
-                        </div>
-                        <p class="text-neutral-600 leading-relaxed">
-                            {session.description}
-                        </p>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-neutral-100 text-neutral-600 border border-neutral-200 uppercase tracking-wide">
+                            {session.tag}
+                        </span>
                     </div>
-                    <div class="md:text-right flex-shrink-0 mt-2 md:mt-0">
-                         <!-- Optional CTA per session if needed, otherwise clean -->
+                    
+                    <h2 class="text-3xl font-heading font-bold text-neutral-900 mb-2">{session.title}</h2>
+                    
+                    <div class="flex items-center text-brand-600 font-bold text-lg mb-6">
+                        <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {session.time}
+                    </div>
+                    
+                    <p class="text-neutral-600 leading-relaxed mb-8">
+                        {session.description}
+                    </p>
+
+                    <div class="flex items-center gap-4 border-t border-neutral-100 pt-6">
+                        <div class="flex items-center text-sm text-neutral-500 font-medium">
+                            <svg class="w-5 h-5 mr-2 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            {session.location}
+                        </div>
+                        <a href="/location" class="ml-auto text-brand-600 font-bold text-sm uppercase tracking-wide hover:underline">
+                            Get Directions
+                        </a>
                     </div>
                 </div>
             </div>
         ))}
       </div>
 
-      <div class="mt-8 bg-white p-6 rounded-xl border border-neutral-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-start gap-4">
-            <div class="bg-primary-50 p-3 rounded-lg text-primary-600">
-                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </div>
-            <div>
-                <h3 class="font-bold text-neutral-900">Important Info</h3>
-                <p class="text-neutral-600 text-sm mt-1">
-                    Please arrive 15 minutes early for registration. All equipment can be provided.
-                </p>
-            </div>
+      <!-- Info Box -->
+      <div class="max-w-3xl mx-auto mt-16 bg-brand-50 rounded-xl p-8 border border-brand-100 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div>
+            <h3 class="font-heading font-bold text-xl text-brand-900 uppercase">First Time?</h3>
+            <p class="text-brand-800 mt-2">
+                Your first session is free. All equipment is provided. Just wear comfortable clothes and non-marking shoes.
+            </p>
         </div>
         <div class="flex-shrink-0">
-             <a href="/pricing" class="text-primary-600 font-semibold hover:text-primary-700 text-sm hover:underline">
-                View Pricing &rarr;
+             <a href="/expect" class="inline-block bg-brand-600 text-white font-bold py-3 px-6 rounded shadow-md hover:bg-brand-700 transition uppercase tracking-wide text-sm">
+                Read the Guide
             </a>
         </div>
       </div>
