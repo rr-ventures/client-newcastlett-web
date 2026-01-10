@@ -1,7 +1,7 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.css'; // Will create this empty or minimal
+import '../styles/global.css';
 
 interface Props {
 	title: string;
@@ -12,7 +12,7 @@ interface Props {
 
 const { 
     title, 
-    description = "Newcastle PCYC Table Tennis Club - Fun, Friendly, Competitive Table Tennis in Broadmeadow, NSW. Come & try — first session free!",
+    description = "Newcastle PCYC Table Tennis Club - Professional table tennis coaching, competition, and social play in Broadmeadow, NSW. All skill levels welcome.",
     image = "/og-image.jpg",
     schema = ""
 } = Astro.props;
@@ -22,13 +22,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Default Organization/SportsActivityLocation schema
 const defaultSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "SportsActivityLocation",
+  "@type": "SportsClub",
   "name": "Newcastle PCYC Table Tennis Club",
-  "description": "Table tennis club at PCYC Newcastle offering casual play, coaching, and competitions. First session free. All skill levels welcome.",
+  "description": description,
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Young Rd",
     "addressLocality": "Broadmeadow",
     "addressRegion": "NSW",
+    "postalCode": "2292",
     "addressCountry": "AU"
   },
   "email": "enquiries@npttc.com.au",
@@ -53,7 +55,7 @@ const defaultSchema = JSON.stringify({
 ---
 
 <!doctype html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -61,6 +63,11 @@ const defaultSchema = JSON.stringify({
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
         <link rel="canonical" href={canonicalURL} />
+        
+        <!-- Fonts: Inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
         
 		<title>{title}</title>
 
@@ -91,7 +98,7 @@ const defaultSchema = JSON.stringify({
           gtag('config', 'G-XXXXXXXXXX');
         </script>
 	</head>
-	<body class="bg-gray-50 flex flex-col min-h-screen font-sans antialiased text-slate-900">
+	<body class="bg-neutral-50 flex flex-col min-h-screen font-sans antialiased text-neutral-900 selection:bg-primary-100 selection:text-primary-900">
         <Navigation />
 		<main class="flex-grow">
     		<slot />

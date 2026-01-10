@@ -1,12 +1,178 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HomeVariantA from '../components/HomeVariantA.astro';
-import HomeVariantB from '../components/HomeVariantB.astro';
 import { FEATURE_FLAGS } from '../config';
 
-const showVariantB = FEATURE_FLAGS.USE_EMOTION_HOMEPAGE;
+// SEO Constants
+const pageTitle = "Newcastle Table Tennis Club | PCYC Broadmeadow";
+const pageDescription = "Join Newcastle's leading table tennis club. Social play, competitions, and coaching for all ages and skill levels. First session free!";
+
+// Schedule Data (Mock - ideal to move to a config/data file later)
+const sessions = [
+    { day: "Monday", time: "6:30 PM - 10:00 PM", type: "Social & Competition", level: "All Levels" },
+    { day: "Wednesday", time: "6:30 PM - 10:00 PM", type: "Social & Practice", level: "All Levels" },
+    { day: "Saturday", time: "2:30 PM - 6:00 PM", type: "Open Session", level: "All Levels" },
+];
+
+const nextSession = "Wednesday 6:30 PM"; // TODO: Dynamic calculation
 ---
 
-<Layout title="Table Tennis Newcastle | PCYC Broadmeadow Club | NPTTC">
-  {showVariantB ? <HomeVariantB /> : <HomeVariantA />}
+<Layout title={pageTitle} description={pageDescription}>
+  
+  <!-- Hero Section -->
+  <section class="relative bg-primary-900 text-white overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-primary-950/80 mix-blend-multiply z-10"></div>
+        <img 
+            src="https://placehold.co/1920x1080/1e3a8a/ffffff?text=Table+Tennis+Action" 
+            alt="Table tennis players in action" 
+            class="w-full h-full object-cover opacity-40"
+        />
+    </div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
+        <div class="max-w-3xl">
+            <div class="inline-flex items-center px-3 py-1 rounded-full border border-primary-400 bg-primary-900/50 text-primary-100 text-xs font-medium mb-6 backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-green-400 mr-2 animate-pulse"></span>
+                Accepting New Members
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
+                Newcastle's Home of <br class="hidden sm:block" />
+                <span class="text-primary-400">Competitive & Social</span> Table Tennis.
+            </h1>
+            <p class="text-lg sm:text-xl text-primary-100 mb-8 leading-relaxed max-w-2xl">
+                Whether you're looking to compete at a high level or just enjoy a hit with friends, 
+                we provide a professional, friendly environment at PCYC Broadmeadow.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="/timetable" class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-semibold rounded-lg text-white bg-primary-600 hover:bg-primary-500 transition shadow-lg hover:shadow-primary-500/25">
+                    Come & Try (Free Session)
+                </a>
+                <a href="/expect" class="inline-flex items-center justify-center px-8 py-3.5 border border-white/20 text-base font-semibold rounded-lg text-white hover:bg-white/10 transition backdrop-blur-sm">
+                    What to Expect
+                </a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Key Value Props -->
+  <section class="py-16 bg-white border-b border-neutral-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-12">
+            <!-- Feature 1 -->
+            <div class="flex flex-col items-start">
+                <div class="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-neutral-900 mb-2">All Skill Levels Welcome</h3>
+                <p class="text-neutral-600 leading-relaxed">
+                    From absolute beginners to state-ranked players. Our graded competitions ensure you play against people of your own standard.
+                </p>
+            </div>
+             <!-- Feature 2 -->
+             <div class="flex flex-col items-start">
+                <div class="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-neutral-900 mb-2">Professional Equipment</h3>
+                <p class="text-neutral-600 leading-relaxed">
+                    Play on ITTF-approved tables in a stadium environment with specialized lighting and flooring at PCYC Broadmeadow.
+                </p>
+            </div>
+             <!-- Feature 3 -->
+             <div class="flex flex-col items-start">
+                <div class="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-neutral-900 mb-2">Flexible Play Times</h3>
+                <p class="text-neutral-600 leading-relaxed">
+                    Three sessions per week including weeknights and weekends. No booking required—just show up 15 minutes early.
+                </p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Schedule Preview -->
+  <section class="py-20 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+                <h2 class="text-3xl font-bold text-neutral-900">Weekly Schedule</h2>
+                <p class="mt-2 text-neutral-600 max-w-xl">Join us for any of our regular sessions. First visit is free.</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <a href="/timetable" class="text-primary-600 font-semibold hover:text-primary-700 hover:underline inline-flex items-center">
+                    View Full Timetable 
+                    <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-neutral-200 overflow-hidden">
+            <div class="grid grid-cols-1 divide-y divide-neutral-100">
+                {sessions.map(session => (
+                    <div class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between hover:bg-neutral-50 transition-colors">
+                        <div class="mb-4 md:mb-0">
+                            <h3 class="text-xl font-bold text-neutral-900">{session.day}</h3>
+                            <p class="text-primary-600 font-medium mt-1">{session.time}</p>
+                        </div>
+                        <div class="flex flex-col md:items-end">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-neutral-100 text-neutral-700 mb-2">
+                                {session.level}
+                            </span>
+                            <p class="text-neutral-500 text-sm">{session.type}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+        
+        <div class="mt-8 bg-primary-50 rounded-lg p-4 flex items-start sm:items-center gap-4 border border-primary-100">
+            <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5 sm:mt-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p class="text-sm text-primary-800">
+                <strong>Next Session:</strong> {nextSession}. Please arrive 15 minutes early for registration.
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-primary-900 rounded-3xl overflow-hidden shadow-2xl relative">
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-primary-800 rounded-full opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
+            
+            <div class="relative z-10 px-8 py-16 md:py-20 md:px-16 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl font-bold text-white mb-4">Ready to play?</h2>
+                    <p class="text-primary-100 text-lg leading-relaxed mb-0">
+                        Your first session is on us. We'll provide the racket and balls—just bring comfortable clothes and non-marking shoes.
+                    </p>
+                </div>
+                <div class="flex flex-col w-full md:w-auto gap-4">
+                    <a href="/timetable" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-xl text-primary-900 bg-white hover:bg-neutral-50 transition shadow-lg transform hover:-translate-y-0.5">
+                        Claim Free Session
+                    </a>
+                    <a href="/location" class="inline-flex items-center justify-center px-8 py-4 border border-primary-700 text-base font-semibold rounded-xl text-white hover:bg-primary-800 transition">
+                        Find Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
 </Layout>

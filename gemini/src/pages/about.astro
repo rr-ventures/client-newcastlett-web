@@ -3,78 +3,89 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="About Newcastle PCYC Table Tennis Club | Since 1996"
-  description="Learn about Newcastle PCYC Table Tennis Club — operating at PCYC Broadmeadow since 1996. Affiliated with Table Tennis NSW and Ratings Central."
+  title="About Us | Newcastle Table Tennis"
+  description="Newcastle Table Tennis Club has been operating since 1996. We are a volunteer-run, non-profit club affiliated with PCYC and Table Tennis NSW."
 >
-  <!-- Hero -->
-  <div class="bg-blue-900 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-      <h1 class="text-4xl font-extrabold">About Our Club</h1>
-      <p class="mt-4 text-xl text-blue-200">Bringing table tennis to Newcastle since 1996</p>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="prose prose-lg max-w-none">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Story</h2>
-      <p class="text-gray-700 mb-6">
-        Newcastle PCYC Table Tennis Club has been a part of Newcastle's sporting community since 1996. For nearly 30 years, we've been providing a welcoming space for table tennis enthusiasts of all skill levels — from complete beginners to competitive players.
-      </p>
+  <div class="bg-neutral-50 py-16 min-h-screen">
       
-      <p class="text-gray-700 mb-6">
-        Based at PCYC Newcastle in Broadmeadow, we offer three sessions per week where players from across the Hunter region come together to enjoy the sport. Whether you're looking for casual social play, structured coaching, or competitive matches, you'll find a place here.
+    <!-- Header -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+      <h1 class="text-4xl font-bold tracking-tight text-neutral-900 mb-6">About Our Club</h1>
+      <p class="text-xl text-neutral-600 leading-relaxed">
+        Bringing table tennis to the Hunter region since 1996.
       </p>
+    </div>
 
-      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-8">Our Values</h2>
-      <ul class="space-y-3 mb-6">
-        <li class="flex items-start">
-          <span class="text-blue-600 font-bold mr-3">•</span>
-          <span class="text-gray-700"><strong>Welcoming:</strong> Everyone is welcome, regardless of age or skill level</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-blue-600 font-bold mr-3">•</span>
-          <span class="text-gray-700"><strong>Community-focused:</strong> We're a club, not a business — run by volunteers who love the game</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-blue-600 font-bold mr-3">•</span>
-          <span class="text-gray-700"><strong>Inclusive:</strong> We cater to social players and competitive players alike</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-blue-600 font-bold mr-3">•</span>
-          <span class="text-gray-700"><strong>Affordable:</strong> We keep costs low so everyone can participate</span>
-        </li>
-      </ul>
-
-      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-8">Affiliations</h2>
-      <div class="grid gap-4 md:grid-cols-3 mb-6">
-        <div class="bg-gray-50 p-4 rounded-lg text-center">
-          <div class="text-3xl mb-2">🏛️</div>
-          <div class="font-medium text-gray-900">PCYC Newcastle</div>
-          <p class="text-sm text-gray-500">Our home venue</p>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg text-center">
-          <div class="text-3xl mb-2">🏆</div>
-          <div class="font-medium text-gray-900">Table Tennis NSW</div>
-          <p class="text-sm text-gray-500">State affiliate</p>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg text-center">
-          <div class="text-3xl mb-2">📊</div>
-          <div class="font-medium text-gray-900">Ratings Central</div>
-          <p class="text-sm text-gray-500">Player ratings</p>
+    <!-- Main Content -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white rounded-2xl shadow-sm border border-neutral-200 p-8 md:p-12 mb-12">
+        <h2 class="text-2xl font-bold text-neutral-900 mb-6">Our Story</h2>
+        <div class="prose prose-lg text-neutral-600">
+            <p class="mb-6">
+                Newcastle PCYC Table Tennis Club has been a fixture of the local sporting community for nearly 30 years. What started as a small group of enthusiasts has grown into one of the most active table tennis clubs in regional NSW.
+            </p>
+            <p>
+                Based at the PCYC in Broadmeadow, we provide a professional yet welcoming environment for everyone—from casual social players to state-ranked competitors. We are entirely volunteer-run, driven by a passion for the sport and a commitment to our members.
+            </p>
         </div>
       </div>
 
-      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-8">Join Us</h2>
-      <p class="text-gray-700 mb-6">
-        Whether you played table tennis years ago and want to pick it up again, or you've never held a bat before, we'd love to have you. Your first session is free — no booking required.
-      </p>
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-4">Our Values</h3>
+            <ul class="space-y-4">
+                <li class="flex items-start">
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    </span>
+                    <span class="ml-3 text-neutral-700"><strong>Inclusive:</strong> We welcome players of all ages, backgrounds, and abilities.</span>
+                </li>
+                 <li class="flex items-start">
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    </span>
+                    <span class="ml-3 text-neutral-700"><strong>Community:</strong> We foster a friendly, social atmosphere where respect is paramount.</span>
+                </li>
+                 <li class="flex items-start">
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    </span>
+                    <span class="ml-3 text-neutral-700"><strong>Affordable:</strong> We keep fees low to ensure the sport remains accessible.</span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-4">Affiliations</h3>
+            <div class="space-y-4">
+                <div class="flex items-center p-4 bg-white rounded-lg border border-neutral-200 shadow-sm">
+                    <div class="flex-shrink-0 w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center text-neutral-500 font-bold text-xs">PCYC</div>
+                    <div class="ml-4">
+                        <p class="text-sm font-bold text-neutral-900">PCYC Newcastle</p>
+                        <p class="text-xs text-neutral-500">Venue Partner</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-white rounded-lg border border-neutral-200 shadow-sm">
+                    <div class="flex-shrink-0 w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center text-neutral-500 font-bold text-xs">TTNSW</div>
+                    <div class="ml-4">
+                        <p class="text-sm font-bold text-neutral-900">Table Tennis NSW</p>
+                        <p class="text-xs text-neutral-500">Affiliated Club</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="bg-primary-900 rounded-2xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl font-bold mb-4">Come meet the team</h2>
+        <p class="text-primary-200 mb-8 max-w-xl mx-auto">
+            The best way to get to know us is to come down for a hit. Your first session is completely free.
+        </p>
+        <a href="/timetable" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-primary-900 bg-white hover:bg-neutral-50 transition shadow-lg">
+            See Session Times
+        </a>
+      </div>
+
     </div>
-    
-    <div class="flex flex-wrap gap-4 mt-8">
-      <a href="/timetable" class="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition" data-track="timetable_view">See the Timetable</a>
-      <a href="/expect" class="bg-gray-100 text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition" data-track="cta_click">What to Expect</a>
-      <a href="/location" class="bg-gray-100 text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition" data-track="directions_click">Get Directions</a>
-    </div>
-  </section>
+  </div>
 </Layout>

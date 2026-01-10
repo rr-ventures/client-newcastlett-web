@@ -1,25 +1,57 @@
 ---
+const { pathname } = Astro.url;
+
+const links = [
+  { href: '/timetable', label: 'Timetable' },
+  { href: '/expect', label: 'What to Expect' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/competitions', label: 'Competitions' },
+  { href: '/location', label: 'Location' },
+];
+
+const isActive = (path: string) => pathname === path || (path !== '/' && pathname.startsWith(path));
 ---
-<nav class="bg-white shadow-sm sticky top-0 z-50">
+
+<nav class="bg-white/95 backdrop-blur-md border-b border-neutral-100 sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
+    <div class="flex justify-between h-20">
       <div class="flex">
         <div class="flex-shrink-0 flex items-center">
-          <a href="/" class="text-2xl font-bold text-blue-900 tracking-tight">NPTTC</a>
+          <a href="/" class="group flex items-center gap-2">
+            <!-- Simple textual logo with credible weight -->
+            <div class="flex flex-col">
+                <span class="text-xl font-bold text-primary-900 tracking-tight leading-none group-hover:text-primary-700 transition-colors">Newcastle</span>
+                <span class="text-sm font-medium text-neutral-500 tracking-wide leading-none group-hover:text-neutral-600 transition-colors">Table Tennis Club</span>
+            </div>
+          </a>
         </div>
-        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-          <a href="/timetable" class="border-transparent text-gray-500 hover:border-blue-500 hover:text-blue-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Timetable</a>
-          <a href="/expect" class="border-transparent text-gray-500 hover:border-blue-500 hover:text-blue-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">What to Expect</a>
-          <a href="/pricing" class="border-transparent text-gray-500 hover:border-blue-500 hover:text-blue-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Pricing</a>
-          <a href="/location" class="border-transparent text-gray-500 hover:border-blue-500 hover:text-blue-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors">Location</a>
+        <div class="hidden md:ml-10 md:flex md:space-x-8">
+          {links.map(({ href, label }) => (
+            <a 
+              href={href} 
+              class:list={[
+                "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors h-full mt-0.5",
+                isActive(href)
+                  ? "border-primary-600 text-primary-900"
+                  : "border-transparent text-neutral-500 hover:text-primary-600 hover:border-primary-200"
+              ]}
+            >
+              {label}
+            </a>
+          ))}
         </div>
       </div>
-      <div class="hidden sm:ml-6 sm:flex sm:items-center">
-        <a href="/timetable" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition shadow-sm hover:shadow-md transform hover:-translate-y-0.5">First Session Free</a>
+      <div class="hidden md:ml-6 md:flex md:items-center">
+        <a 
+          href="/timetable" 
+          class="bg-primary-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-700 transition shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+        >
+          First Session Free
+        </a>
       </div>
-      <div class="-mr-2 flex items-center sm:hidden">
-        <a href="/timetable" class="text-blue-600 font-bold text-xs mr-3 uppercase tracking-wide">First Session Free</a>
-        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-btn">
+      <div class="-mr-2 flex items-center md:hidden">
+        <a href="/timetable" class="text-primary-600 font-bold text-sm mr-4 hover:underline">Free Session</a>
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-neutral-500 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-btn">
           <span class="sr-only">Open main menu</span>
           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -29,13 +61,26 @@
     </div>
   </div>
 
-  <div class="hidden sm:hidden" id="mobile-menu">
-    <div class="pt-2 pb-3 space-y-1 bg-white border-t border-gray-100 shadow-lg">
-      <a href="/timetable" class="text-gray-600 hover:bg-blue-50 hover:text-blue-700 block pl-3 pr-4 py-3 border-l-4 border-transparent hover:border-blue-500 text-base font-medium">Timetable</a>
-      <a href="/expect" class="text-gray-600 hover:bg-blue-50 hover:text-blue-700 block pl-3 pr-4 py-3 border-l-4 border-transparent hover:border-blue-500 text-base font-medium">What to Expect</a>
-      <a href="/pricing" class="text-gray-600 hover:bg-blue-50 hover:text-blue-700 block pl-3 pr-4 py-3 border-l-4 border-transparent hover:border-blue-500 text-base font-medium">Pricing</a>
-      <a href="/location" class="text-gray-600 hover:bg-blue-50 hover:text-blue-700 block pl-3 pr-4 py-3 border-l-4 border-transparent hover:border-blue-500 text-base font-medium">Location & Contact</a>
-      <a href="/competitions" class="text-gray-600 hover:bg-blue-50 hover:text-blue-700 block pl-3 pr-4 py-3 border-l-4 border-transparent hover:border-blue-500 text-base font-medium">Competitions</a>
+  <div class="hidden md:hidden border-t border-neutral-100" id="mobile-menu">
+    <div class="pt-2 pb-3 space-y-1 bg-white shadow-lg">
+      {links.map(({ href, label }) => (
+        <a 
+            href={href} 
+            class:list={[
+                "block pl-3 pr-4 py-3 border-l-4 text-base font-medium transition-colors",
+                isActive(href)
+                    ? "bg-primary-50 border-primary-500 text-primary-700"
+                    : "border-transparent text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 hover:text-neutral-800"
+            ]}
+        >
+            {label}
+        </a>
+      ))}
+       <div class="pt-4 pb-4 px-4">
+          <a href="/timetable" class="w-full flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 shadow-sm">
+            Claim Free Session
+          </a>
+       </div>
     </div>
   </div>
 </nav>

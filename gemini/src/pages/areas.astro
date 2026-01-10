@@ -3,129 +3,65 @@ import Layout from '../layouts/Layout.astro';
 
 const areas = [
   {
-    name: "Newcastle & Surrounds",
-    icon: "🏙️",
-    description: "Our home! Just minutes from Newcastle CBD, Mayfield, Hamilton, Merewether, and surrounding suburbs. Easy access with plenty of on-site parking at PCYC Broadmeadow.",
+    name: "Newcastle",
+    description: "Located centrally in Broadmeadow, we are just minutes from the CBD, Hamilton, Mayfield, and Merewether.",
   },
   {
     name: "Lake Macquarie",
-    icon: "🌳",
-    description: "Players from Charlestown, Belmont, Warners Bay, Toronto, and other Lake Macquarie suburbs regularly make the short trip to join our sessions.",
+    description: "A short drive for players from Charlestown, Belmont, Warners Bay, and Toronto.",
   },
   {
     name: "Maitland & Lower Hunter",
-    icon: "🏘️",
-    description: "Whether you're in Maitland, Cessnock, Kurri Kurri, or nearby areas — we're an easy drive down the expressway. A great option for table tennis in the lower Hunter.",
+    description: "Easily accessible via the New England Highway for players in Maitland, Cessnock, and Kurri Kurri.",
   },
   {
     name: "Hunter Valley",
-    icon: "🍇",
-    description: "From Singleton to Muswellbrook and the wine country in between — if you're looking for organised table tennis in the Hunter Valley, we'd love to have you.",
+    description: "Welcoming players from Singleton, Muswellbrook, and the wider region.",
   },
-];
-
-const driveTimes = [
-  { location: "Newcastle CBD", time: "~10 minutes" },
-  { location: "Charlestown", time: "~15 minutes" },
-  { location: "Maitland", time: "~25 minutes" },
-  { location: "Cessnock", time: "~40 minutes" },
-  { location: "Singleton", time: "~50 minutes" },
-];
-
-const whyChoose = [
-  "Established club since 1996 — Nearly 30 years of bringing the Hunter region together through table tennis",
-  "Three weekly sessions — Monday evenings, Wednesday evenings, and Saturday afternoons give you flexibility",
-  "All skill levels welcome — From complete beginners to competitive players, everyone fits in",
-  "Indoor venue — Play year-round regardless of weather at PCYC Newcastle's climate-controlled facility",
-  "No booking required — Just show up during session times",
-  "Equipment provided — No need to buy a racket before you try",
-  "Affiliated with Table Tennis NSW — Compete in sanctioned events and earn ratings",
 ];
 ---
 
 <Layout 
-  title="Table Tennis for Newcastle, Maitland, Lake Macquarie & Hunter Valley | NPTTC"
-  description="Newcastle PCYC Table Tennis Club welcomes players from across the Hunter region — Newcastle, Maitland, Lake Macquarie, and Hunter Valley. Friendly club, first session free."
+  title="Servicing the Hunter Region | Newcastle Table Tennis"
+  description="Newcastle Table Tennis Club welcomes players from Newcastle, Lake Macquarie, Maitland, and the Hunter Valley."
 >
-  <!-- Hero -->
-  <div class="bg-blue-900 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-      <h1 class="text-4xl font-extrabold">Welcoming Players from Across the Hunter</h1>
-      <p class="mt-4 text-xl text-blue-200">Newcastle PCYC Table Tennis Club is proud to serve the broader Hunter region</p>
+  <div class="bg-white py-16 min-h-screen">
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
+            Table Tennis for the Hunter Region
+        </h1>
+        <p class="mt-4 text-xl text-neutral-600 max-w-2xl mx-auto">
+            Our central location at PCYC Broadmeadow makes us the hub for table tennis in the region.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        {areas.map((area) => (
+            <div class="bg-neutral-50 rounded-xl p-8 border border-neutral-100 hover:border-primary-200 transition-colors">
+                <h3 class="text-xl font-bold text-neutral-900 mb-3">{area.name}</h3>
+                <p class="text-neutral-600 leading-relaxed">
+                    {area.description}
+                </p>
+            </div>
+        ))}
+      </div>
+
+      <div class="bg-white rounded-2xl border border-neutral-200 p-8 shadow-sm">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+                <h3 class="text-lg font-bold text-neutral-900">Getting Here</h3>
+                <p class="text-neutral-600 mt-2">
+                    We are located at Young Road, Broadmeadow. Plenty of free on-site parking is available.
+                </p>
+            </div>
+             <a href="/location" class="flex-shrink-0 inline-flex items-center justify-center px-6 py-3 border border-neutral-300 text-base font-medium rounded-lg text-neutral-700 bg-white hover:bg-neutral-50 transition">
+                View Map & Directions
+            </a>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <!-- Areas Grid -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Where Our Players Come From</h2>
-    <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-      While we're based at PCYC Newcastle in Broadmeadow, our members travel from across the Hunter region to play with us.
-    </p>
-    <div class="grid gap-6 md:grid-cols-2">
-      {areas.map((area) => (
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-          <div class="text-3xl mb-3">{area.icon}</div>
-          <h3 class="text-xl font-bold text-gray-900">{area.name}</h3>
-          <p class="text-gray-600 mt-2">{area.description}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- Why Choose Us -->
-  <section class="bg-gray-50 py-16">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Why Players Choose Us</h2>
-      <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
-        <ul class="space-y-3">
-          {whyChoose.map((reason) => (
-            <li class="flex items-start">
-              <span class="text-green-500 mr-3">✓</span>
-              <span class="text-gray-700">{reason}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Getting Here -->
-  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Getting Here</h2>
-    <p class="text-center text-gray-600 mb-8">We're centrally located at PCYC Newcastle in Broadmeadow</p>
-    
-    <div class="grid gap-6 md:grid-cols-2">
-      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-        <h4 class="font-bold text-gray-900 mb-3">📍 Our Location</h4>
-        <p class="text-gray-700"><strong>PCYC Newcastle</strong><br>Broadmeadow, NSW</p>
-        <p class="text-gray-500 text-sm mt-2">Free on-site parking available. Easy access from the expressway and major roads.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-        <h4 class="font-bold text-gray-900 mb-3">⏱️ Approximate Drive Times</h4>
-        <ul class="space-y-1">
-          {driveTimes.map((dt) => (
-            <li class="text-gray-700">{dt.location}: {dt.time}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-    
-    <div class="text-center mt-8">
-      <a href="/location" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition" data-track="directions_click">
-        Get Directions →
-      </a>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="bg-blue-900 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-      <h2 class="text-3xl font-bold">Ready to Give It a Try?</h2>
-      <p class="mt-4 text-blue-200 mb-8">Your first session is free — no booking required, just show up!</p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/timetable" class="bg-white text-blue-900 px-6 py-3 rounded-md font-medium hover:bg-blue-50 transition" data-track="timetable_view">See the Timetable</a>
-        <a href="/expect" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-blue-900 transition" data-track="cta_click">What to Expect</a>
-      </div>
-    </div>
-  </section>
 </Layout>
