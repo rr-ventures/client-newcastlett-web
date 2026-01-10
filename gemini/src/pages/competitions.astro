@@ -7,11 +7,11 @@ import Layout from '../layouts/Layout.astro';
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left md:flex md:items-end md:justify-between">
                 <div>
-                     <h1 class="text-3xl font-bold text-neutral-900">Competition Draws</h1>
+                     <h1 class="text-4xl font-heading font-bold text-neutral-900 uppercase">Competition Draws</h1>
                      <p class="mt-2 text-neutral-600">View upcoming matches and current season standings.</p>
                 </div>
                 <div class="mt-4 md:mt-0">
-                     <button id="refresh-btn" class="inline-flex items-center px-4 py-2 border border-neutral-300 shadow-sm text-sm font-medium rounded-md text-neutral-700 bg-white hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors">
+                     <button id="refresh-btn" class="inline-flex items-center px-4 py-2 border border-neutral-300 shadow-sm text-sm font-bold uppercase tracking-wide rounded text-neutral-700 bg-white hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-colors">
                         <svg class="mr-2 -ml-1 h-4 w-4 text-neutral-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
@@ -23,14 +23,14 @@ import Layout from '../layouts/Layout.astro';
             <div class="bg-white shadow-sm overflow-hidden rounded-xl border border-neutral-200">
                 <!-- Loading State -->
                 <div id="loading" class="p-16 text-center">
-                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-neutral-200 border-t-primary-600"></div>
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-neutral-200 border-t-brand-600"></div>
                     <p class="mt-4 text-neutral-500 font-medium">Loading schedule...</p>
                 </div>
 
                 <!-- Error State -->
                 <div id="error-message" class="hidden p-16 text-center">
                     <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                         </svg>
                     </div>
@@ -38,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
                     <p class="text-neutral-500 mt-2 max-w-sm mx-auto mb-6">
                         We couldn't fetch the latest competition data. Please check your connection or try again later.
                     </p>
-                    <a href="https://www.facebook.com/groups/742238756140959" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700 font-medium hover:underline">
+                    <a href="https://www.facebook.com/groups/742238756140959" target="_blank" rel="noopener" class="text-brand-600 hover:text-brand-700 font-bold hover:underline uppercase tracking-wide text-sm">
                         Check Facebook for updates &rarr;
                     </a>
                 </div>
@@ -46,12 +46,12 @@ import Layout from '../layouts/Layout.astro';
                 <!-- Table -->
                 <div class="overflow-x-auto">
                     <table id="comps-table" class="hidden min-w-full divide-y divide-neutral-200">
-                        <thead class="bg-neutral-50">
+                        <thead class="bg-neutral-100">
                             <tr>
-                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-neutral-500 uppercase tracking-wider">Date</th>
-                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-neutral-500 uppercase tracking-wider">Event</th>
-                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-neutral-500 uppercase tracking-wider">Division</th>
-                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-neutral-500 uppercase tracking-wider">Status</th>
+                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-neutral-600 uppercase tracking-wider">Date</th>
+                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-neutral-600 uppercase tracking-wider">Event</th>
+                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-neutral-600 uppercase tracking-wider">Division</th>
+                                <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-neutral-600 uppercase tracking-wider">Status</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-neutral-200" id="table-body">
@@ -138,11 +138,11 @@ import Layout from '../layouts/Layout.astro';
             tr.className = "hover:bg-neutral-50 transition-colors";
             
             tr.innerHTML = `
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-900 font-medium">${clean(date)}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-900 font-bold">${clean(date)}</td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-900">${clean(name)}</td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">${clean(division)}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
-                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${isOpen ? 'bg-green-100 text-green-800' : 'bg-neutral-100 text-neutral-800'}">
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wide ${isOpen ? 'bg-green-100 text-green-800' : 'bg-neutral-100 text-neutral-800'}">
                         ${statusText}
                     </span>
                 </td>
