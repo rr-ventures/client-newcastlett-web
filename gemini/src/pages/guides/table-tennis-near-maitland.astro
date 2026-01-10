@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://npttc.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://npttc.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Table Tennis Near Maitland"}
+  ]
+});
+
+const driveTimes = [
+  { location: "Maitland", time: "~25 minutes" },
+  { location: "Cessnock", time: "~40 minutes" },
+  { location: "Kurri Kurri", time: "~35 minutes" },
+  { location: "Singleton", time: "~50 minutes" },
+];
+---
+
+<Layout 
+  title="Table Tennis Near Maitland: A Welcoming Club in Broadmeadow"
+  description="Looking for table tennis near Maitland? Newcastle PCYC Table Tennis Club in Broadmeadow is just 25 minutes away. First session free, all skill levels welcome."
+  schema={breadcrumbSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-gray-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-blue-600 hover:underline">Home</a>
+      <span class="mx-2 text-gray-400">→</span>
+      <a href="/guides" class="text-blue-600 hover:underline">Guides</a>
+      <span class="mx-2 text-gray-400">→</span>
+      <span class="text-gray-700">Near Maitland</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-blue-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-extrabold">Table Tennis Near Maitland: A Welcoming Club in Broadmeadow</h1>
+      <p class="mt-4 text-blue-200">Just a 25-minute drive to Newcastle's friendliest table tennis club</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-gray-700 text-lg">
+        If you're in Maitland, Cessnock, or the lower Hunter and looking for organised table tennis, Newcastle PCYC Table Tennis Club is your closest option — and we'd love to have you.
+      </p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Easy Access from Maitland</h2>
+      <p class="text-gray-700">
+        Located at PCYC Newcastle in Broadmeadow, we're just a 25-minute drive from Maitland via the New England Highway or Hunter Expressway. With three sessions per week, you can easily fit a game into your schedule.
+      </p>
+
+      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 my-6">
+        <h4 class="font-bold text-gray-900 mb-3">⏱️ Drive Times from the Lower Hunter</h4>
+        <ul class="space-y-1">
+          {driveTimes.map((dt) => (
+            <li class="text-gray-700">{dt.location}: {dt.time}</li>
+          ))}
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">What Makes Our Club Special</h2>
+      <p class="text-gray-700">
+        Newcastle PCYC Table Tennis Club has been operating since 1996. We're a friendly, community-focused club where the emphasis is on having fun, meeting people, and improving your game — regardless of your current skill level.
+      </p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Perfect for Beginners</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>No experience required</strong> — Complete beginners are welcome</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Equipment provided</strong> — We have rackets you can borrow</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>No booking needed</strong> — Just show up during session times</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>First session free</strong> — Try before you commit</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Friendly atmosphere</strong> — Our members love welcoming newcomers</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">For Competitive Players</h3>
+      <p class="text-gray-700">If you're looking to take your game to the next level, we offer:</p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700">Regular club competitions throughout the year</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700">Affiliation with Table Tennis NSW</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700">Ratings Central registration for tracking your progress</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700">Coaching available (rates on request)</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Session Times</h2>
+      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 my-4">
+        <ul class="space-y-2">
+          <li class="text-gray-700"><strong>Monday:</strong> 6:30 PM – 10:00 PM</li>
+          <li class="text-gray-700"><strong>Wednesday:</strong> 6:30 PM – 10:00 PM</li>
+          <li class="text-gray-700"><strong>Saturday:</strong> 2:30 PM – 6:00 PM</li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Making the Trip Worth It</h2>
+      <p class="text-gray-700">Many of our members travel from Maitland and surrounding areas. Here's why they make the journey:</p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Quality facilities</strong> — Indoor, climate-controlled venue</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Free parking</strong> — Plenty of on-site parking</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Flexible sessions</strong> — Three times per week</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Great value</strong> — $9 per session, or $40 annual membership</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Social atmosphere</strong> — Make new friends</span>
+        </li>
+      </ul>
+
+      <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-green-800 mb-2">Ready to make the trip?</h3>
+        <p class="text-green-700 mb-4">Your first session is free — no booking required. Just show up and say hello!</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-green-600 text-white px-5 py-2 rounded-md font-medium hover:bg-green-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-green-700 border border-green-300 px-5 py-2 rounded-md font-medium hover:bg-green-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-green-700 border border-green-300 px-5 py-2 rounded-md font-medium hover:bg-green-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
