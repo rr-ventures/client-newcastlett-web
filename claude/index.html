@@ -22,7 +22,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Preload hero image for performance -->
   <link rel="preload" as="image" href="/images/hero-image.jpg" fetchpriority="high">
@@ -224,27 +224,33 @@
           <p>No booking required — just show up and play!</p>
         </div>
         
-        <div class="timetable">
-          <div class="timetable-row header">
-            <div class="timetable-cell">Day</div>
-            <div class="timetable-cell">Session Times</div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-cell timetable-day">Monday</div>
-            <div class="timetable-cell">6:30 PM – 10:00 PM</div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-cell timetable-day">Wednesday</div>
-            <div class="timetable-cell">6:30 PM – 10:00 PM</div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-cell timetable-day">Saturday</div>
-            <div class="timetable-cell">2:30 PM – 6:00 PM</div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-cell timetable-day">Sunday</div>
-            <div class="timetable-cell">Contact us for session information</div>
-          </div>
+        <div class="timetable-wrapper">
+          <table class="timetable">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Session Times</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>6:30 PM – 10:00 PM</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>6:30 PM – 10:00 PM</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>2:30 PM – 6:00 PM</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>Contact us for session information</td>
+              </tr>
+            </tbody>
+          </table>
           <div class="timetable-note">
             No booking required. Arrive at any time during session hours.
           </div>
@@ -373,31 +379,60 @@
       </div>
     </section>
     
-    <!-- Club Heritage -->
+    <!-- Club Heritage & Gallery -->
     <section class="section">
       <div class="container">
-        <div class="social-proof">
+        <div class="section-header">
           <h2>Established 1996</h2>
           <p>Nearly 30 years serving the Newcastle and Hunter region sporting community</p>
-          
-          <div class="affiliations">
-            <div class="affiliation">
-              <span>PCYC Newcastle</span>
-            </div>
-            <div class="affiliation">
-              <span>Table Tennis NSW</span>
-            </div>
-            <div class="affiliation">
-              <span>Ratings Central</span>
-            </div>
+        </div>
+        
+        <div class="affiliations">
+          <div class="affiliation">
+            <span>PCYC Newcastle</span>
           </div>
-          
-          <div style="max-width: 1000px; margin: 3rem auto 0;">
+          <div class="affiliation">
+            <span>Table Tennis NSW</span>
+          </div>
+          <div class="affiliation">
+            <span>Ratings Central</span>
+          </div>
+        </div>
+        
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-item-large">
             <img 
               src="/images/group-photo.jpg" 
               alt="Newcastle Table Tennis Club members at competition with medals"
               loading="lazy"
-              style="width: 100%; height: auto; border-radius: 8px; box-shadow: var(--shadow-xl);"
+            >
+          </div>
+          <div class="gallery-item">
+            <img 
+              src="/images/group-photo-2.jpg" 
+              alt="Table tennis players in action at Newcastle PCYC"
+              loading="lazy"
+            >
+          </div>
+          <div class="gallery-item">
+            <img 
+              src="/images/group-photo-3.jpg" 
+              alt="Newcastle Table Tennis Club competition event"
+              loading="lazy"
+            >
+          </div>
+          <div class="gallery-item">
+            <img 
+              src="/images/group-photo-4.jpg" 
+              alt="Club members enjoying table tennis at PCYC Broadmeadow"
+              loading="lazy"
+            >
+          </div>
+          <div class="gallery-item">
+            <img 
+              src="/images/group-photo-5.jpg" 
+              alt="Professional table tennis facility in Newcastle"
+              loading="lazy"
             >
           </div>
         </div>

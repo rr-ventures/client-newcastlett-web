@@ -1,24 +1,24 @@
 /* Newcastle PCYC Table Tennis Club - Main Stylesheet */
 
-/* CSS Variables for consistent theming - Professional Sports Club */
+/* CSS Variables - Black, White, Red Sports Club Theme */
 :root {
-  --color-primary: #1a1a1a; /* Deep Charcoal/Black - professional, authoritative */
+  --color-primary: #000000; /* Pure Black - strong, authoritative */
   --color-primary-dark: #000000;
-  --color-primary-light: #2d2d2d;
-  --color-secondary: #dc2626; /* Bold Red - energy, sport, action */
-  --color-secondary-dark: #b91c1c;
-  --color-accent: #dc2626; /* Red for all CTAs - club color */
-  --color-text: #1f2937;
-  --color-text-light: #6b7280;
+  --color-primary-light: #333333;
+  --color-secondary: #E31E24; /* Vibrant Red - energy, sport */
+  --color-secondary-dark: #B71C1C;
+  --color-accent: #E31E24; /* Red for all CTAs */
+  --color-text: #212121;
+  --color-text-light: #757575;
   --color-bg: #ffffff;
-  --color-bg-alt: #f9fafb;
-  --color-bg-dark: #1a1a1a;
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+  --color-bg-alt: #F5F5F5;
+  --color-bg-dark: #000000;
+  --font-sans: 'Roboto', 'Open Sans', system-ui, -apple-system, sans-serif;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-md: 0 6px 12px rgba(0,0,0,0.15);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.15);
+  --shadow-xl: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 /* Base styles */
@@ -36,8 +36,8 @@ body {
   font-family: var(--font-sans);
   color: var(--color-text);
   background-color: var(--color-bg);
-  line-height: 1.7;
-  font-size: 18px;
+  line-height: 1.6;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -422,46 +422,61 @@ a:hover {
   outline-offset: 2px;
 }
 
-/* Primary CTA - Bold Red for professional sports club */
+/* Primary CTA - Vibrant Red */
 .btn-primary {
   background: var(--color-secondary);
   color: white;
-  box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.3), 0 2px 4px -2px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 4px 8px rgba(227, 30, 36, 0.3);
   font-weight: 700;
-  font-size: 1.0625rem;
-  padding: 1.125rem 2.25rem;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .btn-primary:hover {
   background: var(--color-secondary-dark);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 12px -2px rgba(220, 38, 38, 0.4), 0 4px 6px -2px rgba(220, 38, 38, 0.4);
+  box-shadow: 0 6px 12px rgba(227, 30, 36, 0.4);
 }
 
 .btn-primary:active {
   transform: translateY(0);
 }
 
-/* Secondary Button - Clean white */
+@media (min-width: 768px) {
+  .btn-primary {
+    font-size: 1.0625rem;
+    padding: 1.125rem 2.5rem;
+  }
+}
+
+/* Secondary Button - Black */
 .btn-secondary {
-  background: white;
-  color: var(--color-primary);
-  border: 2px solid transparent;
+  background: var(--color-primary);
+  color: white;
+  border: 2px solid var(--color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .btn-secondary:hover {
-  background: var(--color-bg-alt);
-  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+  color: white;
   border-color: var(--color-primary-light);
 }
 
-/* Outline Button - Subtle */
+/* Outline Button - White Border */
 .btn-outline {
   background: transparent;
   color: white;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid white;
   box-shadow: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .btn-outline:hover {
@@ -569,77 +584,101 @@ a:hover {
   line-height: 1.8;
 }
 
-/* Timetable - Professional Full-Width Design */
-.timetable {
+/* Timetable - Professional Modern Design */
+.timetable-wrapper {
   background: white;
-  border: 2px solid #e5e7eb;
+  border-radius: 0;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.timetable {
   width: 100%;
-  max-width: 100%;
+  border-collapse: collapse;
 }
 
-.timetable-row {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  border-bottom: 2px solid #e5e7eb;
-  transition: background-color 0.15s ease;
+.timetable thead {
+  background: var(--color-primary);
 }
 
-@media (max-width: 767px) {
-  .timetable-row {
-    grid-template-columns: 120px 1fr;
+.timetable thead th {
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  border-bottom: 3px solid var(--color-secondary);
+}
+
+@media (min-width: 768px) {
+  .timetable thead th {
+    font-size: 1.125rem;
+    padding: 2rem 2.5rem;
   }
 }
 
-.timetable-row:last-child {
+.timetable tbody tr {
+  border-bottom: 1px solid #E0E0E0;
+  transition: background-color 0.2s ease;
+}
+
+.timetable tbody tr:nth-child(even) {
+  background: #FAFAFA;
+}
+
+.timetable tbody tr:hover {
+  background: #F5F5F5;
+}
+
+.timetable tbody tr:last-child {
   border-bottom: none;
 }
 
-.timetable-row:not(.header):hover {
-  background: #f9fafb;
+.timetable tbody td {
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
 }
 
-.timetable-row.header {
-  background: var(--color-primary);
-  color: white;
-  font-weight: 700;
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.timetable-cell {
-  padding: 2rem 2.5rem;
-  display: flex;
-  align-items: center;
-}
-
-@media (max-width: 767px) {
-  .timetable-cell {
-    padding: 1.5rem 1.25rem;
+@media (min-width: 768px) {
+  .timetable tbody td {
+    padding: 2rem 2.5rem;
+    font-size: 1.125rem;
   }
 }
 
-.timetable-day {
+.timetable tbody td:first-child {
   font-weight: 700;
-  font-size: 1.25rem;
   color: var(--color-text);
+  font-size: 1.125rem;
 }
 
-.timetable-row:not(.header) .timetable-cell:last-child {
-  font-size: 1.125rem;
+@media (min-width: 768px) {
+  .timetable tbody td:first-child {
+    font-size: 1.25rem;
+  }
+}
+
+.timetable tbody td:last-child {
   color: var(--color-text);
   font-weight: 500;
 }
 
 .timetable-note {
-  padding: 1.5rem 2.5rem;
-  background: #f9fafb;
+  padding: 1.5rem 2rem;
+  background: var(--color-bg-alt);
   color: var(--color-text-light);
-  font-size: 1rem;
-  font-weight: 500;
-  border-top: 2px solid #e5e7eb;
-  font-style: italic;
+  font-size: 0.9375rem;
+  text-align: center;
+  border-top: 1px solid #E0E0E0;
+}
+
+@media (min-width: 768px) {
+  .timetable-note {
+    padding: 2rem 2.5rem;
+    font-size: 1rem;
+  }
 }
 
 /* Features - Professional Clean Cards */
@@ -919,14 +958,78 @@ a:hover {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin: 3rem 0;
 }
 
 .affiliation {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-text-light);
+  padding: 1rem 2rem;
+  background: white;
+  border: 2px solid #E0E0E0;
+  border-radius: 0;
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.affiliation:hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .affiliation {
+    font-size: 1.125rem;
+  }
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 4/3;
+}
+
+.gallery-item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+@media (max-width: 767px) {
+  .gallery-item-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 /* Testimonial */
