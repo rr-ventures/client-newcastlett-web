@@ -9,40 +9,27 @@ const navItems = [
   { label: "Timetable", to: "/timetable" },
   { label: "Competitions", to: "/competitions" },
   { label: "Location & Contact", to: "/location" },
+  { label: "Guides", to: "/guides" },
 ];
 
 export function Layout({ children }: Props) {
   return (
     <div>
-      <header style={headerStyle}>
-        <div className="container" style={headerInner}>
-          <Link to="/" style={{ fontWeight: 800, fontSize: "1rem", letterSpacing: "0.02em" }}>
-            {SITE.name}
+      <header className="site-header">
+        <div className="container site-header__inner">
+          <Link to="/" className="brand" aria-label={`${SITE.name} home`}>
+            <img className="brand__logo" src="/images/logo.png" alt="" aria-hidden="true" />
+            <span className="brand__name">{SITE.name}</span>
           </Link>
-          <nav style={navStyle} aria-label="Main">
+          <nav className="nav" aria-label="Main">
             {navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                style={({ isActive }) => ({
-                  padding: "0.4rem 0.6rem",
-                  borderRadius: 10,
-                  background: isActive ? "#e0f2fe" : "transparent",
-                  fontWeight: 700,
-                  color: "#0b1021",
-                })}
-              >
+              <NavLink key={item.to} to={item.to} className="nav__link">
                 {item.label}
               </NavLink>
             ))}
           </nav>
-          <Link
-            to="/timetable"
-            className="button primary"
-            onClick={() => track("timetable_view")}
-            style={{ whiteSpace: "nowrap" }}
-          >
-            Show up this week
+          <Link to="/timetable" className="button primary" onClick={() => track("timetable_view")} style={{ whiteSpace: "nowrap" }}>
+            Come for a tryout
           </Link>
         </div>
       </header>
@@ -70,6 +57,7 @@ export function Layout({ children }: Props) {
               <Link to="/pricing">Pricing</Link>
               <Link to="/about">About</Link>
               <Link to="/competitions">Competitions</Link>
+              <Link to="/areas-we-welcome">Areas we welcome</Link>
             </div>
           </div>
           <div>
@@ -90,31 +78,6 @@ export function Layout({ children }: Props) {
     </div>
   );
 }
-
-const headerStyle: React.CSSProperties = {
-  position: "sticky",
-  top: 0,
-  zIndex: 10,
-  background: "rgba(248, 250, 252, 0.97)",
-  backdropFilter: "blur(10px)",
-  borderBottom: "1px solid #e2e8f0",
-};
-
-const headerInner: React.CSSProperties = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  gap: "1rem",
-  padding: "0.9rem 1rem",
-};
-
-const navStyle: React.CSSProperties = {
-  display: "flex",
-  gap: "0.35rem",
-  alignItems: "center",
-  flexWrap: "wrap",
-  justifyContent: "center",
-};
 
 const footerStyle: React.CSSProperties = {
   marginTop: "64px",

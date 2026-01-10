@@ -1,32 +1,30 @@
-import { PLACEHOLDER_IMAGES } from "../config";
-
 type Props = { limit?: number };
 
 export function PhotoStrip({ limit = 4 }: Props) {
-  const items = PLACEHOLDER_IMAGES.slice(0, limit);
+  const items = [
+    {
+      src: "/images/group.jpg",
+      alt: "Group photo of Newcastle PCYC Table Tennis Club players at PCYC Broadmeadow",
+      caption: "Friendly, community-first club",
+    },
+    {
+      src: "/images/hero.jpg",
+      alt: "Table tennis session at PCYC Newcastle Broadmeadow",
+      caption: "All levels welcome — come and try",
+    },
+  ].slice(0, limit);
+
   return (
     <div className="card">
-      <h3 style={{ marginTop: 0 }}>Photos coming soon</h3>
-      <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
+      <h3 style={{ marginTop: 0 }}>Club photos</h3>
+      <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
         {items.map((img) => (
-          <figure key={img.file} style={{ margin: 0 }}>
-            <div
-              style={{
-                background: "#e2e8f0",
-                borderRadius: 12,
-                aspectRatio: "4 / 3",
-                display: "grid",
-                placeItems: "center",
-                color: "#475569",
-                fontWeight: 700,
-              }}
-            >
-              {img.file}
+          <figure key={img.src} style={{ margin: 0 }}>
+            <div style={{ borderRadius: 14, overflow: "hidden", border: "1px solid var(--border)", background: "var(--surface-2)" }}>
+              <img src={img.src} alt={img.alt} loading="lazy" style={{ width: "100%", aspectRatio: "4 / 3", objectFit: "cover" }} />
             </div>
-            <figcaption style={{ marginTop: 6, fontSize: "0.95rem", color: "#475569" }}>
-              <strong>{img.caption}</strong>
-              <br />
-              Alt text: {img.alt}
+            <figcaption style={{ marginTop: 8, fontSize: "0.95rem", color: "var(--muted)" }}>
+              <strong style={{ color: "var(--text)" }}>{img.caption}</strong>
             </figcaption>
           </figure>
         ))}

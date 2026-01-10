@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useSearchParams, Link } from "react-router-dom";
-import { CTA, ENTRY, META } from "../config";
+import { ENTRY, META } from "../config";
 import { SEO } from "../components/SEO";
 import { CTAButtons } from "../components/CTAButtons";
 import { NextSession } from "../components/NextSession";
@@ -16,50 +16,47 @@ export function HomePage() {
   const isVariantB = variant === "B";
 
   const aboveFold = useMemo(() => {
-    if (isVariantB) {
-      return (
-        <section className="hero">
-          <div className="container">
-            <div className="card" style={{ background: "#0f172a", color: "#e2e8f0" }}>
-              <div className="tag" style={{ background: "#e0f2fe", color: "#075985" }}>
-                Beginner-friendly
-              </div>
-              <h1 style={{ margin: "0.6rem 0 0.4rem" }}>New to table tennis? You’ll fit in.</h1>
-              <p style={{ marginBottom: 16, color: "#cbd5e1" }}>
-                No equipment needed. Friendly games. Come & try — first session free.
-              </p>
-              <div style={{ marginBottom: 14 }}>
-                <FearHighlights />
-              </div>
-              <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
-                <NextSession />
-                <TimetablePreview />
-              </div>
-              <div style={{ marginTop: 14, display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
-                <CTAButtons variant="primary" />
-              </div>
-            </div>
-          </div>
-        </section>
-      );
-    }
+    const headline = isVariantB ? "New to table tennis? You’ll fit in." : "Table Tennis at PCYC Newcastle (Broadmeadow)";
+    const subhead = isVariantB
+      ? "Beginner-friendly, social games, and a welcoming club. First session free — just show up."
+      : "Friendly sessions, beginner-welcoming, no booking needed. First session free — just show up.";
 
     return (
       <section className="hero">
         <div className="container">
-          <div className="card">
-            <div className="tag">Show up this week</div>
-            <h1 style={{ margin: "0.6rem 0 0.4rem" }}>Table Tennis at PCYC Newcastle (Broadmeadow)</h1>
-            <p style={{ marginBottom: 16 }}>
-              Friendly sessions, beginner-welcoming, no booking needed. Come & try — first session free.
-            </p>
-            <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
-              <NextSession />
-              <TimetablePreview />
+          <div className="hero__grid">
+            <div className="card hero__card">
+              <div className="tag">Come & try — first session free</div>
+              <h1>{headline}</h1>
+              <p className="hero__subhead">{subhead}</p>
+
+              <div className="hero__actions">
+                <Link to="/timetable" className="button primary">
+                  See session times
+                </Link>
+                <Link to="/location" className="button ghost">
+                  Get directions
+                </Link>
+              </div>
+
+              <div className="hero__trust" aria-label="Quick info">
+                <span className="tag">No booking</span>
+                <span className="tag">Equipment provided</span>
+                <span className="tag">Sports shoes required</span>
+              </div>
+
+              <div style={{ marginTop: 16, display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
+                <NextSession />
+                <TimetablePreview />
+              </div>
+
+              <div style={{ marginTop: 14, display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
+                <CTAButtons variant="primary" />
+              </div>
             </div>
-            <div style={{ marginTop: 14, display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
-              <CTAButtons variant="primary" />
-              <CTAButtons variant="secondary" />
+
+            <div className="hero__image" aria-label="Club photo">
+              <img src="/images/hero.jpg" alt="Players enjoying table tennis at PCYC Newcastle Broadmeadow" loading="eager" />
             </div>
           </div>
         </div>

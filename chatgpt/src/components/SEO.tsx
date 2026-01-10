@@ -5,9 +5,10 @@ type Props = {
   title: string;
   description: string;
   path?: string;
+  image?: string;
 };
 
-export function SEO({ title, description, path = "/" }: Props) {
+export function SEO({ title, description, path = "/", image = "/images/group.jpg" }: Props) {
   useEffect(() => {
     document.title = title;
 
@@ -22,6 +23,37 @@ export function SEO({ title, description, path = "/" }: Props) {
       canonical?.setAttribute("href", canonicalUrl);
     }
 
+    // Open Graph / social
+    const ogTitle = ensureTag("meta[property='og:title']", "meta");
+    ogTitle?.setAttribute("property", "og:title");
+    ogTitle?.setAttribute("content", title);
+    const ogDesc = ensureTag("meta[property='og:description']", "meta");
+    ogDesc?.setAttribute("property", "og:description");
+    ogDesc?.setAttribute("content", description);
+    const ogType = ensureTag("meta[property='og:type']", "meta");
+    ogType?.setAttribute("property", "og:type");
+    ogType?.setAttribute("content", "website");
+    const ogUrl = ensureTag("meta[property='og:url']", "meta");
+    ogUrl?.setAttribute("property", "og:url");
+    ogUrl?.setAttribute("content", canonicalUrl || "");
+    const ogImage = ensureTag("meta[property='og:image']", "meta");
+    ogImage?.setAttribute("property", "og:image");
+    const imageUrl = SITE.siteUrl && SITE.siteUrl !== "[TBD]" ? new URL(image, SITE.siteUrl).toString() : image;
+    ogImage?.setAttribute("content", imageUrl);
+
+    const twitterCard = ensureTag("meta[name='twitter:card']", "meta");
+    twitterCard?.setAttribute("name", "twitter:card");
+    twitterCard?.setAttribute("content", "summary_large_image");
+    const twitterTitle = ensureTag("meta[name='twitter:title']", "meta");
+    twitterTitle?.setAttribute("name", "twitter:title");
+    twitterTitle?.setAttribute("content", title);
+    const twitterDesc = ensureTag("meta[name='twitter:description']", "meta");
+    twitterDesc?.setAttribute("name", "twitter:description");
+    twitterDesc?.setAttribute("content", description);
+    const twitterImage = ensureTag("meta[name='twitter:image']", "meta");
+    twitterImage?.setAttribute("name", "twitter:image");
+    twitterImage?.setAttribute("content", imageUrl);
+
     const ld = buildSchema(description, canonicalUrl);
     const ldScript = ensureTag("script[data-schema='local']", "script") as HTMLScriptElement;
     if (ldScript) {
@@ -29,7 +61,7 @@ export function SEO({ title, description, path = "/" }: Props) {
       ldScript.setAttribute("data-schema", "local");
       ldScript.textContent = JSON.stringify(ld);
     }
-  }, [title, description, path]);
+  }, [title, description, path, image]);
 
   return null;
 }
