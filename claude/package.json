@@ -4,11 +4,11 @@
   "description": "Newcastle PCYC Table Tennis Club website - Claude version",
   "private": true,
   "scripts": {
-    "start": "npx serve -s . -l ${PORT:-3000}",
-    "dev": "npx serve -s . -l 3000"
+    "start": "npx http-server . -p ${PORT:-3000}",
+    "dev": "npx http-server . -p 3000"
   },
   "dependencies": {
-    "serve": "^14.2.4"
+    "http-server": "^14.1.1"
   },
   "engines": {
     "node": ">=18"

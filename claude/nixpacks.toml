@@ -2,8 +2,11 @@
 [phases.setup]
 nixPkgs = ["nodejs-18_x"]
 
+[phases.install]
+cmds = ["npm ci"]
+
 [phases.build]
 cmds = ["echo 'Static site - no build needed'"]
 
 [start]
-cmd = "npx serve -s . -l ${PORT:-3000}"
+cmd = "npx http-server . -p ${PORT:-3000}"
