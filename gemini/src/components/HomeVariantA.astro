@@ -3,11 +3,14 @@ const nextSession = "Wednesday 6:30 PM"; // TODO: Implement dynamic logic
 ---
 <section class="bg-blue-900 text-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-6">
+            🎉 Come & try — first session free
+        </div>
         <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
             Table Tennis in Newcastle
         </h1>
         <p class="mt-6 text-xl text-blue-100 max-w-3xl mx-auto">
-            PCYC Broadmeadow. Competitive & Social. First Session Free.
+            Casual play, coaching & competitions at PCYC Broadmeadow. All skill levels welcome. Welcoming players from across the Hunter region.
         </p>
     </div>
 </section>
@@ -24,7 +27,7 @@ const nextSession = "Wednesday 6:30 PM"; // TODO: Implement dynamic logic
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <h2 class="text-3xl font-bold text-gray-900 mb-8">Weekly Schedule</h2>
-    <div class="grid gap-6 md:grid-cols-3">
+    <div class="grid gap-6 md:grid-cols-4">
         <!-- Mon -->
         <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md transition">
             <h3 class="text-xl font-bold text-gray-900">Monday</h3>
@@ -42,6 +45,92 @@ const nextSession = "Wednesday 6:30 PM"; // TODO: Implement dynamic logic
             <h3 class="text-xl font-bold text-gray-900">Saturday</h3>
             <p class="text-blue-600 font-semibold mt-2">2:30 PM - 6:00 PM</p>
             <p class="text-sm text-gray-500 mt-4">Open Session</p>
+        </div>
+        <!-- Sun -->
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 opacity-75">
+            <h3 class="text-xl font-bold text-gray-500">Sunday</h3>
+            <p class="text-gray-500 font-semibold mt-2 italic">TBA</p>
+            <p class="text-sm text-gray-500 mt-4"><a href="mailto:enquiries@npttc.com.au" class="text-blue-600 hover:underline">Email for updates</a></p>
+        </div>
+    </div>
+    <p class="text-center text-gray-500 mt-6">No booking required — just show up and play!</p>
+</section>
+
+<!-- New to Table Tennis Section -->
+<section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">New to Table Tennis?</h2>
+        <div class="grid gap-6 md:grid-cols-4 text-center">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="text-3xl mb-3">🏓</div>
+                <h3 class="font-bold text-gray-900">Equipment Provided</h3>
+                <p class="text-sm text-gray-600 mt-2">Bats available to borrow — just bring yourself</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="text-3xl mb-3">👋</div>
+                <h3 class="font-bold text-gray-900">All Levels Welcome</h3>
+                <p class="text-sm text-gray-600 mt-2">From complete beginners to experienced players</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="text-3xl mb-3">😊</div>
+                <h3 class="font-bold text-gray-900">Friendly Atmosphere</h3>
+                <p class="text-sm text-gray-600 mt-2">Relaxed, social environment — no pressure</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="text-3xl mb-3">✅</div>
+                <h3 class="font-bold text-gray-900">No Booking Needed</h3>
+                <p class="text-sm text-gray-600 mt-2">Just show up during session times</p>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <a href="/expect" class="text-blue-600 hover:underline font-medium">Read the First-Timer Guide →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="bg-white py-16 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Simple, Affordable Pricing</h2>
+        <div class="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
+            <div class="bg-green-50 border-2 border-green-500 p-6 rounded-lg text-center">
+                <p class="text-sm text-green-700 font-semibold uppercase">First Session</p>
+                <p class="text-4xl font-bold text-green-600 mt-2">FREE</p>
+                <p class="text-gray-600 mt-2">Come & try — no commitment</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200">
+                <p class="text-sm text-gray-500 font-semibold uppercase">Casual Visit</p>
+                <p class="text-4xl font-bold text-gray-900 mt-2">$9</p>
+                <p class="text-gray-600 mt-2">Per session, pay as you go</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200">
+                <p class="text-sm text-gray-500 font-semibold uppercase">Annual Membership</p>
+                <p class="text-4xl font-bold text-gray-900 mt-2">$40<span class="text-lg font-normal">/year</span></p>
+                <p class="text-gray-600 mt-2">Best value for regulars</p>
+            </div>
+        </div>
+        <p class="text-center text-gray-500 mt-6">💳 Cash + Card/EFTPOS accepted</p>
+    </div>
+</section>
+
+<!-- Trust / Social Proof Section -->
+<section class="bg-white py-16 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Part of Newcastle's Sporting Community Since 1996</h2>
+        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Nearly 30 years of bringing table tennis to the Hunter region.</p>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-12">
+            <div class="flex items-center gap-2 text-gray-500">
+                <span class="text-2xl">🏛️</span>
+                <span class="font-medium">PCYC Newcastle</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-500">
+                <span class="text-2xl">🏆</span>
+                <span class="font-medium">Table Tennis NSW</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-500">
+                <span class="text-2xl">📊</span>
+                <span class="font-medium">Ratings Central</span>
+            </div>
         </div>
     </div>
 </section>

@@ -4,35 +4,60 @@ const year = new Date().getFullYear();
 
 <footer class="bg-slate-900 text-white mt-auto border-t border-slate-800">
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       
       <!-- Brand / Copyright -->
-      <div class="text-center md:text-left">
-        <span class="text-xl font-bold tracking-tight text-white block mb-2">NPTTC</span>
+      <div>
+        <span class="text-xl font-bold tracking-tight text-white block mb-2">Newcastle PCYC TTC</span>
         <p class="text-sm text-slate-400">
-          &copy; {year} Newcastle PCYC Table Tennis Club.<br>All rights reserved.
+          Casual play, coaching and competitions at PCYC Broadmeadow. All skill levels welcome since 1996.
         </p>
       </div>
 
-      <!-- Contact Info -->
-      <div class="text-center">
-        <p class="text-sm text-slate-300">
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-bold text-white mb-3">Quick Links</h4>
+        <div class="space-y-2 text-sm">
+          <a href="/timetable" class="text-slate-400 hover:text-white block transition-colors">Timetable</a>
+          <a href="/expect" class="text-slate-400 hover:text-white block transition-colors">What to Expect</a>
+          <a href="/pricing" class="text-slate-400 hover:text-white block transition-colors">Pricing</a>
+          <a href="/location" class="text-slate-400 hover:text-white block transition-colors">Location & Contact</a>
+        </div>
+      </div>
+
+      <!-- More -->
+      <div>
+        <h4 class="font-bold text-white mb-3">More</h4>
+        <div class="space-y-2 text-sm">
+          <a href="/competitions" class="text-slate-400 hover:text-white block transition-colors">Competitions</a>
+          <a href="https://www.facebook.com/groups/742238756140959" target="_blank" rel="noopener" class="text-slate-400 hover:text-white block transition-colors">Facebook Group</a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-bold text-white mb-3">Contact</h4>
+        <p class="text-sm text-slate-400 mb-2">
           PCYC Newcastle, Broadmeadow NSW
         </p>
-        <a href="mailto:enquiries@npttc.com.au" class="text-blue-400 hover:text-blue-300 text-sm mt-1 inline-block transition-colors">
+        <a href="mailto:enquiries@npttc.com.au" class="text-blue-400 hover:text-blue-300 text-sm transition-colors">
           enquiries@npttc.com.au
         </a>
       </div>
 
-      <!-- Social / Links -->
-      <div class="flex justify-center md:justify-end space-x-6">
-        <a href="https://facebook.com" class="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+    </div>
+    
+    <div class="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm text-slate-500">
+        &copy; {year} Newcastle PCYC Table Tennis Club. All rights reserved.
+      </p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="https://www.facebook.com/groups/742238756140959" class="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
           </svg>
         </a>
       </div>
-
     </div>
   </div>
 </footer>

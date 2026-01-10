@@ -7,15 +7,49 @@ interface Props {
 	title: string;
     description?: string;
     image?: string;
+    schema?: string;
 }
 
 const { 
     title, 
-    description = "Newcastle PCYC Table Tennis Club - Fun, Friendly, Competitive Table Tennis in Broadmeadow, NSW. First session free!",
-    image = "/og-image.jpg"
+    description = "Newcastle PCYC Table Tennis Club - Fun, Friendly, Competitive Table Tennis in Broadmeadow, NSW. Come & try — first session free!",
+    image = "/og-image.jpg",
+    schema = ""
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Default Organization/SportsActivityLocation schema
+const defaultSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Newcastle PCYC Table Tennis Club",
+  "description": "Table tennis club at PCYC Newcastle offering casual play, coaching, and competitions. First session free. All skill levels welcome.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Broadmeadow",
+    "addressRegion": "NSW",
+    "addressCountry": "AU"
+  },
+  "email": "enquiries@npttc.com.au",
+  "url": "https://npttc.com.au",
+  "foundingDate": "1996",
+  "sameAs": [
+    "https://www.facebook.com/groups/742238756140959"
+  ],
+  "sport": "Table Tennis",
+  "areaServed": [
+    {"@type": "City", "name": "Newcastle"},
+    {"@type": "City", "name": "Maitland"},
+    {"@type": "AdministrativeArea", "name": "Hunter Valley"},
+    {"@type": "AdministrativeArea", "name": "Lake Macquarie"}
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "18:30", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "18:30", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "14:30", "closes": "18:00" }
+  ]
+});
 ---
 
 <!doctype html>
@@ -43,6 +77,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content={image} />
+
+        <!-- Schema.org structured data -->
+        <script type="application/ld+json" set:html={defaultSchema}></script>
+        {schema && <script type="application/ld+json" set:html={schema}></script>}
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
