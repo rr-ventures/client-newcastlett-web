@@ -12,8 +12,12 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 # Copy static assets from builder stage
 COPY --from=build /app/dist .
-# Copy custom nginx config
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy nginx config template
+COPY nginx.conf /etc/nginx/nginx.conf.template
 
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Use PORT from Railway (default to 80 for local testing)
+ENV PORT=80
+EXPOSE ${PORT}
+
+# Substitute PORT variable at runtime and start nginx
+CMD ["/bin/sh", "-c", "envsubst '${PORT}' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"]

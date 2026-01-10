@@ -1,4 +1,4 @@
-import { zonedTimeToUtc, utcToZonedTime } from "date-fns-tz";
+import { fromZonedTime, toZonedTime } from "date-fns-tz";
 import { addDays } from "date-fns";
 import { Session, TIMETABLE } from "../config";
 
@@ -32,7 +32,7 @@ export function NextSession() {
 }
 
 function findNextSession(timetable: Session[]) {
-  const now = utcToZonedTime(new Date(), TZ);
+  const now = toZonedTime(new Date(), TZ);
   const weekdayMap: Record<string, number> = {
     Sunday: 0,
     Monday: 1,
@@ -52,7 +52,7 @@ function findNextSession(timetable: Session[]) {
       const targetDate = addDays(base, daysToAdd);
       const [h, m] = session.start.split(":").map(Number);
       targetDate.setHours(h, m, 0, 0);
-      const utcDate = zonedTimeToUtc(targetDate, TZ);
+      const utcDate = fromZonedTime(targetDate, TZ);
       return { ...session, when: utcDate };
     });
 

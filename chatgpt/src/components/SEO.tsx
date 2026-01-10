@@ -23,7 +23,7 @@ export function SEO({ title, description, path = "/" }: Props) {
     }
 
     const ld = buildSchema(description, canonicalUrl);
-    const ldScript = ensureTag("script[data-schema='local']", "script");
+    const ldScript = ensureTag("script[data-schema='local']", "script") as HTMLScriptElement;
     if (ldScript) {
       ldScript.type = "application/ld+json";
       ldScript.setAttribute("data-schema", "local");

@@ -27,7 +27,7 @@ export function CTAButtons({ variant = "primary", layout = "row" }: Props) {
         ) : (
           <a
             key={cta.label}
-            href={cta.href}
+            href={(cta as { href: string }).href}
             className={`button ${variant === "primary" ? "primary" : "ghost"}`}
             onClick={() => track(cta.event as any)}
           >
