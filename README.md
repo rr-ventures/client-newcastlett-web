@@ -1,94 +1,57 @@
-# Newcastle PCYC Table Tennis Club - Website Variants
+# Newcastle PCYC Table Tennis Club (NPTTC) Website v1
 
-Three versions of the client website, built by different LLMs for comparison testing.
+Website for the Newcastle PCYC Table Tennis Club. Built to drive physical attendance and community trust.
 
-## Site Status
+## 🚀 Tech Stack
 
-| Version | Status | Tech Stack | Railway Ready |
-|---------|--------|------------|---------------|
-| `claude/` | ✅ Complete | Static HTML/CSS/JS | Yes |
-| `gemini/` | ✅ Complete | Astro + Tailwind | Yes |
-| `chatgpt/` | ❌ **Broken** | React + Vite | No (source files missing) |
+- **Framework:** [Astro](https://astro.build) (Static Site Generation)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com)
+- **Deployment:** Ready for Railway (Static Output or Docker)
 
-> **Note:** The ChatGPT version lost its `src/` folder during migration from Google Drive. Only config files remain. This version cannot be deployed or recovered.
+## 🛠️ Project Structure
 
-## Railway Deployment
+- `src/pages/`: Route components (Home, Timetable, Competitions, Location).
+- `src/components/`: Reusable UI (Navigation, Footer, Home Variants).
+- `src/config.ts`: Feature flags (Homepage A/B testing).
+- `public/`: Static assets.
 
-Each working site can be deployed as a separate Railway service.
+## 🏃‍♂️ Getting Started
 
-### Option 1: Deploy via Railway Dashboard
+1.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-1. Create a new project in Railway
-2. Add a new service from your Git repo
-3. **Set Root Directory** to the specific site folder:
-   - `claude` for the Claude version
-   - `gemini` for the Gemini version
-4. Railway will auto-detect the build settings via `nixpacks.toml`
+2.  **Start development server:**
+    ```bash
+    npm run dev
+    ```
 
-### Option 2: Railway CLI
+3.  **Build for production:**
+    ```bash
+    npm run build
+    ```
 
-```bash
-# Deploy Claude version
-cd claude
-railway up
+## 🧪 Feature Flags
 
-# Deploy Gemini version  
-cd gemini
-railway up
+This project supports A/B testing for the homepage design.
+Modify `src/config.ts` to switch variants:
+
+```typescript
+export const FEATURE_FLAGS = {
+  USE_EMOTION_HOMEPAGE: false, // Set 'true' for Variant B (Emotion), 'false' for Variant A (Utility)
+};
 ```
 
-## Local Development
+## 📊 Data Sources
 
-### Claude Version (Static HTML)
-```bash
-cd claude
-npm install
-npm run dev
-# Opens at http://localhost:3000
-```
+- **Competitions:** Fetched client-side from a Google Sheet CSV (Configured in `src/pages/competitions.astro`).
+- **Timetable:** Hardcoded in `src/pages/timetable.astro`.
 
-### Gemini Version (Astro)
-```bash
-cd gemini
-npm install
-npm run dev
-# Opens at http://localhost:4321
-```
+## 📦 Deployment
 
-## Environment Variables
-
-Both sites require:
-- `PORT` - Automatically set by Railway
-- (Optional) Replace `G-XXXXXXXXXX` with real Google Analytics ID
-- (Optional) Replace Formspree placeholder IDs with real form endpoints
-
-## Placeholder Items (To Complete Before Launch)
-
-- [ ] Google Analytics measurement ID (`G-XXXXXXXXXX` → actual ID)
-- [ ] Formspree form ID (for contact forms)
-- [ ] Replace image placeholders with real club photos
-- [ ] Verify PCYC street address when confirmed
-- [ ] Update parking details when confirmed
-- [ ] Add Google Maps embed with correct coordinates
-- [ ] Committee member names/photos (if desired)
-- [ ] Ratings Central direct link URL
-
-## Brief Compliance Summary
-
-Both Claude and Gemini versions meet the core requirements:
-
-| Requirement | Claude | Gemini |
-|------------|--------|--------|
-| 10-second test (mobile-first) | ✅ | ✅ |
-| Timetable on homepage | ✅ | ✅ |
-| Entry instructions | ✅ | ✅ |
-| Pricing visible | ✅ | ✅ |
-| "First session free" wording | ✅ | ✅ |
-| Fear reduction / What to Expect | ✅ | ✅ |
-| Since 1996 + Affiliations | ✅ | ✅ |
-| Sunday TBA with email | ✅ | ✅ |
-| Contact form | ✅ | ✅ |
-| Facebook link | ✅ | ✅ |
-| Competitions page | ✅ | ✅ |
-| SEO basics (meta, structure) | ✅ | ✅ |
-| Tracking readiness | ✅ | ✅ |
+This project is configured for static hosting.
+For Railway:
+1. Connect GitHub repo.
+2. Set Build Command: `npm run build`
+3. Set Output Directory: `dist`
