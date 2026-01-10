@@ -3,7 +3,8 @@
 nixPkgs = ["nodejs-18_x"]
 
 [phases.install]
-cmds = ["npm install"]
+# Ensure a clean, reproducible install on Railway (avoids cached/partial node_modules issues)
+cmds = ["npm ci --no-audit --no-fund"]
 
 [phases.build]
 cmds = ["npm run build"]

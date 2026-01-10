@@ -1,14 +1,15 @@
 FROM node:18-alpine AS build
 WORKDIR /app
 
-# Copy package files
-COPY package.json ./
-RUN npm install
+# Copy package files (include lockfile for reproducible installs)
+COPY package.json package-lock.json ./
+# Clean, reproducible install (includes devDependencies for build)
+RUN npm ci --no-audit --no-fund
 
 # Copy source code
 COPY . .
 
-# Build the app (skip tsc for now, just use vite)
+# Build the app
 RUN npm run build
 
 # Production stage with simple static server
