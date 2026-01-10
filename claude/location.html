@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Us | Newcastle Table Tennis Club</title>
-  <meta name="description" content="PCYC Newcastle, Broadmeadow NSW. Directions, entry instructions, and contact form.">
+  <title>Location & Contact | Table Tennis at PCYC Newcastle Broadmeadow</title>
+  <meta name="description" content="Find Newcastle PCYC Table Tennis Club at PCYC Newcastle, Broadmeadow NSW. Directions, entry instructions, and contact form. Welcoming players from Newcastle, Maitland, Lake Macquarie & Hunter Valley.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://npttc.com.au/location.html">
   
   <!-- Open Graph -->
   <meta property="og:title" content="Find Us | Newcastle Table Tennis Club">
@@ -208,15 +211,26 @@
           <div class="contact-form">
             <h3 class="mb-3">Send a Message</h3>
             
-            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-track="form_submit">
+              <!-- Honeypot anti-spam field (hidden from users) -->
+              <div style="position: absolute; left: -9999px;" aria-hidden="true">
+                <label for="website">Leave this empty</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+              
               <div class="form-group">
                 <label for="name">Name *</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required autocomplete="name">
               </div>
               
               <div class="form-group">
                 <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
               </div>
               
               <div class="form-group">
@@ -224,7 +238,7 @@
                 <textarea id="message" name="message" required placeholder="How can we help?"></textarea>
               </div>
               
-              <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+              <button type="submit" class="btn btn-primary form-submit" data-track="form_submit">Send Message</button>
             </form>
             
             <div class="form-success">
