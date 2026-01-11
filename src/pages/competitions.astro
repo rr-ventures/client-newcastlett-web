@@ -69,9 +69,8 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-    // Placeholder URL - This is expected to fail or return 404/CORS in this demo environment
-    // In production, this would be a valid published Google Sheet CSV link
-    const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-PLACEHOLDER/pub?output=csv';
+    // Valid Google Sheet CSV link provided by user
+    const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTfoqDuKknGp_w8r1wJkO7jskQEeaSpuwS0qR2V-SN-c_SJTaCBG-OQUfTgpQldhq2bOOfBjm-fEYyK/pub?output=csv';
 
     async function fetchCompetitions() {
         const loading = document.getElementById('loading');
