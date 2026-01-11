@@ -10,12 +10,18 @@ import Layout from '../layouts/Layout.astro';
                      <h1 class="text-4xl font-heading font-bold text-neutral-900 uppercase">Competition Draws</h1>
                      <p class="mt-2 text-neutral-600">View upcoming matches and current season standings.</p>
                 </div>
-                <div class="mt-4 md:mt-0">
+                <div class="mt-4 md:mt-0 flex gap-4 justify-center md:justify-end">
+                     <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfoqDuKknGp_w8r1wJkO7jskQEeaSpuwS0qR2V-SN-c_SJTaCBG-OQUfTgpQldhq2bOOfBjm-fEYyK/pubhtml" target="_blank" class="inline-flex items-center px-4 py-2 border border-neutral-300 shadow-sm text-sm font-bold uppercase tracking-wide rounded text-neutral-700 bg-white hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-colors">
+                        <svg class="mr-2 -ml-1 h-4 w-4 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Open Spreadsheet
+                    </a>
                      <button id="refresh-btn" class="inline-flex items-center px-4 py-2 border border-neutral-300 shadow-sm text-sm font-bold uppercase tracking-wide rounded text-neutral-700 bg-white hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-colors">
                         <svg class="mr-2 -ml-1 h-4 w-4 text-neutral-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
-                        Refresh Data
+                        Refresh
                     </button>
                 </div>
             </div>
@@ -36,10 +42,10 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                     <h3 class="text-lg font-bold text-neutral-900">Unable to load data</h3>
                     <p class="text-neutral-500 mt-2 max-w-sm mx-auto mb-6">
-                        We couldn't fetch the latest competition data. Please check your connection or try again later.
+                        We couldn't fetch the latest competition data directly.
                     </p>
-                    <a href="https://www.facebook.com/groups/742238756140959" target="_blank" rel="noopener" class="text-brand-600 hover:text-brand-700 font-bold hover:underline uppercase tracking-wide text-sm">
-                        Check Facebook for updates &rarr;
+                    <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfoqDuKknGp_w8r1wJkO7jskQEeaSpuwS0qR2V-SN-c_SJTaCBG-OQUfTgpQldhq2bOOfBjm-fEYyK/pubhtml" target="_blank" rel="noopener" class="text-brand-600 hover:text-brand-700 font-bold hover:underline uppercase tracking-wide text-sm">
+                        View Spreadsheet Directly &rarr;
                     </a>
                 </div>
 
@@ -69,7 +75,6 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-    // Valid Google Sheet CSV link provided by user
     const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTfoqDuKknGp_w8r1wJkO7jskQEeaSpuwS0qR2V-SN-c_SJTaCBG-OQUfTgpQldhq2bOOfBjm-fEYyK/pub?output=csv';
 
     async function fetchCompetitions() {
@@ -94,27 +99,80 @@ import Layout from '../layouts/Layout.astro';
             }
             
             const text = await response.text();
-            const rows = text.split(/\r?\n/).map(row => row.split(','));
             
-            if (rows.length < 2) {
+            // Basic CSV parser that handles quotes
+            // Note: This is a simplified parser. For full RFC 4180 compliance, a library like PapaParse is recommended.
+            // But we want to avoid external deps if possible.
+            const rows = [];
+            let currentRow = [];
+            let currentField = '';
+            let inQuotes = false;
+            
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const nextChar = text[i + 1];
+                
+                if (inQuotes) {
+                    if (char === '"' && nextChar === '"') {
+                        currentField += '"';
+                        i++; // Skip escaped quote
+                    } else if (char === '"') {
+                        inQuotes = false;
+                    } else {
+                        currentField += char;
+                    }
+                } else {
+                    if (char === '"') {
+                        inQuotes = true;
+                    } else if (char === ',') {
+                        currentRow.push(currentField);
+                        currentField = '';
+                    } else if (char === '\n' || char === '\r') {
+                        if (currentField || currentRow.length > 0) {
+                            currentRow.push(currentField);
+                            rows.push(currentRow);
+                        }
+                        currentRow = [];
+                        currentField = '';
+                        if (char === '\r' && nextChar === '\n') i++; // Handle CRLF
+                    } else {
+                        currentField += char;
+                    }
+                }
+            }
+            // Add last row if exists
+            if (currentField || currentRow.length > 0) {
+                currentRow.push(currentField);
+                rows.push(currentRow);
+            }
+
+            // Filter out empty rows and header
+            // We assume the first row with meaningful data is the header or data
+            // Let's assume header is present if first row contains "Date" or similar
+            let dataRows = rows.filter(r => r.length > 1 && r.some(cell => cell.trim() !== ''));
+            
+            // Remove header row if it looks like a header
+            if (dataRows.length > 0 && (dataRows[0][0].toLowerCase().includes('date') || dataRows[0][1].toLowerCase().includes('event'))) {
+                 dataRows = dataRows.slice(1);
+            }
+
+            if (dataRows.length === 0) {
                 renderTable([]);
             } else {
-                 const data = rows.slice(1).filter(r => r.length > 1 && r[0].trim() !== ''); 
-                 renderTable(data);
+                 renderTable(dataRows);
             }
             
             loading.classList.add('hidden');
             table.classList.remove('hidden');
 
         } catch (error) {
-            console.warn('Competition fetch failed (expected in demo):', error);
-            // Show error message styled
+            console.warn('Competition fetch failed:', error);
             loading.classList.add('hidden');
             errorMsg.classList.remove('hidden');
         }
     }
 
-    function renderTable(rows: string[][]) {
+    function renderTable(rows) {
         const tableBody = document.getElementById('table-body');
         if(!tableBody) return;
 
@@ -124,22 +182,23 @@ import Layout from '../layouts/Layout.astro';
         }
 
         rows.forEach(row => {
+            // Map columns safely (Date, Event, Division, Status)
+            // Adjust indices based on your specific CSV structure if needed
             const date = row[0] || '';
             const name = row[1] || '';
             const division = row[2] || '';
             const status = row[3] || 'Closed';
 
-            const clean = (str: string) => str ? str.replace(/^"|"$/g, '').trim() : '';
-            const statusText = clean(status);
+            const statusText = status.trim();
             const isOpen = statusText.toLowerCase() === 'open';
 
             const tr = document.createElement('tr');
             tr.className = "hover:bg-neutral-50 transition-colors";
             
             tr.innerHTML = `
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-900 font-bold">${clean(date)}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-900">${clean(name)}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">${clean(division)}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-900 font-bold">${date}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-900">${name}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">${division}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wide ${isOpen ? 'bg-green-100 text-green-800' : 'bg-neutral-100 text-neutral-800'}">
                         ${statusText}

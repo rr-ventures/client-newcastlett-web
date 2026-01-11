@@ -5,109 +5,84 @@ const sessions = [
     { 
         day: "Monday", 
         time: "6:30 PM - 10:00 PM", 
-        title: "Social & Competition",
-        description: "Our flagship night. Organized competition play for graded players, plus social tables for casual hits. A great atmosphere to test your skills.",
-        tag: "Competition & Social",
-        image: "/images/group-photo-2.jpg",
-        location: "PCYC Broadmeadow"
+        type: "Social & Competition",
+        description: "Our weekly competition night combined with social play. Graded matches for competitors, and open tables for social hits.",
+        tag: "Comp & Social"
     },
     { 
         day: "Wednesday", 
         time: "6:30 PM - 10:00 PM", 
-        title: "Social & Competition",
-        description: "Mid-week hit. Competitive matches for those who want them, and plenty of tables for social play and practice.",
-        tag: "Competition & Social",
-        image: "/images/group-photo-3.jpg",
-        location: "PCYC Broadmeadow"
+        type: "Social & Competition",
+        description: "Mid-week session featuring both competition matches and social tables. A great atmosphere for all skill levels.",
+        tag: "Comp & Social"
     },
     { 
         day: "Saturday", 
         time: "2:30 PM - 6:00 PM", 
-        title: "Open Session", 
-        description: "Relaxed weekend session suitable for families, beginners, and regular members. The perfect time to introduce yourself to the club.",
-        tag: "All Levels",
-        image: "/images/group-photo-4.jpg",
-        location: "PCYC Broadmeadow"
+        type: "Social Play",
+        description: "Relaxed weekend session. Perfect for practice, families, and casual games.",
+        tag: "Social Play"
     },
     { 
         day: "Sunday", 
         time: "Time Varies", 
-        title: "Sunday Session", 
-        description: "Additional sessions run frequently on Sundays. Times are announced weekly via email and our Facebook group.",
-        tag: "Check Updates",
-        image: "/images/group-photo-5.jpg",
-        location: "PCYC Broadmeadow"
+        type: "Social Play",
+        description: "Additional sessions announced weekly via email and our Facebook group.",
+        tag: "Social Play"
     },
 ];
 ---
 
-<Layout title="Weekly Timetable | Newcastle Table Tennis" description="Play table tennis in Newcastle on Monday nights, Wednesday nights, and Saturday afternoons. See our full schedule.">
+<Layout title="Weekly Timetable | Newcastle Table Tennis" description="Play table tennis in Newcastle on Monday, Wednesday, Saturday, and Sunday. See our full schedule.">
   <div class="bg-neutral-50 min-h-screen py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center mb-16">
         <h1 class="text-5xl font-heading font-bold text-neutral-900 uppercase tracking-tight mb-4">Weekly Schedule</h1>
         <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
-            Three sessions a week. No booking required—just turn up and play.
+            No booking required—just turn up and play.
         </p>
       </div>
       
-      <div class="space-y-12 max-w-5xl mx-auto">
-        {sessions.map((session, index) => (
-            <div class={`flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-neutral-200 overflow-hidden ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                <!-- Image Side -->
-                <div class="md:w-2/5 h-64 md:h-auto relative">
-                    <img src={session.image} alt={`${session.day} Session`} class="w-full h-full object-cover" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden"></div>
-                    <div class="absolute bottom-4 left-4 md:hidden">
-                        <span class="bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide">
-                            {session.day}
-                        </span>
+      <!-- Professional Timetable Layout -->
+      <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-sm border border-neutral-200 overflow-hidden">
+        <div class="grid grid-cols-1 divide-y divide-neutral-200">
+            
+            {sessions.map((session) => (
+                <div class="p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6 md:gap-12 hover:bg-neutral-50 transition-colors">
+                    
+                    <!-- Time & Day -->
+                    <div class="md:w-1/4 flex-shrink-0">
+                        <h3 class="text-3xl font-heading font-bold text-neutral-900 uppercase mb-1">{session.day}</h3>
+                        <div class="text-brand-600 font-bold text-lg flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            {session.time}
+                        </div>
                     </div>
-                </div>
 
-                <!-- Content Side -->
-                <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="hidden md:block">
-                            <span class="bg-neutral-900 text-white text-sm font-bold px-4 py-1.5 rounded uppercase tracking-wider">
-                                {session.day}
+                    <!-- Details -->
+                    <div class="md:w-3/4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h4 class="text-xl font-bold text-neutral-900 uppercase">{session.type}</h4>
+                            <span class={`inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wide border ${session.tag.includes('Comp') ? 'bg-neutral-900 text-white border-neutral-900' : 'bg-white text-neutral-600 border-neutral-200'}`}>
+                                {session.tag}
                             </span>
                         </div>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-neutral-100 text-neutral-600 border border-neutral-200 uppercase tracking-wide">
-                            {session.tag}
-                        </span>
+                        <p class="text-neutral-600 leading-relaxed text-lg">
+                            {session.description}
+                        </p>
                     </div>
-                    
-                    <h2 class="text-3xl font-heading font-bold text-neutral-900 mb-2">{session.title}</h2>
-                    
-                    <div class="flex items-center text-brand-600 font-bold text-lg mb-6">
-                        <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {session.time}
-                    </div>
-                    
-                    <p class="text-neutral-600 leading-relaxed mb-8">
-                        {session.description}
-                    </p>
 
-                    <div class="flex items-center gap-4 border-t border-neutral-100 pt-6">
-                        <div class="flex items-center text-sm text-neutral-500 font-medium">
-                            <svg class="w-5 h-5 mr-2 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            {session.location}
-                        </div>
-                    </div>
                 </div>
-            </div>
-        ))}
+            ))}
+
+        </div>
       </div>
 
       <!-- Info Box -->
-      <div class="max-w-3xl mx-auto mt-16 bg-neutral-900 rounded-xl p-10 border border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-lg">
+      <div class="max-w-5xl mx-auto mt-12 bg-neutral-900 rounded-xl p-8 md:p-10 border border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-lg">
         <div>
             <h3 class="font-heading font-bold text-2xl text-white uppercase">First Time?</h3>
             <p class="text-neutral-400 mt-2 text-lg">
