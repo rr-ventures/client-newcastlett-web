@@ -59,7 +59,7 @@ const newsItems = [
     <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="max-w-3xl">
             <div class="flex items-center gap-3 mb-4">
-                <span class="inline-block py-1 px-3 rounded bg-brand-600 text-white text-xs font-bold tracking-wider uppercase">
+                <span class="inline-block py-1 px-3 rounded bg-white/10 text-white text-xs font-bold tracking-wider uppercase backdrop-blur-sm border border-white/20">
                     Est. 1996
                 </span>
                 <span class="inline-block py-1 px-3 rounded border border-white/30 text-white text-xs font-bold tracking-wider uppercase backdrop-blur-sm">
@@ -74,10 +74,10 @@ const newsItems = [
                 Join a passionate community of players. From casual social hits to competitive league play, we welcome everyone to the table.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="/timetable" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold uppercase tracking-wide rounded text-white bg-brand-600 hover:bg-brand-700 transition shadow-lg hover:shadow-brand-600/25">
+                <a href="/timetable" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-base font-bold uppercase tracking-wide rounded text-white hover:bg-white hover:text-neutral-900 transition shadow-lg">
                     First Session Free
                 </a>
-                <a href="/about" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-base font-bold uppercase tracking-wide rounded text-white hover:bg-white hover:text-neutral-900 transition">
+                <a href="/about" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/50 text-base font-bold uppercase tracking-wide rounded text-white hover:bg-white/10 hover:border-white transition">
                     About the Club
                 </a>
             </div>
@@ -93,7 +93,7 @@ const newsItems = [
                 <h2 class="text-3xl font-heading font-bold text-neutral-900 uppercase">Club News</h2>
                 <p class="mt-2 text-lg text-neutral-600">Latest announcements and upcoming events.</p>
             </div>
-            <a href="https://www.facebook.com/groups/742238756140959" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center font-bold text-brand-600 hover:text-brand-700 uppercase tracking-wide transition">
+            <a href="https://www.facebook.com/groups/742238756140959" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center font-bold text-neutral-600 hover:text-neutral-900 uppercase tracking-wide transition">
                 More on Facebook &rarr;
             </a>
         </div>
@@ -103,13 +103,13 @@ const newsItems = [
                 <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden hover:shadow-md transition-shadow group cursor-pointer">
                     <div class="h-48 overflow-hidden relative">
                         <img src={item.image} alt={item.title} class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute top-0 right-0 bg-brand-600 text-white text-xs font-bold px-3 py-1 m-3 rounded uppercase tracking-wide">
+                        <div class="absolute top-0 right-0 bg-neutral-900 text-white text-xs font-bold px-3 py-1 m-3 rounded uppercase tracking-wide">
                             Event
                         </div>
                     </div>
                     <div class="p-6">
-                        <p class="text-xs font-bold text-brand-600 uppercase tracking-wider mb-2">{item.date}</p>
-                        <h3 class="text-lg font-heading font-bold text-neutral-900 mb-2 leading-tight group-hover:text-brand-600 transition-colors">
+                        <p class="text-xs font-bold text-neutral-500 uppercase tracking-wider mb-2">{item.date}</p>
+                        <h3 class="text-lg font-heading font-bold text-neutral-900 mb-2 leading-tight group-hover:text-neutral-700 transition-colors">
                             {item.title}
                         </h3>
                         <p class="text-sm text-neutral-500 line-clamp-3 leading-relaxed">
@@ -121,7 +121,7 @@ const newsItems = [
         </div>
         
         <div class="mt-8 text-center sm:hidden">
-            <a href="https://www.facebook.com/groups/742238756140959" target="_blank" rel="noopener" class="inline-flex items-center font-bold text-brand-600 hover:text-brand-700 uppercase tracking-wide transition">
+            <a href="https://www.facebook.com/groups/742238756140959" target="_blank" rel="noopener" class="inline-flex items-center font-bold text-neutral-600 hover:text-neutral-900 uppercase tracking-wide transition">
                 More on Facebook &rarr;
             </a>
         </div>
@@ -211,7 +211,7 @@ const newsItems = [
           <h2 class="text-4xl font-heading font-bold text-neutral-900 uppercase text-center mb-16">See some photos of our club</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {galleryImages.map((img, index) => (
-                  <div class={`relative overflow-hidden rounded-xl shadow-md group aspect-[4/3] ${index === 0 || index === 3 ? 'lg:col-span-2' : ''}`}>
+                  <div class="relative overflow-hidden rounded-xl shadow-md group aspect-[4/3]">
                       <img 
                           src={img} 
                           alt="Club Life" 
@@ -232,13 +232,13 @@ const newsItems = [
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl font-heading font-bold text-white mb-6 uppercase">Ready to hit?</h2>
         <p class="text-xl text-brand-100 mb-10 max-w-2xl mx-auto">
-            Your first session is completely free. We'll provide the racket and balls—just bring comfortable clothes and non-marking shoes.
+            Your first session is completely free. We'll provide the racket and balls—just wear comfortable sports clothes.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="/timetable" class="inline-block bg-white text-brand-900 font-bold py-4 px-8 rounded shadow-lg uppercase tracking-wide hover:bg-neutral-100 transition transform hover:-translate-y-1">
+            <a href="/timetable" class="inline-block bg-white text-neutral-900 font-bold py-4 px-8 rounded shadow-lg uppercase tracking-wide hover:bg-neutral-100 transition transform hover:-translate-y-1">
                 Claim Free Session
             </a>
-            <a href="/location" class="inline-block bg-transparent border-2 border-brand-200 text-white font-bold py-4 px-8 rounded uppercase tracking-wide hover:bg-brand-800 hover:border-brand-800 transition">
+            <a href="/location" class="inline-block bg-transparent border-2 border-white/50 text-white font-bold py-4 px-8 rounded uppercase tracking-wide hover:bg-white/10 hover:border-white transition">
                 Find Our Venue
             </a>
         </div>
