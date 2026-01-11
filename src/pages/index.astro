@@ -12,6 +12,34 @@ const galleryImages = [
     "/images/group-photo-3.jpg",
     "/images/group-photo-4.jpg"
 ];
+
+// News Data (Sample Data from Images)
+const newsItems = [
+    {
+        title: "2025 NSW Open Championships",
+        date: "Sat 29 Nov & Sun 30 Nov 2025",
+        summary: "To be held at Sports Halls, Sydney Olympic Park. Entries close Fri 21 Nov.",
+        image: "/images/hero-image.jpg" // Placeholder
+    },
+    {
+        title: "2024 Autumn Team Comp",
+        date: "Monday March 11th, 6:30pm",
+        summary: "Monday Night competition. 2 man teams, max 24 players. 2 grades with 6 teams each.",
+        image: "/images/group-photo-2.jpg" // Placeholder
+    },
+    {
+        title: "Monday Comp 4",
+        date: "Monday December 18th",
+        summary: "King style's 3 man Round Robin x 2 rounds. Check in by 18:30 for 18:50 start.",
+        image: "/images/group-photo-3.jpg" // Placeholder
+    },
+    {
+        title: "King of the Table 11",
+        date: "Monday August 14",
+        summary: "Win a match go up a table, lose go down. Sudden death 1 game to 11 points!",
+        image: "/images/group-photo-4.jpg" // Placeholder
+    }
+];
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -53,6 +81,49 @@ const galleryImages = [
                     About the Club
                 </a>
             </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- News / Announcements Section -->
+  <section class="py-20 bg-neutral-50 border-b border-neutral-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-12">
+            <div>
+                <h2 class="text-3xl font-heading font-bold text-neutral-900 uppercase">Club News</h2>
+                <p class="mt-2 text-lg text-neutral-600">Latest announcements and upcoming events.</p>
+            </div>
+            <a href="https://www.facebook.com/groups/742238756140959" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center font-bold text-brand-600 hover:text-brand-700 uppercase tracking-wide transition">
+                More on Facebook &rarr;
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {newsItems.map((item) => (
+                <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden hover:shadow-md transition-shadow group cursor-pointer">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src={item.image} alt={item.title} class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute top-0 right-0 bg-brand-600 text-white text-xs font-bold px-3 py-1 m-3 rounded uppercase tracking-wide">
+                            Event
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-brand-600 uppercase tracking-wider mb-2">{item.date}</p>
+                        <h3 class="text-lg font-heading font-bold text-neutral-900 mb-2 leading-tight group-hover:text-brand-600 transition-colors">
+                            {item.title}
+                        </h3>
+                        <p class="text-sm text-neutral-500 line-clamp-3 leading-relaxed">
+                            {item.summary}
+                        </p>
+                    </div>
+                </div>
+            ))}
+        </div>
+        
+        <div class="mt-8 text-center sm:hidden">
+            <a href="https://www.facebook.com/groups/742238756140959" target="_blank" rel="noopener" class="inline-flex items-center font-bold text-brand-600 hover:text-brand-700 uppercase tracking-wide transition">
+                More on Facebook &rarr;
+            </a>
         </div>
     </div>
   </section>
