@@ -60,7 +60,7 @@ const isActive = (path: string) => pathname === path || (path !== '/' && pathnam
     </div>
   </div>
 
-  <div class="hidden lg:hidden border-t border-neutral-100 bg-white" id="mobile-menu">
+  <div class="hidden border-t border-neutral-100 bg-white lg:!hidden" id="mobile-menu">
     <div class="pt-2 pb-3 space-y-1 shadow-lg">
       {links.map(({ href, label }) => (
         <a 
