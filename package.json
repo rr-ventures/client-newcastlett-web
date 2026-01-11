@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "start": "npx serve -s dist -l ${PORT:-3000}",
+    "start": "npm run build && npx serve -s dist -l 3000",
     "astro": "astro"
   },
   "dependencies": {
