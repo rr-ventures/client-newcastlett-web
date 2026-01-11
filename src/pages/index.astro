@@ -23,19 +23,19 @@ const newsItems = [
     },
     {
         title: "2024 Autumn Team Comp",
-        date: "Monday March 11th, 6:30pm",
+        date: "Monday March 11th, 2024",
         summary: "Monday Night competition. 2 man teams, max 24 players. 2 grades with 6 teams each.",
         image: "/images/group-photo-2.jpg" // Placeholder
     },
     {
         title: "Monday Comp 4",
-        date: "Monday December 18th",
+        date: "Monday December 18th, 2023",
         summary: "King style's 3 man Round Robin x 2 rounds. Check in by 18:30 for 18:50 start.",
         image: "/images/group-photo-3.jpg" // Placeholder
     },
     {
         title: "King of the Table 11",
-        date: "Monday August 14",
+        date: "Monday August 14, 2023",
         summary: "Win a match go up a table, lose go down. Sudden death 1 game to 11 points!",
         image: "/images/group-photo-4.jpg" // Placeholder
     }
@@ -211,11 +211,11 @@ const newsItems = [
           <h2 class="text-4xl font-heading font-bold text-neutral-900 uppercase text-center mb-16">See some photos of our club</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {galleryImages.map((img, index) => (
-                  <div class={`relative overflow-hidden rounded-xl shadow-md group h-64 ${index === 0 || index === 3 ? 'lg:col-span-2' : ''}`}>
+                  <div class={`relative overflow-hidden rounded-xl shadow-md group aspect-[4/3] ${index === 0 || index === 3 ? 'lg:col-span-2' : ''}`}>
                       <img 
                           src={img} 
                           alt="Club Life" 
-                          class="w-full h-full object-contain bg-neutral-100 transform group-hover:scale-105 transition duration-700" 
+                          class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" 
                       />
                       <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                   </div>
