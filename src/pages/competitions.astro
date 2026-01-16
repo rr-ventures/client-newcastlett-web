@@ -1,660 +1,196 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Google Spreadsheet ID
+const SPREADSHEET_ID = '15u0C_Hvr0ocBUWmtZoOrzLMX_Hy86QwlcQag7-3qBuw';
+
+// Sheet GIDs mapped to each table (in order: 3 draws, 3 individual results, 1 team result)
+const SHEET_GIDS = {
+    drawAGrade: '0',
+    drawBGrade: '1075269248',
+    drawCGrade: '454539529',
+    resultsIndividualAGrade: '1036329944',
+    resultsIndividualBGrade: '1405839057',
+    resultsIndividualCGrade: '13597649',
+    resultsTeamAGrade: '228892299',
+};
+
+// Helper function to generate embed URL with better formatting options
+// Note: The sheet must be published to the web for this to work
+// File → Share → Publish to web → Select the specific sheet → Publish
+function getSheetEmbedUrl(gid: string) {
+    return `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/pubhtml?gid=${gid}&single=true&widget=true&headers=false&chrome=false`;
+}
 ---
 
 <Layout title="Competitions | Newcastle Table Tennis" description="Check the latest draws, results, and competition schedules for Newcastle Table Tennis Club.">
+    <style>
+        /* Improve Google Sheets embed readability */
+        iframe[title*="Draw"],
+        iframe[title*="Results"] {
+            filter: brightness(1.02) contrast(1.05);
+        }
+        
+        /* Better spacing for embedded sheets */
+        .sheet-container {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        .sheet-header {
+            background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+            border-bottom: 2px solid #e5e7eb;
+        }
+    </style>
     <div class="bg-neutral-50 py-16 min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-10 text-center md:text-left">
-                <h1 class="text-4xl font-heading font-bold text-neutral-900 uppercase">Competition Draws</h1>
-                <p class="mt-2 text-neutral-600">View upcoming matches and current season standings.</p>
+            <div class="mb-12 text-center md:text-left">
+                <h1 class="text-4xl font-heading font-bold text-neutral-900 uppercase mb-3">Competition Draws</h1>
+                <p class="text-lg text-neutral-600">View upcoming matches and current season standings.</p>
             </div>
             
             <!-- Draws Section -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-heading font-bold text-neutral-900 uppercase mb-6">Page for the Draws</h2>
-                <div class="mb-4">
-                    <h3 class="text-xl font-heading font-semibold text-neutral-800 mb-4">Summer Comp 26</h3>
+            <section class="mb-16">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-heading font-bold text-neutral-900 uppercase mb-2">Page for the Draws</h2>
+                    <h3 class="text-xl font-heading font-semibold text-neutral-700">Summer Comp 26</h3>
                 </div>
                 
                 <!-- Three Draw Tables -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
                     <!-- A Grade Draw -->
-                    <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                        <div class="p-4 border-b border-neutral-200 bg-neutral-50">
-                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase">A Grade</h4>
+                    <div class="sheet-container">
+                        <div class="sheet-header p-5">
+                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase tracking-wide">A Grade</h4>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-neutral-100">
-                                    <tr>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Round</th>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Team X</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Vs</th>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Team Y</th>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Grade</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100" rowspan="3">Round 1<br><span class="text-xs text-neutral-500">Monday 2.2.26</span></td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 2</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">A Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 3</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 4</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">A Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 5</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 6</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">A Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100" rowspan="3">Round 2<br><span class="text-xs text-neutral-500">Monday 2.2.26</span></td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 3</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">A Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 2</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 5</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">A Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 4</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 6</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">A Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Round 3<br><span class="text-xs text-neutral-500">Monday 2.2.26</span></td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 4</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">A Grade</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="relative bg-white" style="padding-bottom: 80%; height: 0; overflow: hidden; min-height: 400px;">
+                            <iframe 
+                                src={getSheetEmbedUrl(SHEET_GIDS.drawAGrade)}
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                                title="A Grade Draw"
+                                loading="lazy"
+                                class="w-full h-full"
+                            ></iframe>
                         </div>
                     </div>
 
                     <!-- B Grade Draw -->
-                    <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                        <div class="p-4 border-b border-neutral-200 bg-neutral-50">
-                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase">B Grade</h4>
+                    <div class="sheet-container">
+                        <div class="sheet-header p-5">
+                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase tracking-wide">B Grade</h4>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-neutral-100">
-                                    <tr>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Round</th>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Team X</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Vs</th>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Team Y</th>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Grade</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100" rowspan="3">Round 1<br><span class="text-xs text-neutral-500">Monday 2.2.26</span></td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 2</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">B Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 3</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 4</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">B Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 5</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 6</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">B Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100" rowspan="3">Round 2<br><span class="text-xs text-neutral-500">Monday 2.2.26</span></td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 3</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">B Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 2</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 5</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">B Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 4</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 6</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">B Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Round 3<br><span class="text-xs text-neutral-500">Monday 2.2.26</span></td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 4</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">B Grade</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="relative bg-white" style="padding-bottom: 80%; height: 0; overflow: hidden; min-height: 400px;">
+                            <iframe 
+                                src={getSheetEmbedUrl(SHEET_GIDS.drawBGrade)}
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                                title="B Grade Draw"
+                                loading="lazy"
+                                class="w-full h-full"
+                            ></iframe>
                         </div>
                     </div>
 
                     <!-- C Grade Draw -->
-                    <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                        <div class="p-4 border-b border-neutral-200 bg-neutral-50">
-                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase">C Grade</h4>
+                    <div class="sheet-container">
+                        <div class="sheet-header p-5">
+                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase tracking-wide">C Grade</h4>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-neutral-100">
-                                    <tr>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Round</th>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Team X</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Vs</th>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Team Y</th>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">Grade</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100" rowspan="3">Round 1<br><span class="text-xs text-neutral-500">Wednesday 4.2.26</span></td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 2</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">C Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 3</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 4</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">C Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 5</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 6</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">C Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100" rowspan="3">Round 2<br><span class="text-xs text-neutral-500">Wednesday 11.2.26</span></td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 3</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">C Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 2</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 5</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">C Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 4</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 6</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">C Grade</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Round 3<br><span class="text-xs text-neutral-500">Wednesday 18.2.26</span></td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">Vs</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Team 4</td>
-                                        <td class="px-3 py-2 border-b border-neutral-100">C Grade</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="relative bg-white" style="padding-bottom: 80%; height: 0; overflow: hidden; min-height: 400px;">
+                            <iframe 
+                                src={getSheetEmbedUrl(SHEET_GIDS.drawCGrade)}
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                                title="C Grade Draw"
+                                loading="lazy"
+                                class="w-full h-full"
+                            ></iframe>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Results Section -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-heading font-bold text-neutral-900 uppercase mb-6">Results Individuals</h2>
-                
-                <div class="mb-4 flex flex-col sm:flex-row gap-3">
-                    <a href="#" class="text-brand-600 hover:text-brand-700 underline text-sm">Individual Game Results (Ratings Central)</a>
-                    <a href="#" class="text-brand-600 hover:text-brand-700 underline text-sm">Team Points Table</a>
+            <section class="mb-16">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-heading font-bold text-neutral-900 uppercase mb-4">Results Individuals</h2>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="text-brand-600 hover:text-brand-700 underline text-base font-medium transition-colors">Individual Game Results (Ratings Central)</a>
+                        <a href="#" class="text-brand-600 hover:text-brand-700 underline text-base font-medium transition-colors">Team Points Table</a>
+                    </div>
                 </div>
 
                 <!-- Three Individual Results Tables -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
                     <!-- A Grade Individual Results -->
-                    <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                        <div class="p-4 border-b border-neutral-200 bg-neutral-50">
-                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase">A Grade</h4>
+                    <div class="sheet-container">
+                        <div class="sheet-header p-5">
+                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase tracking-wide">A Grade</h4>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-neutral-100">
-                                    <tr>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">A Grade</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Wins</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Loses</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Sets Won</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Sets Lost</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Yoko</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Deep</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">3</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">4</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">5</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">6</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2">7</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="relative bg-white" style="padding-bottom: 80%; height: 0; overflow: hidden; min-height: 400px;">
+                            <iframe 
+                                src={getSheetEmbedUrl(SHEET_GIDS.resultsIndividualAGrade)}
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                                title="A Grade Individual Results"
+                                loading="lazy"
+                                class="w-full h-full"
+                            ></iframe>
                         </div>
                     </div>
 
                     <!-- B Grade Individual Results -->
-                    <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                        <div class="p-4 border-b border-neutral-200 bg-neutral-50">
-                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase">B Grade</h4>
+                    <div class="sheet-container">
+                        <div class="sheet-header p-5">
+                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase tracking-wide">B Grade</h4>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-neutral-100">
-                                    <tr>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">B Grade</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Wins</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Loses</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Sets Won</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Sets Lost</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Nathan</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Reece</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">3</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">4</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">5</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">6</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2">7</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="relative bg-white" style="padding-bottom: 80%; height: 0; overflow: hidden; min-height: 400px;">
+                            <iframe 
+                                src={getSheetEmbedUrl(SHEET_GIDS.resultsIndividualBGrade)}
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                                title="B Grade Individual Results"
+                                loading="lazy"
+                                class="w-full h-full"
+                            ></iframe>
                         </div>
                     </div>
 
                     <!-- C Grade Individual Results -->
-                    <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                        <div class="p-4 border-b border-neutral-200 bg-neutral-50">
-                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase">C Grade</h4>
+                    <div class="sheet-container">
+                        <div class="sheet-header p-5">
+                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase tracking-wide">C Grade</h4>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-neutral-100">
-                                    <tr>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">C Grade</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Wins</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Loses</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Sets Won</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Sets Lost</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">Kyle</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">2</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">3</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">4</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">5</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">6</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2">7</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="relative bg-white" style="padding-bottom: 80%; height: 0; overflow: hidden; min-height: 400px;">
+                            <iframe 
+                                src={getSheetEmbedUrl(SHEET_GIDS.resultsIndividualCGrade)}
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                                title="C Grade Individual Results"
+                                loading="lazy"
+                                class="w-full h-full"
+                            ></iframe>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Team Results Section -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-heading font-bold text-neutral-900 uppercase mb-6">Results Teams</h2>
+            <section class="mb-16">
+                <h2 class="text-3xl font-heading font-bold text-neutral-900 uppercase mb-8">Results Teams</h2>
                 
-                <!-- Four Team Results Tables -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
+                <!-- Team Results Table -->
+                <div class="grid grid-cols-1 lg:grid-cols-1 gap-4">
                     <!-- A Grade Team Results -->
-                    <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                        <div class="p-4 border-b border-neutral-200 bg-neutral-50">
-                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase">A Grade</h4>
+                    <div class="sheet-container">
+                        <div class="sheet-header p-5">
+                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase tracking-wide">A Grade</h4>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-neutral-100">
-                                    <tr>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">A Grade</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Wins</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Loses</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Total points</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">2</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">3</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">4</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2">5</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- B Grade Team Results -->
-                    <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                        <div class="p-4 border-b border-neutral-200 bg-neutral-50">
-                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase">B Grade</h4>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-neutral-100">
-                                    <tr>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">B Grade</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Wins</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Loses</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Total points</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">2</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">3</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">4</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2">5</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- C Grade Team Results -->
-                    <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                        <div class="p-4 border-b border-neutral-200 bg-neutral-50">
-                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase">C Grade</h4>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-neutral-100">
-                                    <tr>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">C Grade</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Wins</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Loses</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Total points</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">2</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">3</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">4</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2">5</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- D Grade Team Results -->
-                    <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                        <div class="p-4 border-b border-neutral-200 bg-neutral-50">
-                            <h4 class="text-lg font-heading font-bold text-neutral-900 uppercase">D Grade</h4>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-neutral-100">
-                                    <tr>
-                                        <th class="px-3 py-2 text-left font-semibold text-neutral-700 border-b border-neutral-200">D Grade</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Wins</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Loses</th>
-                                        <th class="px-3 py-2 text-center font-semibold text-neutral-700 border-b border-neutral-200">Total points</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">1</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">2</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">3</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2 border-b border-neutral-100">4</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                        <td class="px-3 py-2 text-center border-b border-neutral-100">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-3 py-2">5</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                        <td class="px-3 py-2 text-center">-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="relative bg-white" style="padding-bottom: 50%; height: 0; overflow: hidden; min-height: 350px;">
+                            <iframe 
+                                src={getSheetEmbedUrl(SHEET_GIDS.resultsTeamAGrade)}
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                                title="A Grade Team Results"
+                                loading="lazy"
+                                class="w-full h-full"
+                            ></iframe>
                         </div>
                     </div>
                 </div>
