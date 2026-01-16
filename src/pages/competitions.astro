@@ -19,7 +19,8 @@ const SHEET_GIDS = {
 // Note: The sheet must be published to the web for this to work
 // File → Share → Publish to web → Select the specific sheet → Publish
 function getSheetEmbedUrl(gid: string) {
-    return `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/pubhtml?gid=${gid}&single=true&widget=true&headers=false&chrome=false`;
+    // Try the standard embed format first
+    return `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/preview?gid=${gid}`;
 }
 ---
 
