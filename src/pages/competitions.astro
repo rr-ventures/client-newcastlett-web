@@ -18,9 +18,11 @@ const SHEET_GIDS = {
 // Helper function to generate embed URL with better formatting options
 // Note: The sheet must be published to the web for this to work
 // File → Share → Publish to web → Select the specific sheet → Publish
+// Then use the embed URL format provided by Google
 function getSheetEmbedUrl(gid: string) {
-    // Try the standard embed format first
-    return `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/preview?gid=${gid}`;
+    // Use the embed format - requires sheet to be published to web
+    // Format: /d/SPREADSHEET_ID/pubhtml?gid=GID&single=true&widget=true&headers=false
+    return `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/pubhtml?gid=${gid}&single=true&widget=true&headers=false&chrome=false&rm=minimal`;
 }
 ---
 
