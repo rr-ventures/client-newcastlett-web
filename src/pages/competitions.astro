@@ -44,15 +44,57 @@ function getSheetEmbedUrl(gid: string) {
             border-bottom: 2px solid #e5e7eb;
         }
     </style>
+    <script>
+        function switchTab(tab) {
+            // Hide all sections
+            document.getElementById('section-current').classList.add('hidden');
+            document.getElementById('section-previous').classList.add('hidden');
+            
+            // Remove active styles from all tabs
+            document.getElementById('tab-current').classList.remove('border-brand-600', 'text-brand-600');
+            document.getElementById('tab-current').classList.add('border-transparent', 'text-neutral-500');
+            document.getElementById('tab-previous').classList.remove('border-brand-600', 'text-brand-600');
+            document.getElementById('tab-previous').classList.add('border-transparent', 'text-neutral-500');
+            
+            // Show selected section and activate tab
+            if (tab === 'current') {
+                document.getElementById('section-current').classList.remove('hidden');
+                document.getElementById('tab-current').classList.remove('border-transparent', 'text-neutral-500');
+                document.getElementById('tab-current').classList.add('border-brand-600', 'text-brand-600');
+            } else {
+                document.getElementById('section-previous').classList.remove('hidden');
+                document.getElementById('tab-previous').classList.remove('border-transparent', 'text-neutral-500');
+                document.getElementById('tab-previous').classList.add('border-brand-600', 'text-brand-600');
+            }
+        }
+    </script>
     <div class="bg-neutral-50 py-16 min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12 text-center md:text-left">
                 <h1 class="text-4xl font-heading font-bold text-neutral-900 uppercase mb-3">Competition Draws</h1>
                 <p class="text-lg text-neutral-600">View upcoming matches and current season standings.</p>
             </div>
+
+            <!-- Tab Switcher -->
+            <div class="mb-8 flex gap-4 border-b border-neutral-200">
+                <button 
+                    id="tab-current" 
+                    class="px-6 py-3 text-base font-heading font-bold uppercase tracking-wide border-b-2 border-brand-600 text-brand-600 transition-colors"
+                    onclick="switchTab('current')"
+                >
+                    Current Competition
+                </button>
+                <button 
+                    id="tab-previous" 
+                    class="px-6 py-3 text-base font-heading font-bold uppercase tracking-wide border-b-2 border-transparent text-neutral-500 hover:text-neutral-700 transition-colors"
+                    onclick="switchTab('previous')"
+                >
+                    Previous Competitions
+                </button>
+            </div>
             
             <!-- Current Competition Section -->
-            <section class="mb-16">
+            <section id="section-current" class="mb-16">
                 <div class="mb-8">
                     <h2 class="text-3xl font-heading font-bold text-neutral-900 uppercase mb-2">Current Competition</h2>
                     <h3 class="text-xl font-heading font-semibold text-neutral-700">Summer Comp 26</h3>
@@ -197,7 +239,7 @@ function getSheetEmbedUrl(gid: string) {
             </section>
 
             <!-- Previous Competitions Section -->
-            <section class="mb-16">
+            <section id="section-previous" class="mb-16 hidden">
                 <div class="mb-8">
                     <h2 class="text-3xl font-heading font-bold text-neutral-900 uppercase mb-2">Previous Competitions</h2>
                     <p class="text-lg text-neutral-600">Archive of past competition results and draws.</p>
