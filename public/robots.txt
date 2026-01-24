@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://npttc.com.au/sitemap.xml
+Sitemap: https://www.newcastletabletennis.com.au/sitemap.xml
