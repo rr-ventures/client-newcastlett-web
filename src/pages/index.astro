@@ -5,12 +5,12 @@ import Layout from '../layouts/Layout.astro';
 const pageTitle = "Newcastle Table Tennis Club | PCYC Broadmeadow";
 const pageDescription = "Newcastle's premier table tennis club. A friendly, competitive community playing 4-5 times a week at PCYC Broadmeadow. Join us today!";
 
-// Image Gallery
+// Image Gallery with descriptive alt text for SEO
 const galleryImages = [
-    "/images/hall.jpg",
-    "/images/group-photo-2.jpg",
-    "/images/group-photo-3.jpg",
-    "/images/group-photo-4.jpg"
+    { src: "/images/hall.jpg", alt: "Table tennis hall at PCYC Newcastle Broadmeadow" },
+    { src: "/images/group-photo-2.jpg", alt: "Newcastle Table Tennis Club members at social session" },
+    { src: "/images/group-photo-3.jpg", alt: "Players enjoying table tennis at Newcastle PCYC" },
+    { src: "/images/group-photo-4.jpg", alt: "Community table tennis event in Newcastle" }
 ];
 
 // News Data (Sample Data from Images)
@@ -224,12 +224,12 @@ const newsItems = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="text-4xl font-heading font-bold text-neutral-900 uppercase text-center mb-16">See some photos of our club</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {galleryImages.map((img, index) => (
+              {galleryImages.map((img) => (
                   <div class="relative overflow-hidden rounded-xl shadow-md group aspect-[4/3]">
-                      <img 
-                          src={img} 
-                          alt="Club Life" 
-                          class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" 
+                      <img
+                          src={img.src}
+                          alt={img.alt}
+                          class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700"
                       />
                       <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                   </div>
