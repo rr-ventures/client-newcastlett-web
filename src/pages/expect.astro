@@ -1,8 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// FAQ Schema for rich snippets
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need equipment to play table tennis at Newcastle PCYC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We have beginner-friendly bats available for free use. If you have your own bats at home, feel free to bring them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Am I good enough to join Newcastle Table Tennis Club?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We have a diverse community ranging from complete beginners to state-level competitors. Our session organizers will ensure you are matched with players of a similar skill level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to play table tennis in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your first session is FREE. After that, sessions cost $8.50-$9.50 depending on age. Annual membership is $40 for adults or $20 for juniors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to book to play table tennis at PCYC Broadmeadow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No booking required. Just turn up any time after the session starts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Newcastle Table Tennis Club competitive or social?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's up to you. We offer both competitive matches (on Monday and Wednesday) and purely social play (on weekends). You can choose what suits you."
+      }
+    }
+  ]
+});
 ---
 
-<Layout title="New Player Guide | Newcastle Table Tennis" description="First time at the club? Here's everything you need to know.">
+<Layout title="New Player Guide | Newcastle Table Tennis" description="First time at Newcastle PCYC Table Tennis Club? Here's everything you need to know about your first visit." schema={faqSchema}>
   <div class="bg-neutral-50 py-24 min-h-screen">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
