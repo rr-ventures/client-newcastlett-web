@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Hobbies in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What hobbies can I do in Newcastle NSW?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle offers diverse hobbies including water sports (surfing, swimming, sailing), racquet sports (table tennis, tennis, squash), outdoor activities (hiking, cycling, fishing), creative pursuits (art, photography, music), and social activities (community groups, sports clubs). The city's coastal location and active community make it ideal for both outdoor and indoor hobbies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find hobby groups in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check Facebook Groups, Meetup.com, local libraries, community centres, and sports club websites. Many groups welcome drop-ins, so you can try before committing. For table tennis, you can simply show up to Newcastle PCYC on session nights - no booking required."
+      }
+    }
+  ]
+});
+
+const combinedSchema = `[${breadcrumbSchema},${faqSchema}]`;
+---
+
+<Layout
+  title="Hobbies in Newcastle: Find Your New Passion | 2026 Guide"
+  description="Looking for hobbies in Newcastle NSW? Discover active, creative, and social hobbies to try. From table tennis to surfing to art classes - find what suits you."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-gray-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-blue-600 hover:underline">Home</a>
+      <span class="mx-2 text-gray-400">→</span>
+      <a href="/guides" class="text-blue-600 hover:underline">Guides</a>
+      <span class="mx-2 text-gray-400">→</span>
+      <span class="text-gray-700">Hobbies in Newcastle</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-blue-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-extrabold">Hobbies in Newcastle: Find Your New Passion</h1>
+      <p class="mt-4 text-blue-200">Active, creative, and social hobbies for adults in Newcastle NSW</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-gray-700 text-lg">
+        Work-life balance isn't just about working less — it's about filling your non-work hours with things that energise you. A good hobby gives you something to look forward to, a way to meet people, and skills that grow over time.
+      </p>
+
+      <p class="text-gray-700 mt-4">
+        Newcastle's combination of beaches, bushland, and vibrant community makes it one of the best cities in Australia for hobbies. Whether you want to get active, get creative, or get social, there's something here for you.
+      </p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Active Hobbies</h2>
+      <p class="text-gray-700">For people who want to move their bodies and maybe break a sweat:</p>
+
+      <div class="grid gap-4 my-6">
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">🏓 Table Tennis</h4>
+          <p class="text-gray-700 text-sm mt-2">Indoor, all-weather, social, and surprisingly good exercise. Perfect for people who find gyms boring but want to stay active. All skill levels welcome at Newcastle PCYC.</p>
+          <p class="text-xs text-gray-500 mt-2">Barrier to entry: Very low — equipment provided, first session free</p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">🏄 Surfing</h4>
+          <p class="text-gray-700 text-sm mt-2">Newcastle has world-class breaks for all levels. Merewether, Bar Beach, and Nobbys offer different conditions. Surf schools available for beginners.</p>
+          <p class="text-xs text-gray-500 mt-2">Barrier to entry: Medium — need to learn basics, buy/hire board</p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">🚴 Cycling</h4>
+          <p class="text-gray-700 text-sm mt-2">The Fernleigh Track and coastal paths offer scenic rides. Road cycling groups meet regularly for social rides.</p>
+          <p class="text-xs text-gray-500 mt-2">Barrier to entry: Medium — need a bike</p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">🥾 Hiking/Bushwalking</h4>
+          <p class="text-gray-700 text-sm mt-2">Glenrock, Awabakal, and Blackbutt Reserve are on your doorstep. Free, healthy, and a great way to explore the region.</p>
+          <p class="text-xs text-gray-500 mt-2">Barrier to entry: Very low — just need shoes</p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">🏊 Swimming</h4>
+          <p class="text-gray-700 text-sm mt-2">Ocean baths, beaches, and pools throughout the city. Ocean swimming groups meet regularly for coached sessions.</p>
+          <p class="text-xs text-gray-500 mt-2">Barrier to entry: Low — free at ocean baths</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Creative Hobbies</h2>
+      <p class="text-gray-700">For people who want to make things or express themselves:</p>
+
+      <div class="grid gap-4 my-6">
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">📷 Photography</h4>
+          <p class="text-gray-700 text-sm mt-2">Newcastle's coastline, industrial heritage, and street art make it a photographer's dream. Camera clubs and meetups help you learn and share.</p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">🎨 Art & Painting</h4>
+          <p class="text-gray-700 text-sm mt-2">Newcastle Art Gallery offers classes. Various studios around the city run workshops in painting, ceramics, and more.</p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">🎸 Music</h4>
+          <p class="text-gray-700 text-sm mt-2">Newcastle has a thriving live music scene. Learn an instrument, join a community choir, or find jam sessions at local venues.</p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">✍️ Writing</h4>
+          <p class="text-gray-700 text-sm mt-2">Writing groups meet at libraries and cafes. Newcastle Writers Festival brings the community together annually.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Social Hobbies</h2>
+      <p class="text-gray-700">For people who want connection and community:</p>
+
+      <div class="grid gap-4 my-6">
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">🎲 Board Games</h4>
+          <p class="text-gray-700 text-sm mt-2">Board game cafes and meetup groups have exploded in popularity. Regular game nights at various venues.</p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">📚 Book Clubs</h4>
+          <p class="text-gray-700 text-sm mt-2">Libraries, bookshops, and cafes host book clubs. A great way to read more and discuss with others.</p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">🌱 Community Gardens</h4>
+          <p class="text-gray-700 text-sm mt-2">Get your hands dirty and meet your neighbours. Several community gardens throughout Newcastle.</p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">🍳 Cooking Classes</h4>
+          <p class="text-gray-700 text-sm mt-2">Learn new cuisines while meeting people. Various cooking schools and community centre programs.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">How to Choose a Hobby</h2>
+      <p class="text-gray-700">Consider these factors:</p>
+
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">1.</span>
+          <span class="text-gray-700"><strong>Time commitment:</strong> Some hobbies need regular practice (music), others are drop-in (table tennis)</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">2.</span>
+          <span class="text-gray-700"><strong>Cost:</strong> Ranges from free (hiking) to significant investment (surfing gear)</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">3.</span>
+          <span class="text-gray-700"><strong>Social vs solo:</strong> Do you want to meet people or have alone time?</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">4.</span>
+          <span class="text-gray-700"><strong>Physical vs mental:</strong> Want to move your body, use your brain, or both?</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">5.</span>
+          <span class="text-gray-700"><strong>Indoor vs outdoor:</strong> Weather-dependent matters in Newcastle</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Why We Love Table Tennis as a Hobby</h2>
+      <p class="text-gray-700">
+        We're obviously biased, but here's why table tennis makes an excellent hobby:
+      </p>
+
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Low barrier</strong> — Equipment provided, no experience needed</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>All-weather</strong> — Indoor, climate-controlled venue</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Social</strong> — You're paired with people from the first minute</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Skill ceiling</strong> — You can keep improving for decades</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Affordable</strong> — $9/session or $40/year membership</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Flexible</strong> — Multiple sessions per week, no booking needed</span>
+        </li>
+      </ul>
+
+      <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-green-800 mb-2">Ready to try something new?</h3>
+        <p class="text-green-700 mb-4">Your first session at Newcastle PCYC Table Tennis Club is free. No booking, no commitment — just show up and see if you like it.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-green-600 text-white px-5 py-2 rounded-md font-medium hover:bg-green-700 transition">See the Timetable</a>
+          <a href="/location" class="bg-white text-green-700 border border-green-300 px-5 py-2 rounded-md font-medium hover:bg-green-50 transition">Get Directions</a>
+          <a href="/expect" class="bg-white text-green-700 border border-green-300 px-5 py-2 rounded-md font-medium hover:bg-green-50 transition">What to Expect</a>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Related Guides</h2>
+      <ul class="space-y-2">
+        <li><a href="/guides/social-clubs-newcastle" class="text-blue-600 hover:underline">Social Clubs in Newcastle</a></li>
+        <li><a href="/guides/indoor-activities-newcastle" class="text-blue-600 hover:underline">Indoor Activities in Newcastle</a></li>
+        <li><a href="/guides/gym-alternatives-newcastle" class="text-blue-600 hover:underline">Gym Alternatives in Newcastle</a></li>
+      </ul>
+    </div>
+  </article>
+</Layout>

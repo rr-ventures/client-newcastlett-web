@@ -1,0 +1,289 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Evening Activities in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is there to do in Newcastle at night?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle offers many evening activities beyond bars and restaurants. Options include: table tennis at PCYC Broadmeadow (Monday and Wednesday 6:30pm), social sports leagues, cinema, live music venues, night markets (seasonal), trivia nights, bowling, late-opening gyms, and evening classes. Many people find regular weeknight activities help break up the work-home routine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What activities are open after work in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After-work activities in Newcastle include: table tennis club (Mon/Wed from 6:30pm), social sport leagues, gyms with evening hours, swimming at heated pools, evening yoga/fitness classes, cooking classes, art workshops, and various meetup groups. Most organised activities run between 6pm and 9pm to suit working people."
+      }
+    }
+  ]
+});
+
+const combinedSchema = `[${breadcrumbSchema},${faqSchema}]`;
+---
+
+<Layout
+  title="Evening Activities in Newcastle: Things to Do After Work | 2026 Guide"
+  description="Looking for things to do in Newcastle at night? Discover evening activities beyond bars and restaurants. Table tennis, sports, classes, and more - perfect for weeknights."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-gray-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-blue-600 hover:underline">Home</a>
+      <span class="mx-2 text-gray-400">→</span>
+      <a href="/guides" class="text-blue-600 hover:underline">Guides</a>
+      <span class="mx-2 text-gray-400">→</span>
+      <span class="text-gray-700">Evening Activities Newcastle</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-blue-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-extrabold">Evening Activities in Newcastle: Things to Do After Work</h1>
+      <p class="mt-4 text-blue-200">Because your weeknights deserve more than Netflix</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-gray-700 text-lg">
+        You finish work at 5 or 6pm. By the time you get home, it's dark (half the year, anyway). What do you do? Scroll your phone? Watch TV? Feel vaguely guilty about not being productive?
+      </p>
+
+      <p class="text-gray-700 mt-4">
+        Breaking the work-couch-sleep cycle doesn't require massive life changes. It just requires having <em>something</em> in the calendar that gets you out of the house. This guide covers what's actually available in Newcastle on weeknight evenings.
+      </p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Evening Activities Matter</h2>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Better work-life balance</strong> — Separates "work day" from "your time"</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Improved sleep</strong> — Physical activity in the evening (not too late) helps sleep quality</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Social connection</strong> — Meet people outside your workplace</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Something to look forward to</strong> — Makes the workday easier to get through</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Evening Activities by Day of the Week</h2>
+
+      <div class="bg-green-50 p-6 rounded-lg border border-green-200 my-6">
+        <h3 class="text-xl font-bold text-green-800 mb-3">🏓 Monday: Table Tennis at PCYC</h3>
+        <p class="text-gray-700 mb-3">
+          Start your week with something active and social. Newcastle PCYC Table Tennis Club runs from <strong>6:30pm to 10pm</strong>. Drop in any time, no booking needed.
+        </p>
+        <ul class="text-sm text-gray-700 space-y-1">
+          <li><strong>Where:</strong> PCYC Newcastle, Young Road, Broadmeadow</li>
+          <li><strong>Time:</strong> 6:30pm - 10:00pm</li>
+          <li><strong>Cost:</strong> First session free, then $9</li>
+          <li><strong>Vibe:</strong> Mix of social play and friendly competition</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 my-6">
+        <h3 class="text-lg font-bold text-gray-900 mb-3">Tuesday: Options</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>• <strong>Trivia nights</strong> — Various pubs around Newcastle</li>
+          <li>• <strong>Evening yoga/pilates</strong> — Multiple studios with 6-7pm classes</li>
+          <li>• <strong>Swimming</strong> — Heated pools open until 8-9pm</li>
+          <li>• <strong>Social sport leagues</strong> — Check local competitions</li>
+        </ul>
+      </div>
+
+      <div class="bg-green-50 p-6 rounded-lg border border-green-200 my-6">
+        <h3 class="text-xl font-bold text-green-800 mb-3">🏓 Wednesday: Table Tennis at PCYC</h3>
+        <p class="text-gray-700 mb-3">
+          Mid-week reset. Same deal as Monday — show up between 6:30pm and 10pm, play as long as you like.
+        </p>
+        <ul class="text-sm text-gray-700 space-y-1">
+          <li><strong>Where:</strong> PCYC Newcastle, Young Road, Broadmeadow</li>
+          <li><strong>Time:</strong> 6:30pm - 10:00pm</li>
+          <li><strong>Cost:</strong> $9/session</li>
+          <li><strong>Good for:</strong> Breaking up the week, burning off work stress</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 my-6">
+        <h3 class="text-lg font-bold text-gray-900 mb-3">Thursday: Options</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>• <strong>Live music</strong> — Various venues in Newcastle East, Hamilton</li>
+          <li>• <strong>Evening classes</strong> — Cooking, art, languages at community colleges</li>
+          <li>• <strong>Bowling</strong> — Lanes open late</li>
+          <li>• <strong>Board game meetups</strong> — Check Facebook/Meetup groups</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 my-6">
+        <h3 class="text-lg font-bold text-gray-900 mb-3">Friday: Options</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>• <strong>Cinema</strong> — Event Cinemas, Hoyts, or indie screenings</li>
+          <li>• <strong>Night markets</strong> — Seasonal, check local events</li>
+          <li>• <strong>Live music and comedy</strong> — Weekend kicks off</li>
+          <li>• <strong>Social drinks</strong> — Numerous bars and venues</li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Evening Activities by Type</h2>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Active/Sporty</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Table tennis</strong> — Mon & Wed 6:30pm at PCYC Broadmeadow</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Indoor rock climbing</strong> — Gyms open until 9-10pm</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Swimming</strong> — Heated pools with evening hours</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Gyms</strong> — 24/7 options available</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Social sport leagues</strong> — Netball, soccer, volleyball, touch</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Yoga/pilates studios</strong> — Evening classes common</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Social/Entertainment</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Trivia nights</strong> — Multiple pubs, various nights</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Board game meetups</strong> — Cafes and game shops</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Live music</strong> — Bars and venues throughout Newcastle</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Cinema</strong> — Standard and special screenings</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Bowling</strong> — Open late most nights</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Learning/Creative</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Cooking classes</strong> — Various schools and venues</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Art classes</strong> — Life drawing, painting, pottery</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Dance classes</strong> — Salsa, swing, ballroom</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Language classes</strong> — Community college and private tutors</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Tips for Actually Going</h2>
+      <p class="text-gray-700">Knowing about activities is one thing. Actually going is another. Here's what helps:</p>
+
+      <ol class="space-y-3 my-4 list-decimal list-inside">
+        <li class="text-gray-700"><strong>Put it in your calendar</strong> — Treat it like a meeting you can't skip</li>
+        <li class="text-gray-700"><strong>Go straight from work</strong> — Going home first is the kiss of death</li>
+        <li class="text-gray-700"><strong>Pack your bag the night before</strong> — Remove friction</li>
+        <li class="text-gray-700"><strong>Find a buddy</strong> — Accountability helps, even a loose arrangement</li>
+        <li class="text-gray-700"><strong>Commit for a set period</strong> — "I'll go every Monday for 6 weeks" is easier than "forever"</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Table Tennis Works for Weeknights</h2>
+      <p class="text-gray-700">
+        Our Monday and Wednesday sessions are designed for working people:
+      </p>
+
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Starts 6:30pm</strong> — Time to get there after work</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Runs until 10pm</strong> — Come and go as you please</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>No booking required</strong> — Just show up</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Equipment provided</strong> — Come straight from work</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Free parking</strong> — Easy in, easy out</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Physical + social</strong> — Two benefits in one activity</span>
+        </li>
+      </ul>
+
+      <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-green-800 mb-2">Ready to fill your Monday or Wednesday?</h3>
+        <p class="text-green-700 mb-4">First session free. No booking needed. Just show up at PCYC Broadmeadow from 6:30pm.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-green-600 text-white px-5 py-2 rounded-md font-medium hover:bg-green-700 transition">See Full Timetable</a>
+          <a href="/location" class="bg-white text-green-700 border border-green-300 px-5 py-2 rounded-md font-medium hover:bg-green-50 transition">Get Directions</a>
+          <a href="/expect" class="bg-white text-green-700 border border-green-300 px-5 py-2 rounded-md font-medium hover:bg-green-50 transition">What to Expect</a>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Related Guides</h2>
+      <ul class="space-y-2">
+        <li><a href="/guides/indoor-activities-newcastle" class="text-blue-600 hover:underline">Indoor Activities in Newcastle</a></li>
+        <li><a href="/guides/gym-alternatives-newcastle" class="text-blue-600 hover:underline">Gym Alternatives in Newcastle</a></li>
+        <li><a href="/guides/social-clubs-newcastle" class="text-blue-600 hover:underline">Social Clubs in Newcastle</a></li>
+      </ul>
+    </div>
+  </article>
+</Layout>

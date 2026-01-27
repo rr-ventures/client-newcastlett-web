@@ -1,0 +1,302 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "How to Make Friends in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I make friends as an adult in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best way to make friends as an adult is through regular, repeated contact in a shared activity. Join a sports club, hobby group, or volunteer organisation that meets weekly. Table tennis clubs, running groups, and community organisations are all good options in Newcastle. The key is consistency - showing up regularly lets relationships develop naturally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I meet people in Newcastle NSW?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can meet people in Newcastle through: sports clubs (table tennis, tennis, running, swimming), community groups (volunteer organisations, Rotary), hobby meetups (photography, book clubs, board games), classes (art, cooking, dance), and social apps (Meetup, Bumble BFF). Choose activities you genuinely enjoy so you'll keep attending."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it hard to make friends after moving to Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It takes effort but it's very achievable. Newcastle is known for being friendly and community-oriented. The key is to be proactive - join activities, say yes to invitations, and give relationships time to develop. Most people find it takes 3-6 months of regular activity to develop solid friendships."
+      }
+    }
+  ]
+});
+
+const combinedSchema = `[${breadcrumbSchema},${faqSchema}]`;
+---
+
+<Layout
+  title="How to Make Friends in Newcastle: A Practical Guide | 2026"
+  description="Just moved to Newcastle or struggling to meet people? Practical advice on making friends as an adult, with specific groups and activities to try."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-gray-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-blue-600 hover:underline">Home</a>
+      <span class="mx-2 text-gray-400">→</span>
+      <a href="/guides" class="text-blue-600 hover:underline">Guides</a>
+      <span class="mx-2 text-gray-400">→</span>
+      <span class="text-gray-700">Make Friends in Newcastle</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-blue-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-extrabold">How to Make Friends in Newcastle: A Practical Guide</h1>
+      <p class="mt-4 text-blue-200">Because making friends as an adult shouldn't be this hard</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-gray-700 text-lg">
+        Making friends as an adult is hard. There's no university common room, no school playground, no automatic social structure. You have to create opportunities yourself — and that takes deliberate effort.
+      </p>
+
+      <p class="text-gray-700 mt-4">
+        Whether you've just moved to Newcastle, gone through a life change (divorce, career shift, kids leaving home), or simply realised your social circle has shrunk, this guide gives you practical steps to meet people and build genuine friendships.
+      </p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Making Friends Gets Harder</h2>
+      <p class="text-gray-700">It's not just you. Adult friendship is structurally difficult because:</p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-gray-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>No forced proximity</strong> — You're not thrown together like in school or uni</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-gray-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Less free time</strong> — Work, family, and obligations consume your schedule</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-gray-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Established social circles</strong> — People already have friends and aren't "looking"</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-gray-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Fear of rejection</strong> — Approaching people feels awkward as an adult</span>
+        </li>
+      </ul>
+
+      <p class="text-gray-700">
+        The good news? Research shows you only need <strong>40-60 hours</strong> of interaction to form a friendship. The key is finding situations that create repeated contact.
+      </p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">The Formula That Works</h2>
+      <p class="text-gray-700">Social scientists have identified three ingredients for friendship:</p>
+
+      <div class="bg-blue-50 p-6 rounded-lg border border-blue-200 my-6">
+        <ol class="space-y-3">
+          <li class="flex items-start">
+            <span class="font-bold text-blue-600 mr-3">1.</span>
+            <div>
+              <span class="font-bold text-gray-900">Proximity</span>
+              <p class="text-gray-700 text-sm">Being in the same physical space regularly</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="font-bold text-blue-600 mr-3">2.</span>
+            <div>
+              <span class="font-bold text-gray-900">Repeated unplanned interaction</span>
+              <p class="text-gray-700 text-sm">Seeing the same people without having to arrange it</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="font-bold text-blue-600 mr-3">3.</span>
+            <div>
+              <span class="font-bold text-gray-900">Environment that encourages conversation</span>
+              <p class="text-gray-700 text-sm">Context that makes talking natural, not forced</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <p class="text-gray-700">
+        This is why <strong>regular activities</strong> work better than one-off events. You need to see the same people, week after week, for relationships to form naturally.
+      </p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Where to Meet People in Newcastle</h2>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Sports & Activity Clubs (Best Option)</h3>
+      <p class="text-gray-700">These tick all three boxes: regular schedule, same people, natural conversation topics.</p>
+
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Table tennis</strong> — You're paired with someone immediately. Chat naturally between points. See the same people each week. <a href="/timetable" class="text-blue-600 hover:underline">Sessions at PCYC Broadmeadow</a>.</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Running groups</strong> — Park Run, Hash House Harriers, or organised training groups</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Social sports leagues</strong> — Netball, soccer, touch footy, volleyball</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Swimming clubs</strong> — Ocean swimming groups meet regularly</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Cycling groups</strong> — Regular rides with social coffee after</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Hobby & Interest Groups</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Board game meetups</strong> — Regular nights at cafes and game shops</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Book clubs</strong> — Libraries and bookshops host these</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Photography walks</strong> — Combine a hobby with social time</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Craft groups</strong> — Knitting circles, woodworking (Men's Sheds)</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Community & Volunteer</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Volunteer organisations</strong> — Landcare, wildlife rescue, community events</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Community gardens</strong> — Regular meetups with a shared purpose</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Service clubs</strong> — Rotary, Lions, etc.</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Apps & Online</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Meetup.com</strong> — Search "Newcastle" for local groups</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Facebook Groups</strong> — Search "[hobby] Newcastle"</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mr-2">•</span>
+          <span class="text-gray-700"><strong>Bumble BFF</strong> — Friendship-focused dating app feature</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Practical Tips That Actually Work</h2>
+
+      <div class="space-y-4 my-6">
+        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">1. Show up consistently</h4>
+          <p class="text-gray-700 text-sm mt-1">Same activity, same time, every week. Familiarity breeds friendship. Give it at least 6-8 weeks before deciding it's "not working."</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">2. Be the initiator</h4>
+          <p class="text-gray-700 text-sm mt-1">Don't wait for others to invite you. Suggest grabbing coffee after. Organise a group lunch. Most people are just as keen but too shy to ask.</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">3. Lower your expectations (initially)</h4>
+          <p class="text-gray-700 text-sm mt-1">Not everyone will become a close friend. Aim for pleasant acquaintances first. Deeper friendships develop from a larger pool.</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">4. Ask questions and remember answers</h4>
+          <p class="text-gray-700 text-sm mt-1">People love talking about themselves. Remembering details ("How was your daughter's recital?") shows you care.</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+          <h4 class="font-bold text-gray-900">5. Say yes to things</h4>
+          <p class="text-gray-700 text-sm mt-1">Even when tired. Even when it's not your thing. Opportunities compound. The third "yes" often leads to the real friendship.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Table Tennis is Great for Meeting People</h2>
+      <p class="text-gray-700">
+        We've seen countless friendships form at the club because table tennis naturally creates the conditions for connection:
+      </p>
+
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Instant pairing</strong> — You're matched with someone from minute one</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Natural conversation</strong> — Chat between games, no awkward silences</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Regular schedule</strong> — Same people, same times, every week</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Mixed ages</strong> — Meet people you'd never encounter otherwise</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-500 mr-2">✓</span>
+          <span class="text-gray-700"><strong>Welcoming culture</strong> — Our members love meeting newcomers</span>
+        </li>
+      </ul>
+
+      <blockquote class="border-l-4 border-blue-500 pl-4 italic text-gray-700 my-6">
+        "I moved to Newcastle for work and didn't know anyone. Started coming to table tennis on Wednesday nights. Within a month, I had people to grab dinner with. A year later, some of them are my closest friends."
+        <span class="block text-sm text-gray-500 mt-2">— Club member</span>
+      </blockquote>
+
+      <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-green-800 mb-2">Ready to meet some new people?</h3>
+        <p class="text-green-700 mb-4">Your first session at Newcastle PCYC Table Tennis Club is free. Just show up — we're a friendly bunch.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-green-600 text-white px-5 py-2 rounded-md font-medium hover:bg-green-700 transition">See the Timetable</a>
+          <a href="/location" class="bg-white text-green-700 border border-green-300 px-5 py-2 rounded-md font-medium hover:bg-green-50 transition">Get Directions</a>
+          <a href="/expect" class="bg-white text-green-700 border border-green-300 px-5 py-2 rounded-md font-medium hover:bg-green-50 transition">What to Expect</a>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Related Guides</h2>
+      <ul class="space-y-2">
+        <li><a href="/guides/social-clubs-newcastle" class="text-blue-600 hover:underline">Social Clubs in Newcastle</a></li>
+        <li><a href="/guides/hobbies-newcastle" class="text-blue-600 hover:underline">Hobbies in Newcastle</a></li>
+        <li><a href="/guides/indoor-activities-newcastle" class="text-blue-600 hover:underline">Indoor Activities in Newcastle</a></li>
+      </ul>
+    </div>
+  </article>
+</Layout>
