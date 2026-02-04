@@ -1,0 +1,261 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Racquet Sports in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What racquet sports can I play in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle has four main racquet sports available: table tennis, tennis, badminton, and squash. Each has different costs, venue availability, and physical demands. Table tennis and tennis have the most established club scenes, while badminton and squash are available at community centres and dedicated courts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which racquet sport is best for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Table tennis has the lowest barrier to entry of any racquet sport. At PCYC Broadmeadow, equipment is provided, no court booking is needed, the first session is free, and it's the cheapest per session at $8.50-$9.50. The basics are easy to learn and you can rally within minutes of picking up a bat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I play table tennis in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle PCYC Table Tennis Club plays at PCYC Broadmeadow on Young Road. Sessions run Monday and Wednesday 6:30-10pm and Saturday 2:30-6pm. Your first session is free, then it's $8.50-$9.50 per visit. No booking required — just show up."
+      }
+    }
+  ]
+});
+
+const combinedSchema = `[${breadcrumbSchema},${faqSchema}]`;
+---
+
+<Layout
+  title="Racquet Sports in Newcastle: Tennis, Table Tennis, Badminton & Squash Compared | Guide"
+  description="Compare racquet sports in Newcastle — table tennis, tennis, badminton, and squash. See costs, venues, fitness levels, and find the best option for you."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <span class="text-neutral-700">Racquet Sports</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-bold font-heading">Racquet Sports in Newcastle: Tennis, Table Tennis, Badminton & Squash Compared</h1>
+      <p class="mt-4 text-neutral-300">An honest comparison to help you pick the right racquet sport for your budget, fitness, and schedule</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Racquet sports are some of the best activities you can do for fitness, coordination, and mental sharpness. Newcastle has options for all four major racquet sports, but they differ significantly in cost, accessibility, and what you need to get started. This guide compares them side by side so you can make an informed choice.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Comparison at a Glance</h2>
+      <p class="text-neutral-700">
+        The table below summarises the key differences between the four racquet sports available in Newcastle. If you're short on time, this is the quickest way to compare your options.
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full border-collapse my-6">
+          <thead>
+            <tr class="bg-neutral-100 text-left text-neutral-900 font-bold">
+              <th class="border border-neutral-200 px-4 py-3">Feature</th>
+              <th class="border border-neutral-200 px-4 py-3">Table Tennis</th>
+              <th class="border border-neutral-200 px-4 py-3">Tennis</th>
+              <th class="border border-neutral-200 px-4 py-3">Badminton</th>
+              <th class="border border-neutral-200 px-4 py-3">Squash</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700 font-bold">Cost per session</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">$8.50-$9.50</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">$15-$25 (court hire)</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">$10-$18 (court hire)</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">$15-$25 (court hire)</td>
+            </tr>
+            <tr>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700 font-bold">Equipment needed</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Provided free</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Racquet + balls ($80+)</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Racquet + shuttlecocks ($50+)</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Racquet + ball + goggles ($70+)</td>
+            </tr>
+            <tr>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700 font-bold">Booking required</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">No — just show up</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Yes — court booking</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Yes — court booking</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Yes — court booking</td>
+            </tr>
+            <tr>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700 font-bold">Fitness level</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Any — play at your pace</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Moderate to high</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Moderate to high</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">High — very demanding</td>
+            </tr>
+            <tr>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700 font-bold">Social aspect</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">High — club sessions, mixed groups</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Moderate — social hit-ups, club events</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Moderate — group sessions</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Low — usually 1v1</td>
+            </tr>
+            <tr>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700 font-bold">Venues in Newcastle</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">PCYC Broadmeadow</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Multiple clubs + public courts</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Community halls + sports centres</td>
+              <td class="border border-neutral-200 px-4 py-3 text-neutral-700">Dedicated courts + fitness centres</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Table Tennis</h2>
+      <p class="text-neutral-700">
+        Table tennis is the most accessible racquet sport in Newcastle by a comfortable margin. At PCYC Broadmeadow, Newcastle PCYC Table Tennis Club runs three open sessions every week where anyone can walk in and play. There's no court to book, no equipment to buy, and no membership to sign up for. Your first session is completely free, and after that it's just $8.50-$9.50 per visit.
+      </p>
+      <p class="text-neutral-700">
+        What sets table tennis apart from other racquet sports is the social environment. Because everyone plays in the same room, you naturally rotate opponents and chat between games. It's common for people to come alone and leave knowing half the room. The club has members from their 20s through to their 80s, and beginners are genuinely welcomed — not just tolerated.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <p class="text-neutral-700 font-bold mb-2">Newcastle PCYC Table Tennis Club</p>
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>Where:</strong> PCYC Newcastle, Young Road, Broadmeadow</li>
+          <li class="text-neutral-700"><strong>When:</strong> Monday 6:30-10pm, Wednesday 6:30-10pm, Saturday 2:30-6pm</li>
+          <li class="text-neutral-700"><strong>Cost:</strong> First session free, then $8.50-$9.50</li>
+          <li class="text-neutral-700"><strong>Equipment:</strong> Bats provided at no charge</li>
+          <li class="text-neutral-700"><strong>Booking:</strong> Not required — just turn up</li>
+        </ul>
+      </div>
+      <p class="text-neutral-700">
+        Table tennis is also one of the best sports for brain health. The combination of hand-eye coordination, spin reading, tactical thinking, and quick reactions provides a mental workout that few other sports can match. It's frequently recommended for <a href="/guides/sports-clubs-newcastle" class="text-brand-600 hover:underline">older adults</a> looking to stay mentally sharp while being physically active.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Tennis</h2>
+      <p class="text-neutral-700">
+        Tennis is the most established racquet sport in Newcastle, with clubs spread across the city. The National Park Tennis Centre is one of the main hubs, offering public court hire alongside coaching and competitions. Suburban clubs in Merewether, Waratah, Charlestown, and other areas run social tennis sessions, pennant ladders, and junior development programs.
+      </p>
+      <p class="text-neutral-700">
+        The barrier to entry for tennis is moderate. You'll need your own racquet (a decent beginner racquet starts around $80), a can of balls, and you'll need to book a court. Court hire typically runs $15-$25 per session depending on the venue and time of day. Club memberships provide regular access and reduced court fees but involve an upfront cost.
+      </p>
+      <p class="text-neutral-700">
+        Tennis requires a reasonable base level of fitness. The court is large and the ball moves fast, so you'll be doing plenty of running, especially in singles. Doubles is less demanding and more social. If you're a complete beginner, a few coaching lessons are helpful to learn basic technique before joining social hit-ups.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Badminton</h2>
+      <p class="text-neutral-700">
+        Badminton is played at several community centres and sports halls around Newcastle. It's a fast, entertaining sport that provides excellent cardio and improves agility. The shuttlecock moves differently from a ball — it decelerates quickly, which means rallies have a unique rhythm that many players find satisfying.
+      </p>
+      <p class="text-neutral-700">
+        To play badminton in Newcastle, you'll generally need to book a court at a community or sports centre. Sessions typically cost $10-$18 for court hire. You'll need your own racquet (starting around $30 for a basic model) and a tube of shuttlecocks. Some centres run social badminton nights where you can drop in and play with others, which is a good way to get started without needing to organise your own group.
+      </p>
+      <p class="text-neutral-700">
+        Badminton is moderately demanding physically. It involves a lot of lunging and quick directional changes, so a basic level of fitness helps. However, at a social level it's perfectly manageable for most people and the basics are easy to pick up.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Squash</h2>
+      <p class="text-neutral-700">
+        Squash is the most physically demanding of the four racquet sports. Played in an enclosed court, it involves constant movement, rapid changes of direction, and high-intensity rallies. A 30-minute game of squash burns more calories than almost any other racquet sport. Courts are available at dedicated squash venues and some fitness centres around Newcastle.
+      </p>
+      <p class="text-neutral-700">
+        Court hire for squash typically costs $15-$25 per session. You'll need a racquet ($40-$80 for a beginner model), a squash ball, and protective eyewear is strongly recommended. Booking is essential as courts are shared and time-limited. Squash is primarily a 1v1 sport, so the social aspect is more limited than team-based or club-session formats.
+      </p>
+      <p class="text-neutral-700">
+        If you're already fit and enjoy intense, competitive exercise, squash is an excellent choice. For complete beginners or those returning to sport after a long break, it's worth building a fitness base first or starting with a less demanding racquet sport.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Which Racquet Sport Should You Choose?</h2>
+      <p class="text-neutral-700">
+        The right racquet sport for you depends on what you're looking for. Here's a quick decision guide:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Want the easiest entry point?</strong> Table tennis. No equipment, no booking, first session free, cheapest ongoing cost.</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Want an outdoor sport?</strong> Tennis. Multiple clubs with outdoor courts across Newcastle.</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Want fast-paced indoor cardio?</strong> Badminton. Quick rallies, good agility training, moderate cost.</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Want an intense workout?</strong> Squash. The highest physical demand of any racquet sport.</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Want the best social scene?</strong> Table tennis. Club session format means you meet lots of people every visit.</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Want the lowest impact on joints?</strong> Table tennis. Minimal running and no high-impact movements.</span>
+        </li>
+      </ul>
+
+      <p class="text-neutral-700">
+        For many people, table tennis is the natural starting point because it removes every common barrier — cost, equipment, booking hassles, fitness requirements, and the awkwardness of being a beginner. Once you've got the sporting habit established, you might branch out into other racquet sports as well. Check out our broader <a href="/guides/sports-clubs-newcastle" class="text-brand-600 hover:underline">sports clubs guide</a> for more options beyond racquet sports, or explore <a href="/guides/indoor-activities-newcastle" class="text-brand-600 hover:underline">indoor activities in Newcastle</a> and <a href="/guides/gym-alternatives-newcastle" class="text-brand-600 hover:underline">gym alternatives</a> for other ways to stay active.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Frequently Asked Questions</h2>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">What racquet sports can I play in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Newcastle has four main racquet sports available: table tennis, tennis, badminton, and squash. Each has different costs, venue availability, and physical demands. Table tennis and tennis have the most established club scenes, while badminton and squash are available at community centres and dedicated courts.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Which racquet sport is best for beginners?</h3>
+      <p class="text-neutral-700">
+        Table tennis has the lowest barrier to entry of any racquet sport. At PCYC Broadmeadow, equipment is provided at no cost, no court booking is needed, your first session is free, and ongoing sessions are the cheapest at $8.50-$9.50. The basics are easy to learn and most people can rally within minutes of picking up a bat.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Where can I play table tennis in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Newcastle PCYC Table Tennis Club plays at PCYC Broadmeadow on Young Road. Sessions run Monday and Wednesday 6:30-10pm and Saturday 2:30-6pm. Your first session is free, then it's $8.50-$9.50 per visit. No booking required — just show up. Read our <a href="/expect" class="text-brand-600 hover:underline">What to Expect</a> page for a full walkthrough of your first visit.
+      </p>
+
+      <!-- CTA -->
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Try the most accessible racquet sport in Newcastle</h3>
+        <p class="text-brand-700 mb-4">Your first table tennis session is free — no booking, no equipment needed. Just show up at PCYC Broadmeadow and play.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,278 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Low-Impact Sports in Newcastle"}
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What low-impact sports can I play in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle offers many low-impact sports including table tennis, swimming, lawn bowls, yoga, tai chi, walking groups, and cycling. All are available locally and cater to a range of fitness levels and abilities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is table tennis low impact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, table tennis is a low-impact sport. It's easy on joints while still providing cardio, improving reflexes and coordination. You control the intensity — play gently for a relaxed social game, or ramp it up for a competitive workout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What exercise is good for bad knees in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Good exercises for bad knees available in Newcastle include swimming, table tennis, yoga, cycling, and walking. Table tennis is particularly well-suited because it keeps you moving without the high-impact jumping or running that aggravates knee problems."
+      }
+    }
+  ]
+};
+
+const combinedSchema = JSON.stringify([breadcrumbSchema, faqSchema]);
+---
+
+<Layout
+  title="Low-Impact Sports in Newcastle: Gentle Exercise That's Actually Fun | Guide"
+  description="Looking for low-impact sports in Newcastle? Discover gentle exercise options that protect your joints while keeping you active — including table tennis, swimming, yoga, and more."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <span class="text-neutral-700">Low-Impact Sports</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-bold font-heading">Low-Impact Sports in Newcastle: Gentle Exercise That's Actually Fun</h1>
+      <p class="mt-4 text-neutral-300">Stay active without punishing your body. Newcastle has plenty of joint-friendly options.</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Not all exercise needs to leave you sore, breathless, or reaching for the ice pack. <strong>Low-impact sports</strong> offer a way to stay active, healthy, and social without the strain that high-impact activities put on your body. Whether you're recovering from an injury, managing joint pain, getting older, or simply prefer a gentler approach to fitness, Newcastle has a surprising number of options.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Why Low-Impact Exercise Matters</h2>
+      <p class="text-neutral-700">
+        High-impact sports like running, basketball, and tennis put significant stress on joints — particularly knees, hips, and ankles. Over time, that stress leads to wear and tear, inflammation, and injury. Low-impact exercise reduces that strain while still delivering real fitness benefits.
+      </p>
+      <p class="text-neutral-700">
+        Low-impact sports are especially important for:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Joint health</strong> — Protecting knees, hips, and ankles from repetitive stress injuries</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Injury recovery</strong> — Staying active while healing without setting back your progress</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Aging well</strong> — Maintaining mobility, balance, and strength as you get older</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Beginners</strong> — Building fitness gradually without overdoing it</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Chronic conditions</strong> — Managing arthritis, back pain, or other conditions that limit movement</span>
+        </li>
+      </ul>
+      <p class="text-neutral-700">
+        The key insight is that <strong>low-impact doesn't mean low-benefit</strong>. Many low-impact sports provide excellent cardiovascular exercise, improve coordination, and build functional strength — all while being kind to your body.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Low-Impact Sports Available in Newcastle</h2>
+      <p class="text-neutral-700">
+        Newcastle and the Hunter region offer a wide range of gentle exercise options. Here's a look at the best ones, with honest pros and cons for each.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis</h3>
+      <p class="text-neutral-700">
+        Table tennis is one of the best low-impact sports you can play. The movements are controlled and contained — short steps, small lunges, quick arm movements — with virtually no jumping, pounding, or jarring impacts. Yet it still delivers a genuine workout. A typical session burns <strong>270-400 calories per hour</strong>, improves hand-eye coordination, sharpens reflexes, and provides moderate cardio.
+      </p>
+      <p class="text-neutral-700">
+        What makes table tennis especially appealing is that <strong>you control the intensity</strong>. Want a relaxed social hit? Play at a gentle pace. Want to push yourself? Step up the speed and compete. This flexibility makes it suitable for everyone from <a href="/guides/seniors-activities-newcastle" class="text-brand-600 hover:underline">seniors</a> to younger players recovering from sports injuries.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <p class="text-neutral-700">
+          <strong>Pros:</strong> Very low impact on joints, social and fun, affordable ($9/session), equipment provided, no booking needed, indoor (weather-proof), cognitive benefits.<br/>
+          <strong>Cons:</strong> Limited to three sessions per week at PCYC Broadmeadow.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Swimming</h3>
+      <p class="text-neutral-700">
+        Swimming is the gold standard of low-impact exercise. The water supports your body weight, eliminating almost all joint stress. Newcastle has excellent public pools and ocean baths — from the iconic Bogey Hole to the heated pools at Lambton. Swimming provides a full-body workout that builds cardiovascular fitness, muscular endurance, and flexibility.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <p class="text-neutral-700">
+          <strong>Pros:</strong> Near-zero joint impact, full-body workout, widely available.<br/>
+          <strong>Cons:</strong> Can be solitary, pool fees add up ($8-10 per visit), outdoor pools are weather-dependent.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Lawn Bowls</h3>
+      <p class="text-neutral-700">
+        Lawn bowls has seen a resurgence in Newcastle, especially among younger players. It's gentle, social, and played at a relaxed pace. Several clubs in the area welcome beginners with barefoot bowls sessions. The physical demands are minimal — mostly walking and bending — making it ideal for people with limited mobility.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <p class="text-neutral-700">
+          <strong>Pros:</strong> Very gentle, highly social, affordable, beginner-friendly.<br/>
+          <strong>Cons:</strong> Limited cardiovascular benefit, outdoor (weather-dependent), club scheduling.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Yoga &amp; Tai Chi</h3>
+      <p class="text-neutral-700">
+        Both yoga and tai chi focus on controlled movements, flexibility, balance, and mindfulness. Newcastle has numerous studios and community groups offering classes for all levels. These practices are particularly beneficial for people managing stress, chronic pain, or balance issues.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <p class="text-neutral-700">
+          <strong>Pros:</strong> Excellent for flexibility and balance, calming, adaptable to all abilities.<br/>
+          <strong>Cons:</strong> Studio classes can be expensive ($15-25), limited social interaction in some formats.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Walking Groups</h3>
+      <p class="text-neutral-700">
+        Newcastle's coastline, parks, and bush trails make it ideal for walking. Several community walking groups operate across the region, offering structured, social walks at various paces. Walking is the simplest form of low-impact exercise and requires zero equipment beyond a pair of comfortable shoes.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <p class="text-neutral-700">
+          <strong>Pros:</strong> Free, social, no equipment needed, adaptable pace.<br/>
+          <strong>Cons:</strong> Weather-dependent, limited upper-body workout, can become monotonous.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Cycling</h3>
+      <p class="text-neutral-700">
+        Cycling is excellent for cardiovascular fitness while being gentle on the knees and hips. Newcastle's Fernleigh Track and the coastal cycleway offer scenic, safe routes. E-bikes have also made cycling more accessible to people who find traditional cycling too demanding.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <p class="text-neutral-700">
+          <strong>Pros:</strong> Great cardio, easy on joints, scenic routes in Newcastle.<br/>
+          <strong>Cons:</strong> Requires equipment (bike, helmet), weather-dependent, road safety concerns.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Why Table Tennis Is Ideal for Low-Impact Fitness</h2>
+      <p class="text-neutral-700">
+        Among all the options listed above, table tennis hits a unique sweet spot. It's one of the few low-impact sports that combines <strong>physical exercise, cognitive stimulation, and genuine social connection</strong> in every single session.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Control your intensity</strong> — Play at whatever pace suits your body on the day</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Social by design</strong> — You're always playing with someone, chatting between games, and part of a community</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Cognitive benefits</strong> — Quick decision-making, hand-eye coordination, and strategic thinking keep your mind sharp</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Indoor and weather-proof</strong> — Unlike walking, cycling, or bowls, rain never cancels table tennis</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>No special fitness required</strong> — Beginners are welcome and can start immediately</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Proven health benefits</strong> — Studies link table tennis to improved balance, reduced fall risk in older adults, and better cognitive function</span>
+        </li>
+      </ul>
+      <p class="text-neutral-700">
+        Table tennis is sometimes called "the best brain sport in the world" because of the rapid-fire decision-making involved in every rally. For people looking for a <a href="/guides/gym-alternatives-newcastle" class="text-brand-600 hover:underline">gym alternative</a> that's gentle on the body but stimulating for the mind, it's hard to find a better fit.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Session Times, Cost &amp; Location</h2>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>Monday:</strong> 6:30 PM – 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Wednesday:</strong> 6:30 PM – 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Saturday:</strong> 2:30 PM – 6:00 PM</li>
+        </ul>
+        <p class="text-neutral-700 mt-4">
+          <strong>Location:</strong> PCYC Newcastle, Young Road, Broadmeadow NSW 2292
+        </p>
+        <p class="text-neutral-700 mt-2">
+          <strong>Cost:</strong> $9 per session | First visit free | No booking required
+        </p>
+        <p class="text-neutral-700 mt-2">
+          <strong>Equipment:</strong> Bats provided at no charge — just bring comfortable shoes and a water bottle
+        </p>
+      </div>
+
+      <p class="text-neutral-700">
+        New to the club? Read our <a href="/expect" class="text-brand-600 hover:underline">what to expect</a> page to see what a typical session looks like, or explore more <a href="/guides/hobbies-newcastle" class="text-brand-600 hover:underline">hobbies in Newcastle</a> to find your perfect fit.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Frequently Asked Questions</h2>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h3 class="text-xl font-bold text-neutral-900 mt-0 mb-3">What low-impact sports can I play in Newcastle?</h3>
+        <p class="text-neutral-700">
+          Newcastle offers many low-impact sports including table tennis, swimming, lawn bowls, yoga, tai chi, walking groups, and cycling. All are available locally and cater to a range of fitness levels and abilities. Table tennis at PCYC Broadmeadow is one of the most affordable and social options, with sessions three times a week.
+        </p>
+      </div>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h3 class="text-xl font-bold text-neutral-900 mt-0 mb-3">Is table tennis low impact?</h3>
+        <p class="text-neutral-700">
+          Yes, table tennis is a low-impact sport. It's easy on joints while still providing cardio, improving reflexes and coordination. You control the intensity — play gently for a relaxed social game, or push the pace for a more competitive workout. There's no jumping, running, or jarring impacts involved.
+        </p>
+      </div>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h3 class="text-xl font-bold text-neutral-900 mt-0 mb-3">What exercise is good for bad knees in Newcastle?</h3>
+        <p class="text-neutral-700">
+          Good exercises for bad knees available in Newcastle include swimming, table tennis, yoga, cycling, and walking. Table tennis is particularly well-suited because it keeps you moving and engaged without the high-impact jumping or running that aggravates knee problems. You can play at your own pace and stop whenever you need to.
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Ready to try a low-impact sport?</h3>
+        <p class="text-brand-700 mb-4">Your first table tennis session at PCYC Broadmeadow is free — no booking required, equipment provided. Come see why it's the gentle exercise people actually stick with.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

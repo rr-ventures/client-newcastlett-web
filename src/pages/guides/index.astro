@@ -3,9 +3,79 @@ import Layout from '../../layouts/Layout.astro';
 
 const guides = [
   {
+    slug: "things-to-do-newcastle",
+    title: "Things to Do in Newcastle NSW: A Local's Guide",
+    excerpt: "From beaches and bushwalks to indoor sports and dining — discover the best activities Newcastle has to offer.",
+  },
+  {
+    slug: "social-clubs-newcastle",
+    title: "Social Clubs in Newcastle: Find Your Community",
+    excerpt: "Looking for social clubs in Newcastle NSW? Discover friendly groups where you can meet new people, stay active, and have fun.",
+  },
+  {
+    slug: "evening-activities-newcastle",
+    title: "Evening Activities in Newcastle: Things to Do After Work",
+    excerpt: "Looking for something to do on a weeknight? Here's a day-by-day guide to evening activities in Newcastle.",
+  },
+  {
+    slug: "weekend-activities-newcastle",
+    title: "Weekend Activities in Newcastle: Saturday & Sunday Ideas",
+    excerpt: "Plan your perfect Newcastle weekend with our guide to the best Saturday and Sunday activities.",
+  },
+  {
+    slug: "hobbies-newcastle",
+    title: "Hobbies in Newcastle: Fun Things to Try",
+    excerpt: "Looking for a new hobby? Explore active, creative, and social hobbies you can pick up in Newcastle.",
+  },
+  {
+    slug: "make-friends-newcastle",
+    title: "How to Make Friends in Newcastle: A Practical Guide",
+    excerpt: "New to Newcastle or just want to expand your circle? Evidence-based tips for making genuine friendships as an adult.",
+  },
+  {
     slug: "indoor-activities-newcastle",
     title: "Indoor Activities in Newcastle: Table Tennis at PCYC Broadmeadow",
     excerpt: "Looking for something to do indoors in Newcastle? Discover why table tennis is a great option for all ages and fitness levels.",
+  },
+  {
+    slug: "rainy-day-activities-newcastle",
+    title: "Rainy Day Activities in Newcastle: Indoor Fun",
+    excerpt: "Weather got you stuck inside? Here are the best indoor activities in Newcastle for when it rains.",
+  },
+  {
+    slug: "seniors-activities-newcastle",
+    title: "Activities for Seniors in Newcastle: Stay Active & Social",
+    excerpt: "Discover low-impact, social activities perfect for older adults in Newcastle — from table tennis to walking groups.",
+  },
+  {
+    slug: "gym-alternatives-newcastle",
+    title: "Gym Alternatives in Newcastle: Fun Ways to Stay Fit",
+    excerpt: "Tired of the gym? Compare affordable, social alternatives to gym memberships in Newcastle.",
+  },
+  {
+    slug: "low-impact-sports-newcastle",
+    title: "Low-Impact Sports in Newcastle: Gentle Exercise That's Fun",
+    excerpt: "Looking for exercise that's easy on your joints? Explore low-impact sports options in Newcastle.",
+  },
+  {
+    slug: "sports-clubs-newcastle",
+    title: "Sports Clubs in Newcastle: Find Your Sport & Join",
+    excerpt: "From team sports to individual pursuits — find the right sports club for you in Newcastle.",
+  },
+  {
+    slug: "racquet-sports-newcastle",
+    title: "Racquet Sports in Newcastle: Tennis, Table Tennis, Badminton & Squash",
+    excerpt: "Compare racquet sports in Newcastle — cost, venues, fitness level, and which is best for beginners.",
+  },
+  {
+    slug: "school-holiday-activities-newcastle",
+    title: "School Holiday Activities in Newcastle: Fun for Kids & Families",
+    excerpt: "Keep the kids entertained these school holidays with our guide to family-friendly activities in Newcastle.",
+  },
+  {
+    slug: "things-to-do-lake-macquarie",
+    title: "Things to Do in Lake Macquarie: Activities & Sports",
+    excerpt: "Explore what Lake Macquarie has to offer — from lake activities and bushwalks to nearby sports clubs.",
   },
   {
     slug: "table-tennis-near-maitland",
@@ -15,15 +85,15 @@ const guides = [
 ];
 ---
 
-<Layout 
-  title="Table Tennis Guides | Newcastle PCYC Table Tennis Club"
-  description="Helpful guides about table tennis in Newcastle and the Hunter region. Indoor activities, beginner tips, and more."
+<Layout
+  title="Newcastle Guides: Activities, Sports & Things to Do | Newcastle Table Tennis"
+  description="Explore our guides to activities, sports, and things to do in Newcastle and the Hunter region. Find your next hobby, sport, or social club."
 >
   <!-- Hero -->
-  <div class="bg-blue-900 py-16">
+  <div class="bg-neutral-900 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-      <h1 class="text-4xl font-extrabold">Guides & Resources</h1>
-      <p class="mt-4 text-xl text-blue-200">Helpful information about table tennis in Newcastle and the Hunter region</p>
+      <h1 class="text-4xl font-bold font-heading uppercase">Guides & Resources</h1>
+      <p class="mt-4 text-xl text-neutral-300">Helpful guides to activities, sports, and things to do in Newcastle and the Hunter region</p>
     </div>
   </div>
 
@@ -31,22 +101,22 @@ const guides = [
   <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="space-y-6">
       {guides.map((guide) => (
-        <a href={`/guides/${guide.slug}`} class="block bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:border-blue-300 transition">
-          <h3 class="text-xl font-bold text-blue-900 mb-2">{guide.title}</h3>
-          <p class="text-gray-600">{guide.excerpt}</p>
+        <a href={`/guides/${guide.slug}`} class="block bg-white p-6 rounded-lg shadow-sm border border-neutral-200 hover:shadow-md hover:border-brand-300 transition">
+          <h3 class="text-xl font-bold text-neutral-900 mb-2">{guide.title}</h3>
+          <p class="text-neutral-600">{guide.excerpt}</p>
         </a>
       ))}
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="bg-blue-900 py-16">
+  <section class="bg-neutral-900 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-      <h2 class="text-3xl font-bold">Ready to Play?</h2>
-      <p class="mt-4 text-blue-200 mb-8">Your first session is free — just show up!</p>
+      <h2 class="text-3xl font-bold font-heading uppercase">Ready to Play?</h2>
+      <p class="mt-4 text-neutral-300 mb-8">Your first session is free — just show up!</p>
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/timetable" class="bg-white text-blue-900 px-6 py-3 rounded-md font-medium hover:bg-blue-50 transition" data-track="timetable_view">See the Timetable</a>
-        <a href="/expect" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-blue-900 transition" data-track="cta_click">What to Expect</a>
+        <a href="/timetable" class="bg-brand-600 text-white px-6 py-3 rounded-md font-bold hover:bg-brand-700 transition uppercase tracking-wide" data-track="timetable_view">See the Timetable</a>
+        <a href="/expect" class="border-2 border-white text-white px-6 py-3 rounded-md font-bold hover:bg-white hover:text-neutral-900 transition uppercase tracking-wide" data-track="cta_click">What to Expect</a>
       </div>
     </div>
   </section>

@@ -1,0 +1,304 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Activities for Seniors in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What activities are good for seniors in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle offers many activities for seniors including table tennis, lawn bowls, swimming, walking groups, and community education through U3A. Table tennis is an ideal choice because it is low-impact on joints, highly social, and provides proven cognitive benefits such as improved reflexes, hand-eye coordination, and mental sharpness. Newcastle PCYC Table Tennis Club welcomes players of all ages and ability levels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is table tennis suitable for older adults?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, table tennis is extremely well-suited for older adults. It is low impact on joints, and you can play at your own pace — from gentle rallies to competitive matches. Our club has members ranging from their 20s to their 80s. Regular play improves reflexes, balance, hand-eye coordination, and overall mental sharpness, making it one of the best sports for healthy ageing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost for seniors to play table tennis in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your first session at Newcastle PCYC Table Tennis Club is completely free — just show up and try it out. After that, seniors pay $8.50 per visit. Annual club membership is $40, and equipment is provided so there is no need to purchase your own racket to get started."
+      }
+    }
+  ]
+});
+
+const combinedSchema = `[${breadcrumbSchema},${faqSchema}]`;
+---
+
+<Layout
+  title="Activities for Seniors in Newcastle NSW: Stay Active & Social | Guide"
+  description="Discover the best activities for seniors in Newcastle NSW. From walking groups and swimming to low-impact table tennis, find social and active options for over 50s."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <span class="text-neutral-700">Activities for Seniors</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-bold font-heading">Activities for Seniors in Newcastle: Stay Active, Social & Sharp</h1>
+      <p class="mt-4 text-neutral-300">A guide to staying healthy and connected in the Hunter Region for over 50s</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Staying active as you get older is one of the best things you can do for your body, your mind, and your social life. Whether you have recently retired, moved to the area, or simply want to try something new, <strong>Newcastle and the Hunter Region</strong> offer a wonderful range of activities designed for seniors and over 50s. This guide covers the most popular options and explains why <strong>table tennis</strong> has become a favourite among older adults looking for a fun, low-impact way to stay sharp.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Popular Activities for Seniors in Newcastle</h2>
+      <p class="text-neutral-700">
+        Newcastle is well served with activities that cater to older adults. Here are some of the most popular choices across the region:
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Walking Groups</h3>
+      <p class="text-neutral-700">
+        Newcastle's coastline and parklands make it an ideal city for walking. Groups meet regularly at spots like Bathers Way, Merewether Beach, and Blackbutt Reserve. Walking is free, easy on the joints, and a great way to meet people. Many local community centres and councils organise guided group walks for seniors.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Swimming & Aqua Aerobics</h3>
+      <p class="text-neutral-700">
+        Newcastle's ocean baths and public pools offer excellent options for older adults. Aqua aerobics classes provide a full-body workout with minimal joint stress, and many pools run dedicated seniors sessions. The Lambton Pool, Newcastle Ocean Baths, and various Lake Macquarie pools all offer programs for over 50s.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Lawn Bowls</h3>
+      <p class="text-neutral-700">
+        Bowling clubs across Newcastle offer a traditional social sport that remains hugely popular with seniors. It is gentle, strategic, and provides a built-in social network. Clubs in Merewether, Hamilton, and Broadmeadow all welcome new members.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">U3A (University of the Third Age)</h3>
+      <p class="text-neutral-700">
+        U3A Hunter Region runs a wide variety of courses and interest groups for retirees — from languages and history to art, music, and current affairs. It is a fantastic way to keep learning and meet like-minded people without the pressure of formal education.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Community Centres & Men's Sheds</h3>
+      <p class="text-neutral-700">
+        Local community centres across Newcastle, Lake Macquarie, and Maitland run regular programs for seniors including art classes, craft groups, exercise sessions, and social mornings. Men's Sheds provide a welcoming space for hands-on projects and mateship.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis</h3>
+      <p class="text-neutral-700">
+        Table tennis is increasingly recognised as one of the <strong>best sports for older adults</strong>. It is played indoors, requires minimal equipment, and can be enjoyed at any pace. It provides a unique combination of physical activity, cognitive stimulation, and social interaction — all in a single session. More on this below.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Why Table Tennis Is Ideal for Seniors</h2>
+      <p class="text-neutral-700">
+        Of all the activities available to seniors in Newcastle, table tennis stands out for the breadth of benefits it delivers. Researchers and health professionals have long praised it as a <a href="/guides/low-impact-sports-newcastle" class="text-brand-600 hover:underline">low-impact sport</a> that ticks almost every box for healthy ageing.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Cognitive Benefits</h3>
+      <p class="text-neutral-700">
+        Table tennis has been called "the brain sport" for good reason. Every rally requires rapid decision-making, spatial awareness, and hand-eye coordination. Studies have shown that regular play can improve reaction time, sharpen concentration, and stimulate areas of the brain associated with memory and strategic thinking. For seniors, this translates into a genuinely enjoyable way to keep your mind active.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Improves reflexes and reaction time</strong> — the fast-paced nature of the game keeps your brain engaged</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Enhances hand-eye coordination</strong> — tracking and returning the ball sharpens spatial awareness</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Boosts mental sharpness</strong> — strategic play stimulates problem-solving and focus</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Social Connection</h3>
+      <p class="text-neutral-700">
+        Loneliness and social isolation are significant challenges for older Australians. Joining a table tennis club is one of the most effective ways to <a href="/guides/make-friends-newcastle" class="text-brand-600 hover:underline">build new friendships</a> and feel part of a community. At Newcastle PCYC Table Tennis Club, our members range from their 20s to their 80s — everyone plays together, and the atmosphere is welcoming and inclusive. Many of our senior members say the social side of the club is just as important to them as the exercise.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Combat isolation</strong> — regular sessions give you something to look forward to each week</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Mixed-age community</strong> — play alongside people of all ages and backgrounds</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Friendly club culture</strong> — newcomers are always made welcome</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Physical Health</h3>
+      <p class="text-neutral-700">
+        Table tennis provides genuine physical exercise without the joint stress of running, tennis, or other high-impact sports. You move constantly during a game — stepping, stretching, rotating — which improves balance, flexibility, and cardiovascular fitness. Because you control the intensity, it suits everyone from gentle social players to competitive athletes.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Low impact on joints</strong> — no running or heavy lifting involved</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Improves balance and coordination</strong> — essential for fall prevention in older adults</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Play at your own pace</strong> — from relaxed rallies to fast-paced competitive games</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Mental Health & Wellbeing</h3>
+      <p class="text-neutral-700">
+        Regular physical activity is one of the most effective ways to manage stress, anxiety, and low mood. Table tennis adds an extra dimension because the concentration required during play acts as a form of mindfulness — you simply cannot worry about other things when you are focused on returning a fast-spinning ball. The combination of exercise, social interaction, and mental engagement makes it a powerful tool for overall wellbeing.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Playing Table Tennis at Newcastle PCYC</h2>
+      <p class="text-neutral-700">
+        Newcastle PCYC Table Tennis Club has been welcoming players since 1996. We operate out of PCYC Newcastle in Broadmeadow and run three open sessions per week. Whether you are a complete beginner or an experienced player, you will find games at your level. Read more about <a href="/expect" class="text-brand-600 hover:underline">what to expect at your first session</a>.
+      </p>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h4 class="font-bold text-neutral-900 mb-3">Session Times</h4>
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>Monday:</strong> 6:30 PM - 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Wednesday:</strong> 6:30 PM - 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Saturday:</strong> 2:30 PM - 6:00 PM</li>
+        </ul>
+        <p class="text-neutral-700 mt-3 text-sm">See the full <a href="/timetable" class="text-brand-600 hover:underline">timetable</a> for details.</p>
+      </div>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h4 class="font-bold text-neutral-900 mb-3">Cost</h4>
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&bull;</span>
+            <span class="text-neutral-700"><strong>First session:</strong> Free — just turn up and try it</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&bull;</span>
+            <span class="text-neutral-700"><strong>Seniors/Concession:</strong> $8.50 per visit</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&bull;</span>
+            <span class="text-neutral-700"><strong>Adults:</strong> $9.50 per visit</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&bull;</span>
+            <span class="text-neutral-700"><strong>Annual membership:</strong> $40</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h4 class="font-bold text-neutral-900 mb-3">Location</h4>
+        <p class="text-neutral-700">
+          PCYC Newcastle, Young Road, Broadmeadow NSW 2292. Free on-site parking is available. <a href="/location" class="text-brand-600 hover:underline">Get directions</a>.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">What You Need to Get Started</h2>
+      <p class="text-neutral-700">
+        Getting started at our club could not be simpler. There is no need to book, register in advance, or bring any equipment. Here is what we recommend:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Comfortable clothing</strong> — casual sportswear is fine</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Indoor sports shoes</strong> — flat-soled, non-marking shoes</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>A water bottle</strong> — the hall can get warm during busy sessions</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Equipment provided</strong> — we have rackets you can borrow at no charge</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Explore More Guides</h2>
+      <p class="text-neutral-700">
+        Looking for more ideas? Browse our other guides for the Newcastle area:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><a href="/guides/social-clubs-newcastle" class="text-brand-600 hover:underline">Social Clubs in Newcastle</a> — find your community</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><a href="/guides/low-impact-sports-newcastle" class="text-brand-600 hover:underline">Low-Impact Sports in Newcastle</a> — gentle on the body, great for fitness</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><a href="/guides/make-friends-newcastle" class="text-brand-600 hover:underline">How to Make Friends in Newcastle</a> — tips for building social connections</span>
+        </li>
+      </ul>
+
+      <!-- FAQ Section -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Frequently Asked Questions</h2>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h3 class="text-xl font-bold text-neutral-900 mt-0 mb-3">What activities are good for seniors in Newcastle?</h3>
+        <p class="text-neutral-700">
+          Newcastle offers a wide range of activities suited to seniors, including table tennis, lawn bowls, swimming, walking groups, U3A courses, and community centre programs. Table tennis is an especially good choice because it is low-impact, highly social, and delivers proven cognitive benefits such as improved reflexes, hand-eye coordination, and mental sharpness.
+        </p>
+      </div>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h3 class="text-xl font-bold text-neutral-900 mt-0 mb-3">Is table tennis suitable for older adults?</h3>
+        <p class="text-neutral-700">
+          Absolutely. Table tennis is low impact on joints and you can play at your own pace, making it suitable for a wide range of fitness levels. At Newcastle PCYC Table Tennis Club, our members range from their 20s to their 80s. Regular play has been shown to improve reflexes, balance, hand-eye coordination, and overall cognitive function — all of which are important for healthy ageing.
+        </p>
+      </div>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h3 class="text-xl font-bold text-neutral-900 mt-0 mb-3">How much does it cost for seniors to play table tennis in Newcastle?</h3>
+        <p class="text-neutral-700">
+          Your first session is completely free. After that, seniors and concession holders pay $8.50 per visit, while standard adults pay $9.50. Annual club membership is $40. Equipment is provided, so there is no need to buy a racket to get started.
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Ready to give it a try?</h3>
+        <p class="text-brand-700 mb-4">Your first session is free — no booking required. Just show up during any session and introduce yourself. Our members will make you feel right at home.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

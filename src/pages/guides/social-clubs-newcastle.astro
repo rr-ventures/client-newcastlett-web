@@ -1,0 +1,284 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Social Clubs in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What social clubs are there in Newcastle NSW?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle has many social clubs including sporting clubs (table tennis, tennis, lawn bowls), hobby groups (photography, gardening, crafts), community groups (Rotary, Lions), and interest-based meetups. Newcastle PCYC Table Tennis Club is one of the most welcoming options for adults looking to meet new people through sport."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I join a social club in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most social clubs in Newcastle welcome drop-ins or have simple sign-up processes. For Newcastle PCYC Table Tennis Club, you can simply show up to any session — no booking required. Your first session is free, and there's no pressure to commit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there social clubs for adults over 50 in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many clubs welcome members of all ages. Table tennis is particularly popular with adults over 50 because it's low-impact, social, and can be played at your own pace. Our club has members ranging from their 20s to their 80s."
+      }
+    }
+  ]
+});
+
+const combinedSchema = `[${breadcrumbSchema},${faqSchema}]`;
+---
+
+<Layout
+  title="Social Clubs in Newcastle NSW: Find Your Community | 2026 Guide"
+  description="Looking for social clubs in Newcastle NSW? Discover friendly groups where you can meet new people, stay active, and have fun. Try table tennis — your first session is free."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <span class="text-neutral-700">Social Clubs</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-bold font-heading">Social Clubs in Newcastle NSW: Find Your Community</h1>
+      <p class="mt-4 text-neutral-300">A guide to the best ways to meet people, stay active, and build lasting friendships in Newcastle</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Moving to a new city, retiring, or simply looking to expand your social circle? Newcastle has a thriving community of social clubs that make it easy to meet like-minded people. Whether you're into sport, arts, volunteering, or just want a regular reason to get out of the house, there's a club for you.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Types of Social Clubs in Newcastle</h2>
+      <p class="text-neutral-700">
+        Newcastle's social club scene is surprisingly diverse. Here's a snapshot of what's available across the city and surrounding suburbs.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Sporting Clubs</h3>
+      <p class="text-neutral-700">
+        Sport is one of the easiest ways to meet people because it gives you a shared activity and a regular schedule. Newcastle has clubs for almost every sport you can think of:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Table tennis</strong> — Indoor, social, and suitable for all ages and fitness levels</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Lawn bowls</strong> — Popular with social groups, many clubs offer barefoot bowls nights</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Tennis</strong> — Several clubs around Newcastle offer social hit-ups alongside competitive ladders</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Swimming</strong> — Ocean and pool-based swim clubs with regular morning sessions</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Walking and running groups</strong> — Parkrun at various locations plus social hiking groups</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Hobby and Interest Groups</h3>
+      <p class="text-neutral-700">
+        If sport isn't your thing, Newcastle has plenty of hobby-based clubs where you can learn something new while making friends:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Photography clubs</strong> — Regular outings and workshops around the Hunter region</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Gardening groups</strong> — Community gardens and horticultural societies</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Craft and makers groups</strong> — Knitting circles, woodworking, and art classes</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Book clubs</strong> — Several libraries and bookshops host regular groups</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Community Organisations and Meetups</h3>
+      <p class="text-neutral-700">
+        Community service clubs like Rotary, Lions, and Zonta have active chapters in Newcastle and are always looking for new members. There are also informal meetup groups for everything from board games to language exchange, often organised through platforms like Meetup.com or local Facebook groups.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">What Makes a Great Social Club?</h2>
+      <p class="text-neutral-700">
+        Not all clubs are created equal. If you're looking for a genuinely social experience, here are the qualities that matter most:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Welcoming atmosphere</strong> — You should feel comfortable from your very first visit, not like an outsider</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Low barrier to entry</strong> — No long sign-up process, no expensive gear, no tryouts</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Regular schedule</strong> — Consistency is key for building friendships over time</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Affordable</strong> — Cost shouldn't be a barrier to social connection</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Mixed ages and backgrounds</strong> — The best clubs bring together people you wouldn't normally meet</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Why Table Tennis Works So Well as a Social Club</h2>
+      <p class="text-neutral-700">
+        Of all the social club options in Newcastle, table tennis ticks every box. It's one of those rare activities where complete beginners and experienced players can share the same space and genuinely enjoy themselves. Here's why it stands out:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Natural conversation starter</strong> — You're standing across a table from someone, chatting between rallies. Friendships form without any awkward small talk</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>All fitness levels</strong> — You control the pace. Play gently or go full speed, it's up to you</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Low impact on joints</strong> — Particularly popular with <a href="/guides/seniors-activities-newcastle" class="text-brand-600 hover:underline">adults over 50</a> who want to stay active without risking injury</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Indoor and weather-proof</strong> — Rain or shine, sessions run year-round in a climate-controlled venue</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Quick to pick up</strong> — Most people can rally within minutes, even if they've never held a bat before</span>
+        </li>
+      </ul>
+      <p class="text-neutral-700">
+        Many of our members say the same thing: they came for the table tennis but stayed for the people. It's the kind of place where you walk in not knowing anyone and leave with plans to come back next week. If you're curious about <a href="/guides/make-friends-newcastle" class="text-brand-600 hover:underline">how to make friends in Newcastle</a>, this is one of the most natural ways to do it.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Newcastle PCYC Table Tennis Club</h2>
+      <p class="text-neutral-700">
+        Operating since 1996 at PCYC Newcastle in Broadmeadow, our club is one of the longest-running social sporting clubs in the region. We welcome everyone from complete beginners to seasoned competitors, and our members range from their 20s through to their 80s.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Session Times</h3>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>Monday:</strong> 6:30 PM - 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Wednesday:</strong> 6:30 PM - 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Saturday:</strong> 2:30 PM - 6:00 PM</li>
+        </ul>
+        <p class="text-neutral-700 mt-3 text-sm">
+          Evening sessions are perfect if you're looking for <a href="/guides/evening-activities-newcastle" class="text-brand-600 hover:underline">things to do in Newcastle at night</a>.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Cost</h3>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&check;</span>
+            <span class="text-neutral-700"><strong>First session free</strong> — Come and try with no obligation</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&check;</span>
+            <span class="text-neutral-700"><strong>Casual visit:</strong> $8.50 - $9.50 per session</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&check;</span>
+            <span class="text-neutral-700"><strong>Annual membership:</strong> $40 per year</span>
+          </li>
+        </ul>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">What You Need to Know</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>No booking required</strong> — Just show up during any session</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Equipment provided</strong> — We have bats you can borrow, so there's nothing to buy</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Wear comfortable clothes</strong> — Indoor sports shoes and something you can move in</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Come alone or bring a friend</strong> — Either way, you'll be made welcome</span>
+        </li>
+      </ul>
+      <p class="text-neutral-700">
+        Not sure what your first visit will be like? Read our <a href="/expect" class="text-brand-600 hover:underline">What to Expect</a> page for a step-by-step walkthrough.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Frequently Asked Questions</h2>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">What social clubs are there in Newcastle NSW?</h3>
+      <p class="text-neutral-700">
+        Newcastle has a wide range of social clubs including sporting clubs (table tennis, tennis, lawn bowls, swimming), hobby groups (photography, gardening, crafts), community organisations (Rotary, Lions), and interest-based meetup groups. Newcastle PCYC Table Tennis Club is one of the most welcoming options for adults looking to meet new people through sport.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">How do I join a social club in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Most social clubs in Newcastle welcome drop-ins or have simple sign-up processes. For Newcastle PCYC Table Tennis Club, you can simply show up to any session — no booking required. Your first session is free, and there's no pressure to commit.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Are there social clubs for adults over 50 in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Yes, many clubs welcome members of all ages. Table tennis is particularly popular with adults over 50 because it's low-impact, social, and can be played at your own pace. Our club has members ranging from their 20s to their 80s. Check out our guide to <a href="/guides/seniors-activities-newcastle" class="text-brand-600 hover:underline">activities for seniors in Newcastle</a> for more ideas.
+      </p>
+
+      <!-- CTA -->
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Ready to find your community?</h3>
+        <p class="text-brand-700 mb-4">Try a free session at Newcastle PCYC Table Tennis Club — no booking required. Just show up and say hello.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

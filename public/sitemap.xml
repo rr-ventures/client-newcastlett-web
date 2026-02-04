@@ -2,68 +2,154 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.newcastletabletennis.com.au/</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.newcastletabletennis.com.au/timetable</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.newcastletabletennis.com.au/expect</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.newcastletabletennis.com.au/pricing</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.newcastletabletennis.com.au/location</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.newcastletabletennis.com.au/competitions</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.newcastletabletennis.com.au/about</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/areas</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Guides Hub -->
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Individual Guides -->
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/things-to-do-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newcastletabletennis.com.au/areas</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://www.newcastletabletennis.com.au/guides/social-clubs-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newcastletabletennis.com.au/guides</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://www.newcastletabletennis.com.au/guides/evening-activities-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/weekend-activities-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/hobbies-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/make-friends-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.newcastletabletennis.com.au/guides/indoor-activities-newcastle</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/rainy-day-activities-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/seniors-activities-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/gym-alternatives-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/low-impact-sports-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/sports-clubs-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/racquet-sports-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/school-holiday-activities-newcastle</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.newcastletabletennis.com.au/guides/things-to-do-lake-macquarie</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.newcastletabletennis.com.au/guides/table-tennis-near-maitland</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>

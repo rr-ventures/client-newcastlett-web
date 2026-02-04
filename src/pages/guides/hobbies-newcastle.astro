@@ -1,0 +1,261 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Hobbies in Newcastle"}
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What hobbies can I do in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle offers a wide range of hobbies to suit every interest. Active hobbies include table tennis, surfing, rock climbing, and cycling. Creative pursuits include art classes, pottery, and photography groups. Social hobbies include book clubs, community gardens, and volunteering with local organisations. Many of these are available through community centres, local clubs, and venues like PCYC Broadmeadow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are good hobbies for adults in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best hobbies for adults in Newcastle combine physical activity with social connection. Table tennis is an excellent choice because it is social, active, and affordable — sessions at PCYC Broadmeadow cost just $8.50 to $9.50 with your first session free. Other popular adult hobbies include surfing at Merewether or Bar Beach, bushwalking in Glenrock or Blackbutt Reserve, and joining craft or hobby groups through local community centres."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I try new hobbies in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Great places to try new hobbies in Newcastle include PCYC Newcastle, community centres in Hamilton and Wallsend, local sports clubs, and meetup groups. For table tennis, you can visit PCYC Broadmeadow on Monday or Wednesday evenings (6:30-10pm) or Saturday afternoons (2:30-6pm). Your first session is free, no booking is required, and all equipment is provided."
+      }
+    }
+  ]
+};
+
+const combinedSchema = JSON.stringify([breadcrumbSchema, faqSchema]);
+---
+
+<Layout
+  title="Hobbies in Newcastle: Fun Things to Try in 2026 | Guide"
+  description="Discover the best hobbies in Newcastle NSW. From table tennis and surfing to art classes and social clubs, find your next favourite pastime in the Hunter Region."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <span class="text-neutral-700">Hobbies in Newcastle</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-bold font-heading">Hobbies in Newcastle: Fun Things to Try in 2026</h1>
+      <p class="mt-4 text-neutral-300">Your guide to finding a hobby you'll love in the Hunter Region</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Looking for a new hobby in Newcastle? Whether you want to get moving, explore your creative side, or simply meet new people, Newcastle and the Hunter Region have something for everyone. From outdoor adventures along the coastline to <a href="/guides/indoor-activities-newcastle" class="text-brand-600 hover:underline">indoor activities</a> at local clubs, there is no shortage of ways to spend your free time.
+      </p>
+      <p class="text-neutral-700">
+        The best hobbies combine physical activity, social connection, and personal growth. In this guide we break down the top hobbies available in Newcastle across three categories: active, creative, and social. We also highlight <strong>table tennis</strong> as one hobby that ticks all three boxes while remaining affordable and accessible for every age and fitness level.
+      </p>
+
+      <!-- Active Hobbies -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Active Hobbies in Newcastle</h2>
+      <p class="text-neutral-700">
+        Newcastle's natural setting makes it an ideal city for staying active. With beaches, bushland reserves, and well-maintained sporting facilities, you can find a physical hobby to suit any preference or fitness level.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis</h3>
+      <p class="text-neutral-700">
+        Table tennis is one of the most accessible active hobbies in Newcastle. It delivers a genuine workout -- improving reflexes, coordination, and cardiovascular fitness -- without the heavy impact on joints that comes with many other sports. At Newcastle PCYC Table Tennis Club in Broadmeadow, you can play three times per week in a friendly, welcoming environment. Sessions run <strong>Monday and Wednesday evenings from 6:30 to 10pm</strong> and <strong>Saturday afternoons from 2:30 to 6pm</strong>. Your first session is free, equipment is provided, and no booking is needed. After that, sessions cost just <strong>$8.50 to $9.50</strong> depending on age.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Surfing</h3>
+      <p class="text-neutral-700">
+        Newcastle is one of Australia's premier surf cities. Breaks at Merewether, Bar Beach, and Nobbys are suitable for beginners and experienced surfers alike. Several local surf schools offer lessons if you are just starting out, and the consistent swell means you can surf year-round.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Rock Climbing</h3>
+      <p class="text-neutral-700">
+        Indoor climbing gyms in Newcastle provide a full-body workout and a supportive community. Bouldering is especially popular because it requires no ropes or partner to get started. Most gyms offer introductory sessions and gear hire for newcomers.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Cycling</h3>
+      <p class="text-neutral-700">
+        The Fernleigh Track, the Throsby Creek cycleway, and coastal routes through Merewether and Bar Beach make Newcastle a fantastic city for cycling. Whether you prefer road riding, mountain biking in Glenrock, or casual weekend rides, local cycling groups welcome riders of all abilities.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Bushwalking</h3>
+      <p class="text-neutral-700">
+        Blackbutt Reserve, Glenrock State Conservation Area, and the Awabakal Nature Reserve all offer walking trails minutes from the CBD. Bushwalking is free, requires no equipment beyond a good pair of shoes, and is a wonderful way to unwind after a long week.
+      </p>
+
+      <!-- Creative Hobbies -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Creative Hobbies in Newcastle</h2>
+      <p class="text-neutral-700">
+        Newcastle has a thriving arts and creative scene. From gallery workshops to independent studios, you can explore creative hobbies in supportive group settings.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Art Classes</h3>
+      <p class="text-neutral-700">
+        Studios and community centres across Newcastle offer drawing, painting, and mixed-media classes for beginners and experienced artists. The Newcastle Art Gallery and various co-op spaces regularly host drop-in workshops and short courses.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Pottery and Ceramics</h3>
+      <p class="text-neutral-700">
+        Pottery has seen a huge resurgence in popularity. Several Newcastle studios offer wheel-throwing and hand-building classes, often in small groups so you receive personal attention. It is a deeply satisfying hobby that produces something tangible you can use at home.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Photography</h3>
+      <p class="text-neutral-700">
+        Newcastle's dramatic coastline, heritage architecture, and vibrant street scenes provide endless subjects. Photography meetup groups organise regular walks and outings, and you can join with nothing more than a smartphone to get started.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Music and Performing Arts</h3>
+      <p class="text-neutral-700">
+        Community choirs, theatre groups, and music workshops are active throughout the city. Whether you want to learn an instrument, join a band, or try your hand at improv comedy, Newcastle's performing arts community is welcoming and diverse.
+      </p>
+
+      <!-- Social Hobbies -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Social Hobbies in Newcastle</h2>
+      <p class="text-neutral-700">
+        If meeting new people is your priority, Newcastle has plenty of hobbies built around community and connection. Many of these double as <a href="/guides/social-clubs-newcastle" class="text-brand-600 hover:underline">social clubs</a> where friendships develop naturally over shared interests.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Book Clubs</h3>
+      <p class="text-neutral-700">
+        Libraries in Newcastle, Lambton, and Wallsend run regular book clubs that are free to join. Independent bookshops also host reading groups. It is one of the most low-key ways to meet like-minded people in a relaxed setting.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Community Gardens</h3>
+      <p class="text-neutral-700">
+        Community gardens across Newcastle offer plots where you can grow vegetables, herbs, and flowers alongside your neighbours. They are wonderful for learning gardening skills, sharing produce, and building genuine community ties.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Volunteering</h3>
+      <p class="text-neutral-700">
+        Volunteering with local organisations -- from wildlife rescue groups to food banks and event committees -- is a meaningful way to give back while building friendships. Opportunities are listed through Volunteering Hunter and local council websites.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis as a Social Hobby</h3>
+      <p class="text-neutral-700">
+        Table tennis at PCYC Broadmeadow is as much a social activity as it is a sport. Between games, members chat, share tips, and build friendships that extend beyond the club. Many of our players say the social side is what keeps them coming back week after week. With <a href="/guides/evening-activities-newcastle" class="text-brand-600 hover:underline">evening sessions</a> on Monday and Wednesday, it fits easily into a working adult's schedule.
+      </p>
+
+      <!-- Why Table Tennis -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Why Table Tennis Stands Out</h2>
+      <p class="text-neutral-700">
+        Most hobbies fall into one category: active, creative, or social. Table tennis is rare because it genuinely combines all three. You get a real physical workout, you develop the creative skill of reading spin and placement, and you meet a diverse group of friendly people every session.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Active</strong> — Burns calories, sharpens reflexes, and improves hand-eye coordination</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Social</strong> — Meet players of all ages and backgrounds in a welcoming club environment</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Accessible</strong> — No experience needed, equipment provided, first session free</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Affordable</strong> — Just $8.50 to $9.50 per session with no lock-in contracts</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Indoor and weather-proof</strong> — Play year-round regardless of rain, heat, or wind</span>
+        </li>
+      </ul>
+
+      <!-- Session Details -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Session Times and Details</h2>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>Monday:</strong> 6:30 PM - 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Wednesday:</strong> 6:30 PM - 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Saturday:</strong> 2:30 PM - 6:00 PM</li>
+        </ul>
+      </div>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&bull;</span>
+            <span class="text-neutral-700"><strong>Location:</strong> PCYC Newcastle, Young Rd, Broadmeadow NSW 2292</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&bull;</span>
+            <span class="text-neutral-700"><strong>Cost:</strong> $8.50 (juniors/students) to $9.50 (adults) per session</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&bull;</span>
+            <span class="text-neutral-700"><strong>First session:</strong> Free, no booking required</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&bull;</span>
+            <span class="text-neutral-700"><strong>Equipment:</strong> Bats and balls provided</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-brand-600 mr-2">&bull;</span>
+            <span class="text-neutral-700"><strong>What to bring:</strong> Comfortable clothes and indoor sports shoes</span>
+          </li>
+        </ul>
+      </div>
+      <p class="text-neutral-700">
+        Want to know more about what your first visit looks like? Check out our <a href="/expect" class="text-brand-600 hover:underline">new player guide</a> for everything you need to know before you arrive.
+      </p>
+
+      <!-- FAQ Section -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Frequently Asked Questions</h2>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">What hobbies can I do in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Newcastle offers a wide range of hobbies to suit every interest. Active hobbies include table tennis, surfing, rock climbing, and cycling. Creative pursuits include art classes, pottery, and photography groups. Social hobbies include book clubs, community gardens, and volunteering with local organisations. Many of these are available through community centres, local clubs, and venues like PCYC Broadmeadow.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">What are good hobbies for adults in Newcastle?</h3>
+      <p class="text-neutral-700">
+        The best hobbies for adults in Newcastle combine physical activity with social connection. Table tennis is an excellent choice because it is social, active, and affordable -- sessions at PCYC Broadmeadow cost just $8.50 to $9.50 with your first session free. Other popular adult hobbies include surfing at Merewether or Bar Beach, bushwalking in Glenrock or Blackbutt Reserve, and joining craft or hobby groups through local community centres.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Where can I try new hobbies in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Great places to try new hobbies in Newcastle include PCYC Newcastle, community centres in Hamilton and Wallsend, local sports clubs, and meetup groups. For table tennis, you can visit PCYC Broadmeadow on Monday or Wednesday evenings (6:30-10pm) or Saturday afternoons (2:30-6pm). Your first session is free, no booking is required, and all equipment is provided.
+      </p>
+
+      <!-- CTA -->
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Ready to try a new hobby?</h3>
+        <p class="text-brand-700 mb-4">Table tennis at PCYC Broadmeadow is the perfect place to start. Your first session is free, no booking required -- just show up and play!</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

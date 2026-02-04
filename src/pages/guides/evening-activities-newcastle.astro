@@ -1,0 +1,226 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Evening Activities in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is there to do in Newcastle on a weeknight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle has plenty of weeknight activities. Table tennis at PCYC Broadmeadow runs Monday and Wednesday evenings from 6:30pm. You'll also find trivia nights at local pubs, evening yoga classes, night markets (seasonal), late-night dining along Darby Street, and cinema screenings throughout the week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What evening sports can I play in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle offers several evening sports options. Table tennis at PCYC Broadmeadow runs Monday and Wednesday from 6:30pm to 10pm — no booking required. You can also find indoor soccer, basketball, badminton, and social tennis leagues running on weeknight evenings across the city."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there things to do in Newcastle after work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, plenty. Table tennis sessions at PCYC Broadmeadow start at 6:30pm — perfect after-work timing. No booking needed, just show up. Equipment is provided and your first session is free. It's a great way to unwind, stay active, and meet new people after a day at work."
+      }
+    }
+  ]
+});
+
+const combinedSchema = `[${breadcrumbSchema},${faqSchema}]`;
+---
+
+<Layout
+  title="Evening Activities in Newcastle: Things to Do After Work | Guide"
+  description="Discover the best weeknight and evening activities in Newcastle. From table tennis to live music, trivia nights to yoga — find something fun to do after work every night of the week."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <span class="text-neutral-700">Evening Activities in Newcastle</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-bold font-heading">Evening Activities in Newcastle: Things to Do After Work</h1>
+      <p class="mt-4 text-neutral-300">Your night-by-night guide to weeknight fun in Newcastle and the Hunter</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Finished work and wondering what to do with your evening? You are not alone. Newcastle has far more going on after 5pm than most people realise. Whether you want something active, social, creative, or relaxing, there is an evening activity in Newcastle to suit every mood and every night of the week.
+      </p>
+      <p class="text-neutral-700">
+        We put together this night-by-night guide to help you break the scroll-couch-sleep cycle and actually enjoy your weeknights. Some of these activities are free, some cost a few dollars, and all of them beat staring at Netflix trying to pick something to watch.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Why Weeknight Activities Matter</h2>
+      <p class="text-neutral-700">
+        Research consistently shows that people who have regular evening activities outside the home report higher levels of wellbeing, stronger social connections, and better sleep. It does not have to be anything intense. Even one structured evening per week gives you something to look forward to, a reason to leave the house, and a chance to meet people outside your usual circle.
+      </p>
+      <p class="text-neutral-700">
+        Having a regular <a href="/guides/hobbies-newcastle" class="text-brand-600 hover:underline">hobby or activity</a> is one of the simplest ways to improve your quality of life. And in a city like Newcastle, the options are surprisingly good.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Monday Evening</h2>
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis at PCYC Broadmeadow</h3>
+      <p class="text-neutral-700">
+        Monday night is one of the best nights to start your week with something active and social. <strong>Newcastle PCYC Table Tennis Club</strong> runs sessions every Monday from 6:30pm to 10pm at PCYC Newcastle in Broadmeadow. It is the perfect after-work activity: no booking required, equipment is provided, and your <a href="/expect" class="text-brand-600 hover:underline">first session is free</a>.
+      </p>
+      <p class="text-neutral-700">
+        The club welcomes all skill levels, from complete beginners who have never held a bat to experienced competition players. Most people come straight from work and find it a great way to switch off, get moving, and <a href="/guides/make-friends-newcastle" class="text-brand-600 hover:underline">meet new people</a>.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <p class="text-neutral-700"><strong>Monday Table Tennis:</strong> 6:30 PM - 10:00 PM at PCYC Newcastle, Young Rd, Broadmeadow. $9 per session or $40 annual membership. Free first visit. <a href="/timetable" class="text-brand-600 hover:underline">See full timetable</a>.</p>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Trivia Nights</h3>
+      <p class="text-neutral-700">
+        Monday is also a popular night for pub trivia across Newcastle. Several venues in the CBD, Hamilton, and Lambton run weekly trivia competitions. It is a low-cost, social evening out that works well for groups of friends or couples. Check your local pub's social media for details and start times.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Tuesday Evening</h2>
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Yoga and Fitness Classes</h3>
+      <p class="text-neutral-700">
+        Tuesday evenings are well served by yoga studios and fitness centres across Newcastle. From gentle yin yoga to higher-intensity vinyasa flows, there are classes running at studios in the CBD, Merewether, and Adamstown from around 5:30pm onwards. Evening yoga is a brilliant way to decompress after work and improve flexibility, strength, and mental clarity.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Community Classes and Workshops</h3>
+      <p class="text-neutral-700">
+        Tuesday is also a popular night for community education classes. Newcastle Community Arts Centre, local libraries, and various community halls offer evening workshops in everything from ceramics and drawing to language classes and cooking. These are fantastic if you are looking to pick up a new skill while meeting like-minded people.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Wednesday Evening</h2>
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis at PCYC Broadmeadow</h3>
+      <p class="text-neutral-700">
+        Wednesday is another table tennis night at PCYC Broadmeadow, running from 6:30pm to 10pm. Many regulars come on both Monday and Wednesday, but plenty of members pick one night that suits their schedule. Wednesday sessions tend to have a relaxed midweek vibe, and it is a great way to break up the working week with something fun and physical.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <p class="text-neutral-700"><strong>Wednesday Table Tennis:</strong> 6:30 PM - 10:00 PM at PCYC Newcastle, Young Rd, Broadmeadow. Same deal as Monday: no booking, equipment provided, all levels welcome. <a href="/location" class="text-brand-600 hover:underline">Get directions</a>.</p>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Midweek Social Events</h3>
+      <p class="text-neutral-700">
+        Wednesday evenings also see a range of social meetups and events across the city. Running groups, book clubs, and <a href="/guides/social-clubs-newcastle" class="text-brand-600 hover:underline">social clubs</a> often choose midweek for their regular gatherings. If you are new to Newcastle or looking to expand your social circle, a Wednesday activity is an excellent anchor for your week.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Thursday Evening</h2>
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Live Music and Entertainment</h3>
+      <p class="text-neutral-700">
+        Thursday is when Newcastle's live music scene really kicks into gear. Venues like the Cambridge Hotel, Lizottes, and various bars across Beaumont Street in Hamilton host live acts on Thursday nights. From local bands to touring artists, there is usually something on if you enjoy live music. Thursday is also a popular night for comedy shows and open mic events.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Night Markets (Seasonal)</h3>
+      <p class="text-neutral-700">
+        During warmer months, Newcastle hosts evening markets at various locations including the Foreshore and Hunter Street Mall area. These markets typically feature food trucks, local artisans, live entertainment, and a buzzing atmosphere. Keep an eye on local event listings for dates and locations as they change seasonally.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Friday Evening</h2>
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Dining on Darby Street and Beaumont Street</h3>
+      <p class="text-neutral-700">
+        Friday night is prime time for Newcastle's dining scene. Darby Street in Cooks Hill and Beaumont Street in Hamilton are the two main restaurant strips, offering everything from casual pizzerias and Asian fusion to fine dining. Both strips have a walkable, vibrant atmosphere on Friday evenings and are perfect for catching up with friends or a date night.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Cinema and Bars</h3>
+      <p class="text-neutral-700">
+        Event Cinemas Kotara, Hoyts Charlestown, and Reading Cinemas at The Brewery in the CBD all run late sessions on Friday nights. Combine a movie with dinner or drinks at one of Newcastle's growing number of craft beer bars and cocktail lounges for a classic Friday night out. The Honeysuckle precinct near the harbour is particularly popular for evening drinks with a waterfront view.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">The Benefits of a Regular Evening Hobby</h2>
+      <p class="text-neutral-700">
+        Picking one evening activity and committing to it regularly is one of the most underrated things you can do for yourself. Here is what a consistent weekly hobby gives you:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Structure and routine</strong> — Something to look forward to each week</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Social connection</strong> — Regular face time with people who share your interests</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Physical activity</strong> — Even light exercise improves mood and sleep</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Mental sharpness</strong> — Learning and playing keeps your brain engaged</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Stress relief</strong> — A genuine break from work and screens</span>
+        </li>
+      </ul>
+      <p class="text-neutral-700">
+        Table tennis ticks all of these boxes. It is active without being exhausting, social without being forced, and easy to start without any prior experience. That is why so many of our members describe Monday or Wednesday nights as the highlight of their week.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Getting Started with Table Tennis</h2>
+      <p class="text-neutral-700">
+        If you are looking for a regular evening activity in Newcastle, table tennis at PCYC Broadmeadow is one of the easiest to try. Here is what you need to know:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Sessions:</strong> Monday and Wednesday 6:30 PM - 10:00 PM, Saturday 2:30 PM - 6:00 PM</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Cost:</strong> $9 per session or $40 annual membership. First session free</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Equipment:</strong> Bats and balls provided — just wear comfortable clothes and indoor shoes</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Booking:</strong> None required. Just show up</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Skill level:</strong> All levels welcome, from absolute beginners to competition players</span>
+        </li>
+      </ul>
+      <p class="text-neutral-700">
+        The club has been running since 1996 and is one of Newcastle's most established <a href="/guides/social-clubs-newcastle" class="text-brand-600 hover:underline">social sporting clubs</a>. Whether you are after a casual hit or want to work your way into competition play, there is a place for you. Check out our <a href="/guides/hobbies-newcastle" class="text-brand-600 hover:underline">hobbies guide</a> for more ideas on things to try in Newcastle.
+      </p>
+
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Ready to fill your evenings?</h3>
+        <p class="text-brand-700 mb-4">Try table tennis for free — no booking required. Sessions run Monday and Wednesday from 6:30pm. Just show up!</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

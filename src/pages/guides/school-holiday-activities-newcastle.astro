@@ -1,0 +1,232 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "School Holiday Activities in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What can kids do in Newcastle during school holidays?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle has plenty of school holiday activities for kids including table tennis at PCYC Broadmeadow (all ages welcome), Blackbutt Reserve, beaches like Merewether and Nobbys, Wet'n'Wild (seasonal), bowling, cinema, the Hunter Wetlands Centre, Fort Scratchley tours, and skateparks across the city."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there affordable school holiday activities in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many school holiday activities in Newcastle are free or low-cost. Table tennis at PCYC Broadmeadow costs $8.50–$9.50 per session with the first session free. Newcastle's beaches are free, Blackbutt Reserve is free entry, libraries run free holiday programs, and local parks and playgrounds are always available at no cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What indoor activities are there for kids in school holidays in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Indoor school holiday activities in Newcastle include table tennis at PCYC Broadmeadow, bowling, cinema, escape rooms, indoor rock climbing, library holiday programs, and art workshops. Table tennis is a great option as it suits all ages and no booking is required."
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="School Holiday Activities in Newcastle: Fun Things for Kids & Families | Guide"
+  description="Plan your school holidays in Newcastle with this guide to outdoor, indoor, free and rainy-day activities for kids and families. Try table tennis at PCYC Broadmeadow — first session free."
+  schema={`[${breadcrumbSchema},${faqSchema}]`}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">→</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">→</span>
+      <span class="text-neutral-700">School Holiday Activities</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-extrabold font-heading">School Holiday Activities in Newcastle: Fun Things for Kids & Families</h1>
+      <p class="mt-4 text-neutral-300">Your go-to guide for keeping the kids entertained every school break</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        School holidays roll around four times a year, and every parent in Newcastle knows the feeling — two weeks stretching ahead with kids bouncing off the walls. The good news is Newcastle and the Hunter region are packed with activities to keep children of all ages busy, active, and happy. Whether you want free outdoor adventures, affordable <a href="/guides/indoor-activities-newcastle" class="text-brand-600 hover:underline">indoor activities</a>, or something to fill a rainy afternoon, this guide has you covered.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Why School Holidays Need a Plan</h2>
+      <p class="text-neutral-700">
+        Without a loose plan, school holidays can turn into a fortnight of screen time and boredom. You do not need a jam-packed itinerary, but having a handful of go-to activities makes the break more enjoyable for everyone. The trick is mixing free outdoor options with a few structured activities, and always having a <a href="/guides/rainy-day-activities-newcastle" class="text-brand-600 hover:underline">rainy day backup</a> ready. Newcastle makes this easy because the city offers beaches, reserves, parks, and plenty of indoor venues within a short drive.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Outdoor Activities for School Holidays</h2>
+      <p class="text-neutral-700">
+        Newcastle's outdoors is the star of any school holiday lineup. With reliable weather for most of the year, you can fill entire days without spending a cent.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Beaches</h3>
+      <p class="text-neutral-700">
+        Merewether, Bar Beach, Nobbys, and Stockton are all family-friendly and patrolled during holidays. Pack a picnic, grab the boogie boards, and you have a full day sorted. The ocean baths at Merewether and Newcastle are great for younger kids who are not confident in the surf.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Blackbutt Reserve</h3>
+      <p class="text-neutral-700">
+        Free entry, walking tracks, playgrounds, and native wildlife including koalas, wombats, and echidnas. Blackbutt Reserve is a reliable school holiday destination that works for toddlers through to teenagers. Bring a picnic and let the kids explore for hours.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Parks, Playgrounds & Skateparks</h3>
+      <p class="text-neutral-700">
+        Newcastle has excellent parks scattered across the city. Foreshore Park, King Edward Park, and the playgrounds at Jesmond, Lambton, and Wallsend are all worth a visit. For older kids, skateparks at Bar Beach, Wallsend, and Warners Bay provide hours of entertainment. The Hunter Wetlands Centre in Shortland is another free-entry option with boardwalks, bird hides, and open green space.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Fort Scratchley</h3>
+      <p class="text-neutral-700">
+        A free heritage site with tunnels, gun emplacements, and ocean views. Kids love the tunnel tours (small fee), and the grounds are open daily for exploring. It is educational and genuinely interesting for the whole family.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Indoor Activities for School Holidays</h2>
+      <p class="text-neutral-700">
+        When the weather turns or the kids need something different, Newcastle has plenty of <a href="/guides/indoor-activities-newcastle" class="text-brand-600 hover:underline">indoor options</a> to keep everyone active and entertained.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis at PCYC Broadmeadow</h3>
+      <p class="text-neutral-700">
+        Table tennis is one of the best school holiday activities in Newcastle. It suits all ages, it is genuinely fun, and it keeps kids active without requiring any prior experience. At <strong>PCYC Newcastle in Broadmeadow</strong>, the Newcastle Table Tennis Club welcomes families and children of all skill levels. No booking is required — just show up during session times and join in.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>All ages welcome</strong> — Kids, teens, parents, and grandparents play together</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>First session free</strong> — Try before you commit</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>Equipment provided</strong> — No need to bring your own racket</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>Affordable</strong> — Just $8.50–$9.50 per session after your free trial</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>No booking needed</strong> — Drop in during any session</span>
+        </li>
+      </ul>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h4 class="font-bold text-neutral-900 mb-3">Session Times</h4>
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>Monday:</strong> 6:30 PM – 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Wednesday:</strong> 6:30 PM – 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Saturday:</strong> 2:30 PM – 6:00 PM (great for families)</li>
+        </ul>
+      </div>
+
+      <p class="text-neutral-700">
+        The Saturday afternoon session is particularly popular with families. It is a relaxed, social environment where kids can burn off energy while parents have a hit too. Many families make it a regular school holiday tradition. Check the <a href="/timetable" class="text-brand-600 hover:underline">full timetable</a> for details, or read about <a href="/expect" class="text-brand-600 hover:underline">what to expect</a> at your first visit.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Other Indoor Options</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Bowling</strong> — Zone Bowling at Charlestown or Lambton has holiday specials</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Cinema</strong> — Event Cinemas Charlestown and Hoyts at Kotara run kids' club screenings during holidays</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Escape rooms</strong> — Several operators in Newcastle CBD for older kids and teens</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Indoor rock climbing</strong> — Great for adventurous kids who want a physical challenge</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Library holiday programs</strong> — Newcastle libraries run free workshops, craft sessions, and reading challenges</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Art workshops</strong> — Various studios offer holiday classes for kids</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Free and Cheap School Holiday Activities</h2>
+      <p class="text-neutral-700">
+        Not every school holiday activity needs to cost a fortune. Newcastle has a strong lineup of free and budget-friendly options that are just as enjoyable as the paid ones.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>Beaches and ocean baths</strong> — Free, always open, and endlessly entertaining</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>Blackbutt Reserve</strong> — Free entry, wildlife, walking tracks, and playgrounds</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>Library holiday programs</strong> — Free workshops, craft sessions, and events</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>Parks and playgrounds</strong> — Dozens of great playgrounds across the city</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>Table tennis</strong> — First session free, then just $8.50–$9.50 per visit</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Rainy Day Backup Plans</h2>
+      <p class="text-neutral-700">
+        Newcastle weather is generally kind, but every school holiday period has at least one or two wet days. Having a <a href="/guides/rainy-day-activities-newcastle" class="text-brand-600 hover:underline">rainy day plan</a> ready means you are not scrambling when the forecast turns. Table tennis, bowling, cinema, library programs, and indoor climbing are all weather-proof options. Table tennis at PCYC is particularly good for rainy days because you do not need to book — just turn up and play.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Making the Most of School Holidays</h2>
+      <p class="text-neutral-700">
+        The best approach to school holidays is a mix of structured activities and free play. Aim for one or two planned outings per week, and fill the rest with beaches, parks, and backyard time. If you are looking for something the whole family can do together as an ongoing activity beyond the holidays, table tennis is worth trying. It is one of the few sports where kids and adults genuinely compete and have fun at the same time.
+      </p>
+      <p class="text-neutral-700">
+        For more ideas, browse our guide to <a href="/guides/things-to-do-newcastle" class="text-brand-600 hover:underline">things to do in Newcastle</a> — it covers activities beyond the school holiday period too.
+      </p>
+
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Try table tennis these school holidays</h3>
+        <p class="text-brand-700 mb-4">Your first session is free — no booking required. Bring the kids to PCYC Broadmeadow and give it a go!</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

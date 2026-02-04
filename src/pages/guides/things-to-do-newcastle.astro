@@ -1,0 +1,240 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Things to Do in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the best things to do in Newcastle NSW?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle offers a wide range of activities. Popular options include visiting beaches like Nobbys, Bar Beach, and Merewether, walking the Bathers Way coastal walk, exploring Fort Scratchley, browsing Newcastle Museum, dining on Darby Street, and playing sports such as table tennis at PCYC Broadmeadow, surfing, and rock climbing. The city also has vibrant art galleries and regular markets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What indoor activities are there in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle has plenty of indoor activities including table tennis at PCYC Broadmeadow, rock climbing, bowling, cinema, art galleries, escape rooms, and indoor swimming. Table tennis at Newcastle PCYC Table Tennis Club runs three sessions per week and welcomes all skill levels with a free first session."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What free things can you do in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are many free things to do in Newcastle including walking the Bathers Way coastal trail, visiting Nobbys Lighthouse, exploring King Edward Park, trying a free table tennis session at PCYC Broadmeadow, browsing weekend markets, and visiting the ANZAC Memorial Walk."
+      }
+    }
+  ]
+});
+
+const combinedSchema = `[${breadcrumbSchema},${faqSchema}]`;
+---
+
+<Layout
+  title="Things to Do in Newcastle NSW: Local's Guide to Activities | 2026"
+  description="Discover the best things to do in Newcastle NSW. From beaches and coastal walks to table tennis, dining, and arts — a local's guide to activities for every interest."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <span class="text-neutral-700">Things to Do in Newcastle</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-bold font-heading">Things to Do in Newcastle NSW: A Local's Guide to Activities</h1>
+      <p class="mt-4 text-neutral-300">The ultimate guide to outdoor adventures, indoor fun, great food, and everything in between</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Newcastle is one of Australia's most underrated cities. With stunning coastline, a thriving food scene, world-class street art, and a growing list of sports and recreation options, there is genuinely something here for everyone. Whether you are visiting for a weekend or looking for new ways to spend your free time as a local, this guide covers the best things to do in Newcastle NSW in 2026.
+      </p>
+
+      <!-- Outdoor Activities -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Outdoor Activities</h2>
+      <p class="text-neutral-700">
+        Newcastle's coastline is the jewel in the city's crown. With a string of beaches running south from the harbour, you will never be far from sand and surf.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Beaches</h3>
+      <p class="text-neutral-700">
+        <strong>Nobbys Beach</strong> is Newcastle's most iconic stretch of sand, sitting at the foot of the historic Nobbys Headland and lighthouse. It is perfect for a swim, a walk along the breakwall, or just watching the ships come into port. Further south, <strong>Bar Beach</strong> is a local favourite for bodyboarding and people-watching, while <strong>Merewether Beach</strong> — one of the largest ocean beaches in the Southern Hemisphere — is the go-to spot for serious surfers. Merewether also has an ocean baths complex that is free to use year-round.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Walks and Parks</h3>
+      <p class="text-neutral-700">
+        The <strong>Bathers Way</strong> is a six-kilometre coastal walk stretching from Nobbys Beach to Merewether. It links beaches, rock pools, lookouts, and the ANZAC Memorial Walk — all completely free. Along the way you will pass through <strong>King Edward Park</strong>, a heritage-listed green space with ocean views, a rotunda, and the remains of a historic bogey hole carved into the rock platform. For nature lovers, the <strong>Glenrock State Conservation Area</strong> offers bushwalking trails through native bushland with hidden beaches at the end.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Fort Scratchley</h3>
+      <p class="text-neutral-700">
+        Perched above Nobbys Beach, <strong>Fort Scratchley</strong> is a heritage military fortress with free entry to the grounds and museum. It is one of only two forts in Australia to have fired upon an enemy ship, making it a must-visit for history buffs. Guided tunnel tours run regularly for a small fee.
+      </p>
+
+      <!-- Indoor Activities -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Indoor Activities</h2>
+      <p class="text-neutral-700">
+        Newcastle gets its share of rainy days and scorching summers. When the weather sends you indoors, there is plenty to keep you busy. For more ideas, see our full guide to <a href="/guides/indoor-activities-newcastle" class="text-brand-600 hover:underline">indoor activities in Newcastle</a>.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis at PCYC Broadmeadow</h3>
+      <p class="text-neutral-700">
+        One of the best-value indoor activities in Newcastle is <strong>table tennis</strong> at Newcastle PCYC Table Tennis Club. Operating since 1996, the club welcomes players of all ages and abilities — from complete beginners to seasoned competitors. It is social, active, and works equally well as a casual hobby or a serious sport.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>Monday:</strong> 6:30 PM - 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Wednesday:</strong> 6:30 PM - 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Saturday:</strong> 2:30 PM - 6:00 PM</li>
+        </ul>
+        <p class="text-neutral-700 mt-3">
+          Just $9 per session (or $40 annual membership). Equipment is provided, no booking is required, and your <strong>first session is free</strong>. Check the <a href="/timetable" class="text-brand-600 hover:underline">timetable</a> or see <a href="/expect" class="text-brand-600 hover:underline">what to expect</a> on your first visit.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">More Indoor Fun</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Rock climbing</strong> — Indoor climbing gyms offer bouldering and top-rope walls for all levels</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Bowling</strong> — Ten-pin bowling centres are great for groups and families</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Escape rooms</strong> — Several operators in the CBD offer themed puzzle challenges</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Cinema</strong> — Catch the latest releases at Event Cinemas or boutique screenings at smaller venues</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Indoor swimming</strong> — Heated indoor pools are available at multiple locations across the city</span>
+        </li>
+      </ul>
+
+      <!-- Food & Drink -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Food & Drink</h2>
+      <p class="text-neutral-700">
+        Newcastle's food scene has exploded in recent years. Whether you want a quick coffee, a long lunch, or a cocktail with harbour views, there is a precinct for you.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Darby Street</h3>
+      <p class="text-neutral-700">
+        <strong>Darby Street</strong> in Cooks Hill is Newcastle's original eat street. Lined with cafes, restaurants, boutiques, and bars, it has a relaxed village feel that is perfect for a Saturday morning brunch or an <a href="/guides/evening-activities-newcastle" class="text-brand-600 hover:underline">evening out</a>. Highlights include wood-fired pizza, Japanese diners, specialty coffee, and gelato.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Beaumont Street</h3>
+      <p class="text-neutral-700">
+        <strong>Beaumont Street</strong> in Hamilton is the multicultural heart of Newcastle dining. You will find everything from Italian and Greek to Thai, Vietnamese, and Indian. It is generally more affordable than Darby Street and equally full of character.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Honeysuckle</h3>
+      <p class="text-neutral-700">
+        The <strong>Honeysuckle precinct</strong> along the harbour foreshore is Newcastle's waterfront dining destination. With craft breweries, cocktail bars, and restaurants offering views across the working harbour, it is the place for a sunset drink or a special dinner.
+      </p>
+
+      <!-- Arts & Culture -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Arts & Culture</h2>
+      <p class="text-neutral-700">
+        Newcastle has a rich creative scene that punches well above its weight.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Newcastle Museum</h3>
+      <p class="text-neutral-700">
+        Located in the restored Honeysuckle rail workshops, <strong>Newcastle Museum</strong> tells the story of the city through interactive exhibits covering its Indigenous heritage, coal and steel history, and natural disasters. Entry is free, making it one of the best value cultural attractions in the region.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Galleries and Street Art</h3>
+      <p class="text-neutral-700">
+        The <strong>Newcastle Art Gallery</strong> houses one of Australia's leading regional art collections, with works spanning colonial to contemporary. Beyond the gallery walls, Newcastle's laneways and building facades are covered in world-class street art and murals — take a self-guided walking tour through the CBD to see them. The city also hosts regular art markets and open studio events throughout the year.
+      </p>
+
+      <!-- Sports & Fitness -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Sports & Fitness</h2>
+      <p class="text-neutral-700">
+        Newcastle is a city that loves sport. From ocean swimming to competitive table tennis, there are activities for every fitness level and interest. If you are looking for a new <a href="/guides/hobbies-newcastle" class="text-brand-600 hover:underline">hobby</a>, sport is a brilliant way to meet people and stay active.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis</h3>
+      <p class="text-neutral-700">
+        <strong>Newcastle PCYC Table Tennis Club</strong> is one of the most accessible sports in the city. It is low-impact, suitable for all ages from juniors to retirees, and you can play at whatever intensity suits you. The club runs three sessions per week at PCYC Newcastle in Broadmeadow, with equipment provided and no booking necessary. Whether you are after a social hit or competitive match play, you will find a game.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Three sessions per week</strong> — Monday and Wednesday evenings, Saturday afternoons</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>All equipment provided</strong> — Rackets and balls supplied free of charge</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Free first session</strong> — Try before you commit, no booking required</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Only $9 per visit</strong> — Or $40 for annual membership</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Surfing and Ocean Swimming</h3>
+      <p class="text-neutral-700">
+        With a coastline full of breaks for every skill level, Newcastle is one of the best cities in Australia for surfing. Beginners can take lessons at Nobbys or Merewether, while experienced surfers head to Bar Beach and the reefs further south. Ocean swimming is equally popular, with the Merewether and Newcastle ocean baths offering safe, free saltwater pools.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Cycling</h3>
+      <p class="text-neutral-700">
+        Newcastle's expanding network of cycleways makes it an increasingly bike-friendly city. The Fernleigh Track, a 15-kilometre shared path built on a former rail corridor, is a favourite for cyclists and runners. The harbourside path from Honeysuckle to Stockton ferry is another popular ride.
+      </p>
+
+      <!-- Weekend Wrap-Up -->
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Planning Your Weekend</h2>
+      <p class="text-neutral-700">
+        The best way to experience Newcastle is to mix it up. Start your morning with a swim or coastal walk, grab brunch on Darby Street, explore the museum or galleries in the afternoon, and finish the day with a table tennis session at PCYC Broadmeadow or dinner along Honeysuckle. For more <a href="/guides/weekend-activities-newcastle" class="text-brand-600 hover:underline">weekend activity ideas</a>, check out our dedicated guide.
+      </p>
+
+      <!-- CTA -->
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Try Table Tennis This Week</h3>
+        <p class="text-brand-700 mb-4">Looking for something new to do in Newcastle? Your first session at Newcastle PCYC Table Tennis Club is free — no booking required. Just show up, grab a racket, and play.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
