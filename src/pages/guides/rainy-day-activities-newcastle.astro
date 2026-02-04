@@ -1,0 +1,251 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Rainy Day Activities in Newcastle"}
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What can I do on a rainy day in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle has plenty of rainy day options including table tennis at PCYC Broadmeadow, cinema, bowling, escape rooms, art galleries, indoor rock climbing, shopping centres, and museums. Most are affordable and don't require advance booking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What indoor sports can I play in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Indoor sports in Newcastle include table tennis (Monday, Wednesday and Saturday at PCYC Broadmeadow), indoor rock climbing, indoor swimming, basketball, and badminton. Table tennis is one of the most affordable and social options available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there free indoor activities in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Newcastle has several free indoor activities. Newcastle Art Gallery offers free entry, the library hosts regular free events, you can try table tennis free at PCYC Broadmeadow, and Newcastle Museum is free to visit."
+      }
+    }
+  ]
+};
+
+const combinedSchema = JSON.stringify([breadcrumbSchema, faqSchema]);
+---
+
+<Layout
+  title="Rainy Day Activities in Newcastle: Indoor Fun When the Weather's Bad | Guide"
+  description="Stuck inside on a rainy day in Newcastle? Discover the best indoor activities — from table tennis and bowling to galleries and escape rooms. Fun for all ages, rain or shine."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <span class="text-neutral-700">Rainy Day Activities</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-bold font-heading">Rainy Day Activities in Newcastle: Indoor Fun When the Weather's Bad</h1>
+      <p class="mt-4 text-neutral-300">Don't let the rain ruin your plans. Newcastle has plenty to offer indoors.</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Newcastle enjoys a generally mild coastal climate, but anyone who lives here knows the weather can turn without warning. A sunny morning can become a grey, drizzly afternoon in no time. When the rain rolls in from the coast, having a reliable list of <strong>indoor activities</strong> makes the difference between a wasted day and a great one.
+      </p>
+
+      <p class="text-neutral-700">
+        Whether you're looking for something active, creative, or just a way to kill a few hours until the clouds clear, Newcastle has more indoor options than you might think. Here's our guide to the best rainy day activities in the region.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Why Newcastle Weather Can Catch You Out</h2>
+      <p class="text-neutral-700">
+        Newcastle sits on the Hunter coastline, which means weather patterns shift quickly. The city averages around 114 rainy days per year, with the wettest months typically between February and June. Even outside those months, afternoon storms can blow in off the ocean with little warning. Having a go-to list of <a href="/guides/indoor-activities-newcastle" class="text-brand-600 hover:underline">indoor activities</a> means you're never stuck for something to do.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">The Best Rainy Day Activities in Newcastle</h2>
+      <p class="text-neutral-700">
+        Here's a breakdown of the top indoor options when the weather turns bad. Some are free, some are active, and all of them beat sitting at home watching the rain.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis at PCYC Broadmeadow</h3>
+      <p class="text-neutral-700">
+        If you want something active, social, and genuinely fun on a rainy day, <strong>table tennis</strong> is hard to beat. Newcastle PCYC Table Tennis Club runs three sessions per week at PCYC Broadmeadow, and the sport is completely weather-proof. Rain, wind, heatwave — it doesn't matter. You're indoors, the tables are set up, and the games are on.
+      </p>
+      <p class="text-neutral-700">
+        Table tennis works brilliantly as a rainy day activity because there's <strong>no booking required</strong> — you can decide on the spot. Equipment is provided, so you don't need to plan ahead. It's affordable at just $9 per session, and your first visit is free. Whether you're a complete beginner or an experienced player, you'll find people at your level. Check the <a href="/timetable" class="text-brand-600 hover:underline">timetable</a> to see when the next session is.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Cinema</h3>
+      <p class="text-neutral-700">
+        A classic rainy day choice. Newcastle has several cinemas including Event Cinemas at Charlestown Square and Hoyts at Kotara. It's the obvious option when the weather turns, which means it can get busy — especially on school holidays. Budget around $20-25 per person after tickets and snacks.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Art Galleries &amp; Museums</h3>
+      <p class="text-neutral-700">
+        Newcastle Art Gallery in the Civic precinct offers <strong>free entry</strong> and features an impressive collection of Australian art. It's a calm, thoughtful way to spend a rainy afternoon. Newcastle Museum (also free) is another excellent option, particularly if you have kids. Both offer rotating exhibitions throughout the year.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Escape Rooms</h3>
+      <p class="text-neutral-700">
+        For groups of friends or family, escape rooms offer 60-90 minutes of puzzle-solving fun. Newcastle has several venues with themed rooms ranging from beginner to advanced. It's one of the more expensive options at $30-40 per person, but the experience is memorable and completely rain-proof.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Bowling</h3>
+      <p class="text-neutral-700">
+        Ten-pin bowling is a reliable rainy day standby. Venues in the area offer lane hire with shoe rental included. It's good for groups and families, with most sessions costing around $15-20 per person. The atmosphere is casual and social — no skill required.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Indoor Rock Climbing</h3>
+      <p class="text-neutral-700">
+        If you want a physical challenge, indoor climbing walls offer a full-body workout regardless of what's happening outside. Expect to pay $20-25 per visit, plus shoe hire if needed. It's more intense than some other options on this list, but satisfying if you enjoy pushing yourself.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Shopping Centres</h3>
+      <p class="text-neutral-700">
+        Charlestown Square and Kotara Westfield are the two main covered shopping centres in the area. Beyond retail, they house food courts, cinemas, and various entertainment options. Not the most exciting rainy day plan, but practical — especially if you need to combine errands with entertainment.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Cafes &amp; Coffee Culture</h3>
+      <p class="text-neutral-700">
+        Newcastle has a thriving cafe scene. Areas like Darby Street, Beaumont Street in Hamilton, and the Honeysuckle precinct are packed with excellent coffee shops. Sometimes the best rainy day plan is a good coffee, a comfortable seat, and watching the rain from the inside. Pair it with a book or a board game and you've got a proper afternoon sorted.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Free Indoor Activities in Newcastle</h2>
+      <p class="text-neutral-700">
+        Not every rainy day needs to cost money. Here are some genuinely free options:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Newcastle Art Gallery</strong> — Free entry, rotating exhibitions, central location</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Newcastle Museum</strong> — Free general admission, great for families</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Library events</strong> — Newcastle Region Library runs free workshops, talks, and reading groups</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&#10003;</span>
+          <span class="text-neutral-700"><strong>Try table tennis free</strong> — Your first session at PCYC Broadmeadow is on the house</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Why Table Tennis Is the Best Rainy Day Option</h2>
+      <p class="text-neutral-700">
+        Of all the activities on this list, table tennis stands out for several reasons. It's the perfect balance of active and social — you're moving, laughing, competing, and meeting people all at once. Unlike the cinema or a cafe, you're actually <strong>doing something physical</strong>. Unlike rock climbing or escape rooms, it won't cost you $30+.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>100% weather-proof</strong> — Indoor venue at PCYC Broadmeadow</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>No booking needed</strong> — Decide on the day based on the weather</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Equipment provided</strong> — Nothing to bring except comfortable shoes</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Affordable</strong> — $9 per session, first visit free</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Social</strong> — Meet friendly locals and enjoy a <a href="/guides/hobbies-newcastle" class="text-brand-600 hover:underline">new hobby</a></span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>All ages and abilities</strong> — From kids to retirees, beginners to competitive players</span>
+        </li>
+      </ul>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <p class="text-neutral-700">
+          <strong>Tip:</strong> Next time you see rain in the forecast, check the <a href="/timetable" class="text-brand-600 hover:underline">session timetable</a> and plan around it. Rainy Monday or Wednesday evening? Perfect for table tennis. Wet Saturday afternoon? Same. No booking, no commitment — just turn up and play.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Session Times &amp; Location</h2>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>Monday:</strong> 6:30 PM – 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Wednesday:</strong> 6:30 PM – 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Saturday:</strong> 2:30 PM – 6:00 PM</li>
+        </ul>
+        <p class="text-neutral-700 mt-4">
+          <strong>Location:</strong> PCYC Newcastle, Young Road, Broadmeadow NSW 2292
+        </p>
+        <p class="text-neutral-700 mt-2">
+          <strong>Cost:</strong> $9 per session | First visit free | No booking required
+        </p>
+      </div>
+
+      <p class="text-neutral-700">
+        Want to know more about what a session looks like? Read our <a href="/expect" class="text-brand-600 hover:underline">what to expect</a> page, or browse more ideas in our guide to <a href="/guides/things-to-do-newcastle" class="text-brand-600 hover:underline">things to do in Newcastle</a>.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Frequently Asked Questions</h2>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h3 class="text-xl font-bold text-neutral-900 mt-0 mb-3">What can I do on a rainy day in Newcastle?</h3>
+        <p class="text-neutral-700">
+          Newcastle has plenty of rainy day options including table tennis at PCYC Broadmeadow, cinema, bowling, escape rooms, art galleries, indoor rock climbing, shopping centres, and museums. Most are affordable and don't require advance booking, so you can decide on the spot when the weather turns.
+        </p>
+      </div>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h3 class="text-xl font-bold text-neutral-900 mt-0 mb-3">What indoor sports can I play in Newcastle?</h3>
+        <p class="text-neutral-700">
+          Indoor sports available in Newcastle include table tennis (Monday, Wednesday, and Saturday at PCYC Broadmeadow), indoor rock climbing, indoor swimming, basketball, and badminton. Table tennis is one of the most accessible and affordable — no booking required, equipment provided, and your first session is free.
+        </p>
+      </div>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h3 class="text-xl font-bold text-neutral-900 mt-0 mb-3">Are there free indoor activities in Newcastle?</h3>
+        <p class="text-neutral-700">
+          Yes, there are several free <a href="/guides/indoor-activities-newcastle" class="text-brand-600 hover:underline">indoor activities</a> in Newcastle. Newcastle Art Gallery offers free entry, the library hosts regular free events and workshops, Newcastle Museum has free general admission, and you can try your first table tennis session free at PCYC Broadmeadow.
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Don't let the rain stop you</h3>
+        <p class="text-brand-700 mb-4">Try table tennis free at PCYC Broadmeadow — no booking required, equipment provided. Just show up and play.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

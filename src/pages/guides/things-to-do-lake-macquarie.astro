@@ -1,0 +1,250 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Things to Do in Lake Macquarie"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is there to do in Lake Macquarie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lake Macquarie offers a wide range of activities including kayaking, sailing, and fishing on the lake, bushwalking at Green Point Reserve and Awabakal Nature Reserve, walking along Warners Bay foreshore, visiting Speers Point Park, exploring the Museum of Art and Culture, and playing table tennis at nearby PCYC Newcastle in Broadmeadow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sports can I play near Lake Macquarie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sports available near Lake Macquarie include table tennis at PCYC Broadmeadow (15–20 minute drive), sailing and kayaking on the lake, cycling around the foreshore paths, tennis at local courts, and lawn bowls at several clubs in the area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there table tennis near Lake Macquarie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PCYC Newcastle in Broadmeadow is the closest dedicated table tennis club to Lake Macquarie, about 15–20 minutes drive from Charlestown or Warners Bay. Sessions run Monday and Wednesday 6:30–10pm, and Saturday 2:30–6pm. Your first session is free and no booking is required."
+      }
+    }
+  ]
+});
+
+const driveTimes = [
+  { location: "Charlestown", time: "~15 minutes" },
+  { location: "Warners Bay", time: "~18 minutes" },
+  { location: "Belmont", time: "~20 minutes" },
+  { location: "Toronto", time: "~25 minutes" },
+  { location: "Morisset", time: "~35 minutes" },
+];
+---
+
+<Layout
+  title="Things to Do in Lake Macquarie: Activities & Sports Near the Lake | Guide"
+  description="Discover the best things to do in Lake Macquarie — from kayaking and bushwalks to table tennis at nearby PCYC Broadmeadow. Activities for all ages and interests."
+  schema={`[${breadcrumbSchema},${faqSchema}]`}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">→</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">→</span>
+      <span class="text-neutral-700">Things to Do in Lake Macquarie</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-extrabold font-heading">Things to Do in Lake Macquarie: Activities & Sports Near the Lake</h1>
+      <p class="mt-4 text-neutral-300">Your guide to outdoor adventures, sports, and things to see around Australia's largest coastal lake</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Lake Macquarie is Australia's largest coastal saltwater lake, stretching across 110 square kilometres just south of Newcastle. With waterfront towns, bushland reserves, and a relaxed lifestyle, the Lake Macquarie region is a fantastic place to live, visit, and stay active. Whether you are a local looking for new things to try or visiting for the weekend, this guide covers the best activities and sports in and around the lake.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">On the Water</h2>
+      <p class="text-neutral-700">
+        The lake itself is the main attraction. With calm, sheltered water and numerous boat ramps and foreshores, it is ideal for water-based activities year-round.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Kayaking and stand-up paddleboarding</strong> — Launch from Warners Bay, Belmont, or Toronto foreshore. The lake is generally calm and suitable for beginners</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Sailing</strong> — Lake Macquarie Yacht Club and several other clubs run regular races and learn-to-sail programs</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Fishing</strong> — The lake is popular for flathead, bream, and luderick. Fish from the shore at Speers Point, Belmont, or hire a boat for deeper water</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Swimming</strong> — Sheltered swimming areas at Warners Bay and Marmong Point are popular in summer</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Bushwalks and Nature Reserves</h2>
+      <p class="text-neutral-700">
+        The Lake Macquarie area is surrounded by bushland, offering excellent walking tracks for all fitness levels.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Green Point Reserve</h3>
+      <p class="text-neutral-700">
+        A beautiful coastal reserve between Belmont and Swansea with walking tracks through littoral rainforest. The loop walk takes about an hour and offers views across the lake and out to the ocean. Well-maintained tracks make it accessible for most fitness levels.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Awabakal Nature Reserve</h3>
+      <p class="text-neutral-700">
+        Located between Dudley and Redhead, Awabakal has diverse walking tracks through coastal bushland. The walk to Dudley Bluff lookout is a highlight, with sweeping views along the coastline. Several tracks connect to the coastal walk network.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Warners Bay Foreshore</h3>
+      <p class="text-neutral-700">
+        A paved shared path running along the lake edge, perfect for walking, cycling, or a morning jog. The path connects through to Speers Point Park and is flat, making it suitable for families with prams and young children. Cafes and restaurants line the foreshore at Warners Bay.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Parks and Family-Friendly Spots</h2>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Speers Point Park</strong> — Large park with playgrounds, BBQ areas, and water play. Hosts Eat Street markets and community events throughout the year</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Toronto foreshore</strong> — Playground, picnic areas, and a swimming enclosure on the lake</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Rathmines Park</strong> — Historic RAAF base site with large open space and memorial walk</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Arts, Culture and Indoor Attractions</h2>
+      <p class="text-neutral-700">
+        The <strong>Museum of Art and Culture (MAC)</strong> at Booragul is Lake Macquarie's premier cultural venue, with free exhibitions, sculpture garden, and regular workshops. For shopping and entertainment, Charlestown Square is the region's major centre with cinema, dining, and retail.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Sports and Active Recreation</h2>
+      <p class="text-neutral-700">
+        Lake Macquarie has a strong sporting culture with clubs and facilities covering most sports. Here is a snapshot of what is available in and near the region.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Cycling</strong> — The Fernleigh Track (shared path on the old rail line) connects Belmont to Adamstown, and the foreshore paths are ideal for casual riding</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Tennis</strong> — Courts at Warners Bay, Charlestown, Toronto, and other suburbs</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Lawn bowls</strong> — Several clubs around the lake welcome social players and beginners</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Sailing and kayaking</strong> — Clubs and hire operators around the lake (see above)</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">•</span>
+          <span class="text-neutral-700"><strong>Table tennis</strong> — PCYC Newcastle in Broadmeadow, just 15–20 minutes from the Lake Macquarie area (see below)</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Table Tennis Near Lake Macquarie</h2>
+      <p class="text-neutral-700">
+        If you are looking for a regular social sport that is easy to pick up, affordable, and welcoming to all ages, <strong>table tennis at PCYC Newcastle in Broadmeadow</strong> is well worth the short drive from Lake Macquarie. The Newcastle Table Tennis Club is the closest dedicated club to the Lake Macquarie area, and several of our members already travel from Charlestown, Warners Bay, and surrounding suburbs.
+      </p>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-6">
+        <h4 class="font-bold text-neutral-900 mb-3">Drive Times from Lake Macquarie</h4>
+        <ul class="space-y-1">
+          {driveTimes.map((dt) => (
+            <li class="text-neutral-700">{dt.location}: {dt.time}</li>
+          ))}
+        </ul>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Why It's Worth the Drive</h3>
+      <p class="text-neutral-700">
+        Table tennis is one of those sports that is easy to start but endlessly rewarding. At PCYC Broadmeadow, you will find a friendly, community-focused club that has been running since 1996. The club welcomes complete beginners and experienced players alike — there is no pressure, just good games and good company. For Lake Macquarie residents looking for a <a href="/guides/sports-clubs-newcastle" class="text-brand-600 hover:underline">sports club in the Newcastle area</a>, it is one of the most accessible and affordable options available.
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>First session free</strong> — Try before you commit</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>$8.50–$9.50 per session</strong> — Affordable regular sport</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>No booking required</strong> — Just show up during session times</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>Equipment provided</strong> — Rackets available to borrow</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>All ages and skill levels</strong> — From kids to seniors</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">✓</span>
+          <span class="text-neutral-700"><strong>Free parking</strong> — Easy parking at PCYC</span>
+        </li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Session Times</h3>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>Monday:</strong> 6:30 PM – 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Wednesday:</strong> 6:30 PM – 10:00 PM</li>
+          <li class="text-neutral-700"><strong>Saturday:</strong> 2:30 PM – 6:00 PM</li>
+        </ul>
+      </div>
+      <p class="text-neutral-700">
+        The Monday and Wednesday evening sessions work well for Lake Macquarie residents who can head to Broadmeadow after work. The Saturday afternoon session is popular with families. Check the <a href="/timetable" class="text-brand-600 hover:underline">full timetable</a> for the latest details, or visit our <a href="/guides/table-tennis-near-maitland" class="text-brand-600 hover:underline">Maitland guide</a> if you are coming from the other direction.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Exploring Beyond the Lake</h2>
+      <p class="text-neutral-700">
+        Lake Macquarie's central location makes it easy to explore the wider Hunter region. Newcastle CBD is just 20 minutes north, with its beaches, restaurants, and cultural attractions. Check out our guide to <a href="/guides/things-to-do-newcastle" class="text-brand-600 hover:underline">things to do in Newcastle</a> for more ideas. The Hunter Valley wine region is about 45 minutes west, and the Central Coast is an easy drive south.
+      </p>
+
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Try table tennis — just 15 minutes from Lake Mac</h3>
+        <p class="text-brand-700 mb-4">Your first session is free, no booking required. Come to PCYC Broadmeadow and see why our members keep coming back.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

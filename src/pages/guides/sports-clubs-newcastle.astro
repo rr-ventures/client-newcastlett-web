@@ -1,0 +1,231 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Sports Clubs in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What sports clubs can I join in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle has sports clubs covering table tennis (PCYC Broadmeadow), tennis, lawn bowls, cricket, rugby league, soccer, swimming, cycling, running, and surfing. Whether you're looking for team sport, individual competition, or casual social play, there's a club for every interest and fitness level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I join a sports club in Newcastle as a beginner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most sports clubs in Newcastle welcome beginners. Table tennis at PCYC Newcastle is one of the easiest to try — just show up to any session, no booking required. Your first session is free and equipment is provided. Many other clubs also offer social grades, beginner programs, and come-and-try days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the cheapest sports clubs in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Table tennis is one of the most affordable options at $8.50-$9.50 per session with no membership required. Parkrun is completely free and held at multiple Newcastle locations. Lawn bowls clubs offer social sessions from around $10. Community swimming is also very affordable with pool entry fees typically under $10."
+      }
+    }
+  ]
+});
+
+const combinedSchema = `[${breadcrumbSchema},${faqSchema}]`;
+---
+
+<Layout
+  title="Sports Clubs in Newcastle: Find Your Sport & Join a Club | Guide"
+  description="Explore sports clubs in Newcastle — from team sports to racquet sports to social play. Find the right club for your fitness level and interests. Try table tennis free."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <span class="text-neutral-700">Sports Clubs</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-bold font-heading">Sports Clubs in Newcastle: Find Your Sport & Join a Club</h1>
+      <p class="mt-4 text-neutral-300">A complete guide to the sports clubs, leagues, and social sporting options across the Newcastle region</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Newcastle is a city built on sport. From weekend cricket on suburban ovals to competitive rugby league under lights, there's a deep sporting culture here that makes it easy to find a club and get involved. Whether you played a sport years ago and want to pick it up again, or you're looking for something completely new, this guide covers the main options available across the city.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Team Sports</h2>
+      <p class="text-neutral-700">
+        Team sports are the backbone of Newcastle's sporting landscape. They offer regular fixtures, built-in social networks, and the satisfaction of working toward a shared goal. Most clubs run both competitive and social-grade teams, so you can choose the level that suits you.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Soccer</h3>
+      <p class="text-neutral-700">
+        Newcastle has a thriving soccer scene through the Northern NSW Football Association. Clubs like Adamstown Rosebud FC, Lambton Jaffas FC, and Newcastle Olympic FC run senior teams across multiple divisions. Many clubs welcome new players for pre-season trials, and there are also social futsal leagues at indoor venues across the city if you prefer a more casual format.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Cricket</h3>
+      <p class="text-neutral-700">
+        Cricket runs deep in Newcastle. The Newcastle District Cricket Association oversees clubs from Merewether to Wallsend. If you're after something less time-intensive than a full Saturday match, several clubs run T20 and social midweek competitions during summer. Indoor cricket centres also offer short-format leagues year-round.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Rugby League</h3>
+      <p class="text-neutral-700">
+        As the home of the Newcastle Knights, rugby league is part of the city's identity. The Newcastle Rugby League competition features clubs across the Hunter, with senior, reserve, and women's teams. If full-contact isn't your thing, touch football and Oztag leagues are popular alternatives with lower injury risk and shorter time commitments.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Basketball</h3>
+      <p class="text-neutral-700">
+        Basketball Newcastle runs competitions at multiple venues including the Newcastle Basketball Stadium. Social leagues are available for adults who want regular games without the intensity of representative basketball. It's a great option for staying fit midweek.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Racquet Sports</h2>
+      <p class="text-neutral-700">
+        Racquet sports are ideal if you want something active but don't need a full team to play. They offer a mix of competition, fitness, and social interaction, and most can be played year-round. For a detailed breakdown, see our <a href="/guides/racquet-sports-newcastle" class="text-brand-600 hover:underline">racquet sports comparison guide</a>.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Table Tennis</h3>
+      <p class="text-neutral-700">
+        Table tennis stands out as one of the most accessible racquet sports in Newcastle. At PCYC Broadmeadow, Newcastle PCYC Table Tennis Club runs three sessions per week in a welcoming, low-pressure environment. There's no booking required, your first session is free, and bats are provided. Members range from complete beginners to competitive players, and the atmosphere is social and inclusive. It's one of the few sports where you can genuinely walk in off the street and start playing immediately.
+      </p>
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>Sessions:</strong> Monday 6:30-10pm, Wednesday 6:30-10pm, Saturday 2:30-6pm</li>
+          <li class="text-neutral-700"><strong>Cost:</strong> First session free, then $8.50-$9.50 per visit</li>
+          <li class="text-neutral-700"><strong>Location:</strong> PCYC Newcastle, Young Road, Broadmeadow</li>
+          <li class="text-neutral-700"><strong>No membership required</strong> — pay as you go, come when it suits you</li>
+        </ul>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Tennis</h3>
+      <p class="text-neutral-700">
+        Newcastle has several tennis clubs including the National Park Tennis Centre and clubs in suburbs like Merewether, Waratah, and Charlestown. Most offer social tennis sessions alongside competitive pennant competitions. Court hire is typically available for casual players, and coaching programs cater to beginners through to advanced players.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Badminton and Squash</h3>
+      <p class="text-neutral-700">
+        Badminton sessions run at several community centres and sports halls around Newcastle. Squash courts can be found at venues like the Squash Pit and some fitness centres. Both sports offer a solid cardio workout and are easy to pick up at a social level.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Individual Sports</h2>
+      <p class="text-neutral-700">
+        If you prefer to set your own pace and schedule, individual sports give you that flexibility while still offering community through clubs and group sessions.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Swimming</h3>
+      <p class="text-neutral-700">
+        Newcastle's coastline and ocean baths make it a natural home for swimming. The Newcastle Permanent Swim Club and other local clubs run pool-based training at venues like the Lambton Pool and Newcastle Ocean Baths. Ocean swimming groups meet regularly at beaches like Merewether and Bar Beach, especially in the warmer months. It's one of the best low-impact sports available.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Running and Cycling</h3>
+      <p class="text-neutral-700">
+        Parkrun holds free timed 5km events every Saturday morning at multiple Newcastle locations including Dixon Park and Jesmond Park. It's completely free, open to all abilities, and a fantastic way to build a running habit. For cycling, clubs like Newcastle Cycleways Movement and local road cycling groups organise regular group rides along the coast and through the Hunter Valley. Running groups such as the Newcastle Running Club offer structured training for events ranging from 5km fun runs to marathons.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Surfing</h3>
+      <p class="text-neutral-700">
+        With consistent swells and beaches ranging from gentle to challenging, Newcastle is one of Australia's best surfing cities. The Newcastle Surfing Association runs regular competitions, and several surf schools operate along the coast for beginners. Board riders clubs at beaches like Merewether, Bar Beach, and Nobbys offer a community around the sport.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Social Sports</h2>
+      <p class="text-neutral-700">
+        Not every sport needs to be competitive. Social sports are perfect if you want the physical and mental benefits of activity combined with a relaxed, community-focused atmosphere.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Lawn Bowls</h3>
+      <p class="text-neutral-700">
+        Lawn bowls has had a resurgence in popularity, especially among younger adults. Clubs like Merewether Bowling Club and Hamilton Bowling Club run barefoot bowls sessions and social leagues that are more about having a good time than strict competition. Social sessions typically cost around $10, and most clubs have a bar and bistro on-site.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Golf</h3>
+      <p class="text-neutral-700">
+        Newcastle has several golf courses including Newcastle Golf Club and Merewether Golf Club. While golf can be expensive at the club level, public courses and driving ranges offer more affordable entry points. Social golf groups organise regular rounds for players of all abilities.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Why Table Tennis Is One of the Best Clubs to Start With</h2>
+      <p class="text-neutral-700">
+        If you're browsing this list and feeling overwhelmed by the options, table tennis is worth a serious look as your first step. Here's why it consistently ranks as one of the most beginner-friendly sports clubs in Newcastle:
+      </p>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Zero commitment to try</strong> — Your first session is free, there's no booking, and you don't need to bring anything except comfortable clothes</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Equipment provided</strong> — Bats are available to borrow at every session, so there's nothing to buy upfront</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Genuinely affordable</strong> — At $8.50-$9.50 per session with no membership required, it's one of the cheapest sports in Newcastle</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Three sessions per week</strong> — Monday and Wednesday evenings (6:30-10pm) plus Saturday afternoons (2:30-6pm) give you flexibility</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>All ages and levels</strong> — Members range from their 20s to their 80s, from first-timers to seasoned competitors</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&check;</span>
+          <span class="text-neutral-700"><strong>Welcoming atmosphere</strong> — It's a club where people genuinely make an effort to include newcomers and help them feel at home</span>
+        </li>
+      </ul>
+      <p class="text-neutral-700">
+        Not sure what to expect on your first visit? Our <a href="/expect" class="text-brand-600 hover:underline">What to Expect</a> page walks you through everything step by step. You can also check out our guides on <a href="/guides/social-clubs-newcastle" class="text-brand-600 hover:underline">social clubs in Newcastle</a> and <a href="/guides/gym-alternatives-newcastle" class="text-brand-600 hover:underline">gym alternatives</a> if you're still weighing up your options.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Frequently Asked Questions</h2>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">What sports clubs can I join in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Newcastle has sports clubs covering table tennis (PCYC Broadmeadow), tennis, lawn bowls, cricket, rugby league, soccer, swimming, cycling, running, and surfing. Whether you're looking for team sport, individual competition, or casual social play, there's a club for every interest and fitness level.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">How do I join a sports club in Newcastle as a beginner?</h3>
+      <p class="text-neutral-700">
+        Most sports clubs in Newcastle welcome beginners. Table tennis at PCYC Newcastle is one of the easiest to try — just show up to any session, no booking required. Your first session is free and equipment is provided. Many other clubs also offer social grades, beginner programs, and come-and-try days throughout the year.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">What are the cheapest sports clubs in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Table tennis is one of the most affordable options at $8.50-$9.50 per session with no membership required. Parkrun is completely free and held at multiple Newcastle locations every Saturday. Lawn bowls clubs offer social sessions from around $10. Community swimming is also very affordable with pool entry fees typically under $10.
+      </p>
+
+      <!-- CTA -->
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Ready to get active?</h3>
+        <p class="text-brand-700 mb-4">Try a free session of table tennis at PCYC Broadmeadow — no booking, no commitment. Just show up and play.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

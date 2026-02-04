@@ -1,0 +1,205 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.newcastletabletennis.com.au/"},
+    {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.newcastletabletennis.com.au/guides/"},
+    {"@type": "ListItem", "position": 3, "name": "Weekend Activities in Newcastle"}
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What can I do on the weekend in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Newcastle offers plenty of weekend activities including beach swims and coastal walks, markets (Olive Tree Markets on Saturday, Newcastle City Farmers Market on Sunday), bushwalking at Glenrock and Awabakal Nature Reserve, table tennis at PCYC Broadmeadow on Saturday afternoons, dining out on Darby Street and Beaumont Street, visiting Newcastle Art Gallery, and guided tours of Fort Scratchley."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sports can I play on Saturday in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Saturdays in Newcastle you can play table tennis at PCYC Broadmeadow (2:30 PM to 6:00 PM, all levels welcome), join parkrun at various locations in the morning, play social tennis at local clubs, try lawn bowls, go surfing at one of many beaches, or join a cycling group ride through the Hunter Valley or along the coast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there family-friendly weekend activities in Newcastle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Newcastle has many family-friendly weekend activities. Popular options include swimming and sandcastle-building at the beaches, Blackbutt Reserve for wildlife encounters, Hunter Wetlands Centre, table tennis at PCYC Broadmeadow where all ages are welcome at Saturday sessions, playgrounds along the foreshore, and bike paths including the Fernleigh Track."
+      }
+    }
+  ]
+});
+
+const combinedSchema = `[${breadcrumbSchema},${faqSchema}]`;
+---
+
+<Layout
+  title="Weekend Activities in Newcastle: What to Do on Saturday & Sunday | Guide"
+  description="Discover the best weekend activities in Newcastle NSW. From Saturday morning markets and parkrun to afternoon table tennis at PCYC Broadmeadow and Sunday brunch — your complete weekend guide."
+  schema={combinedSchema}
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-100 py-3 px-4 text-sm">
+    <div class="max-w-3xl mx-auto">
+      <a href="/" class="text-brand-600 hover:underline">Home</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <a href="/guides" class="text-brand-600 hover:underline">Guides</a>
+      <span class="mx-2 text-neutral-400">&rarr;</span>
+      <span class="text-neutral-700">Weekend Activities</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-neutral-900 py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div class="inline-block bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-4">Guide</div>
+      <h1 class="text-3xl font-bold font-heading">Weekend Activities in Newcastle: What to Do on Saturday & Sunday</h1>
+      <p class="mt-4 text-neutral-300">Your guide to making the most of every weekend in Newcastle NSW</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 text-lg">
+        Newcastle is one of those cities where weekends genuinely feel different from the working week. With beaches, bushland, markets, and a thriving food scene all within easy reach, there is no shortage of <a href="/guides/things-to-do-newcastle" class="text-brand-600 hover:underline">things to do in Newcastle</a>. Whether you prefer an action-packed Saturday or a slow Sunday, this guide breaks down the best weekend activities across the city.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Saturday Morning: Markets, Parkrun, and the Beach</h2>
+      <p class="text-neutral-700">
+        The best Saturday mornings in Newcastle start early. If you are a runner, parkrun is a brilliant way to kick off the weekend. Newcastle has several free 5km events each Saturday at 8:00 AM, including popular runs at Throsby Creek and Dixon Park. It is a social, no-pressure event that welcomes walkers and joggers as well as serious runners.
+      </p>
+      <p class="text-neutral-700">
+        After your run (or instead of it), head to one of Newcastle's weekend markets. The Olive Tree Markets at Newcastle Showground run on selected Saturdays and feature local produce, artisan goods, and street food. It is a fantastic spot to pick up breakfast, browse handmade crafts, and soak up the community atmosphere.
+      </p>
+      <p class="text-neutral-700">
+        If markets are not your thing, Saturday mornings are perfect for a swim. Newcastle and Merewether ocean baths are open year-round, and there is nothing quite like starting your weekend with salt water and sunshine. The beaches along Bathers Way — from Nobbys through to Merewether — are consistently ranked among Australia's best.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Saturday Afternoon: Table Tennis, Hiking, and Cycling</h2>
+      <p class="text-neutral-700">
+        Saturday afternoons are when Newcastle really comes alive with activity options. If you are looking for something social, active, and indoors, <strong>table tennis at PCYC Broadmeadow</strong> is one of the best-kept secrets in the city.
+      </p>
+
+      <div class="bg-neutral-50 p-6 rounded-lg border border-neutral-200 my-4">
+        <h3 class="text-xl font-bold text-neutral-900 mb-3">Saturday Table Tennis at PCYC Broadmeadow</h3>
+        <ul class="space-y-2">
+          <li class="text-neutral-700"><strong>When:</strong> Every Saturday, 2:30 PM - 6:00 PM</li>
+          <li class="text-neutral-700"><strong>Where:</strong> PCYC Newcastle, Broadmeadow</li>
+          <li class="text-neutral-700"><strong>Cost:</strong> First session free, then $8.50 - $9.50 casual or $40/year membership</li>
+          <li class="text-neutral-700"><strong>What to bring:</strong> Indoor sports shoes and a water bottle — equipment is provided</li>
+        </ul>
+        <p class="text-neutral-700 mt-3 text-sm">
+          No booking required. Check the <a href="/timetable" class="text-brand-600 hover:underline">full timetable</a> for all session times.
+        </p>
+      </div>
+
+      <p class="text-neutral-700">
+        Newcastle PCYC Table Tennis Club has been running since 1996, and the Saturday session is one of the most popular. It draws a genuine mix of people — students, retirees, families, and working professionals — all sharing tables and having a hit. The atmosphere is relaxed and welcoming, and you do not need any experience to join in. Many of our regular members started by simply showing up on a Saturday afternoon with no idea how to play. Within a few weeks, they were hooked. If you are curious about what your first visit looks like, have a read of our <a href="/expect" class="text-brand-600 hover:underline">What to Expect</a> page.
+      </p>
+      <p class="text-neutral-700">
+        Table tennis works particularly well as a Saturday activity because it fits neatly into the afternoon. You can do your morning errands or beach trip, play a few hours of table tennis, and still have the evening free. It is the kind of <a href="/guides/hobbies-newcastle" class="text-brand-600 hover:underline">hobby</a> that slots into your weekend without taking over.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Other Saturday Afternoon Options</h3>
+      <p class="text-neutral-700">
+        If you want to get outdoors, the Glenrock State Conservation Area is one of Newcastle's hidden gems. The trails wind through coastal bushland down to secluded beaches, and the walks range from gentle 30-minute loops to more challenging 2-hour circuits. Awabakal Nature Reserve, just south of Dudley, offers similar bushwalking with stunning clifftop views and a chance to spot wallabies and sea eagles.
+      </p>
+      <p class="text-neutral-700">
+        Cyclists have excellent options too. The Fernleigh Track — a 15-kilometre shared path built on a former rail corridor — runs from Adamstown to Belmont and is flat, scenic, and perfect for a Saturday afternoon ride. Road cyclists often head out toward the Hunter Valley vineyards or along the coastal roads toward Catherine Hill Bay.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Sunday: Brunch, Bathers Way, and Blackbutt Reserve</h2>
+      <p class="text-neutral-700">
+        Sundays in Newcastle have a completely different rhythm. The pace is slower, the cafes are fuller, and there is a wonderful sense of easing into the day. If there is one thing Newcastle does exceptionally well on a Sunday, it is brunch.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Brunch Spots</h3>
+      <p class="text-neutral-700">
+        <strong>Darby Street</strong> in Cooks Hill is the spiritual home of Newcastle brunch culture. It is lined with independent cafes, each with its own character, and on a sunny Sunday the footpath tables are packed from 8:00 AM onwards. <strong>Beaumont Street</strong> in Hamilton is another excellent strip, with a slightly more multicultural feel and some outstanding bakeries and brunch menus. You will also find great options along Hunter Street in the city centre, especially around the East End.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Bathers Way Coastal Walk</h3>
+      <p class="text-neutral-700">
+        After brunch, the Bathers Way walk is the quintessential Newcastle Sunday activity. This six-kilometre coastal path stretches from Nobbys Headland to Merewether Beach, passing through some of the most spectacular coastal scenery in NSW. Along the way you will pass the Bogey Hole (a convict-carved ocean pool), the ANZAC Memorial Walk, Susan Gilmore Beach, and Bar Beach. It is mostly paved and suitable for prams and wheelchairs, making it a genuinely family-friendly outing.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Blackbutt Reserve</h3>
+      <p class="text-neutral-700">
+        For families or anyone who loves wildlife, Blackbutt Reserve is a must. This 182-hectare bushland reserve in the middle of Newcastle is home to koalas, wombats, kangaroos, emus, and a range of native birds. Entry is free, there are well-maintained walking tracks, picnic areas with barbecues, and enclosed wildlife exhibits where kids can get close to the animals. It is one of the best free things to do in Newcastle on any day, but Sundays have a particularly relaxed feel.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Other Sunday Ideas</h3>
+      <ul class="space-y-2 my-4">
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Newcastle City Farmers Market</strong> — Sunday mornings at Newcastle Showground for fresh produce and local food</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Fort Scratchley</strong> — Guided tunnel tours on weekends, plus free entry to the museum and harbour views</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Newcastle Art Gallery</strong> — Free admission, regularly rotating exhibitions, and a peaceful spot to spend a quiet hour</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Hunter Wetlands Centre</strong> — Birdwatching, nature walks, and family-friendly activities in Shortland</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-brand-600 mr-2">&bull;</span>
+          <span class="text-neutral-700"><strong>Foreshore bike paths</strong> — Flat, scenic cycling along the harbour foreshore, perfect for families</span>
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Building a Weekend Routine</h2>
+      <p class="text-neutral-700">
+        One of the best things about living in Newcastle is how easy it is to build a weekend routine you actually look forward to. A lot of our table tennis members have settled into a rhythm: markets or the beach in the morning, table tennis from 2:30 PM, then dinner or drinks with friends in the evening. It is the kind of routine that keeps you active, social, and connected to the community without feeling like a chore.
+      </p>
+      <p class="text-neutral-700">
+        If you are new to Newcastle or just looking to shake up your weekends, the Saturday table tennis session is a brilliant starting point. It is a low-pressure way to try something new, meet people from different walks of life, and add a regular <a href="/guides/social-clubs-newcastle" class="text-brand-600 hover:underline">social activity</a> to your week. You do not need to be fit, coordinated, or experienced — just willing to have a go.
+      </p>
+
+      <h2 class="text-2xl font-bold text-neutral-900 mt-8 mb-4">Frequently Asked Questions</h2>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">What can I do on the weekend in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Newcastle is packed with weekend activities. On Saturdays you can start with parkrun or the Olive Tree Markets, hit the beach, then head to PCYC Broadmeadow for a social table tennis session in the afternoon (2:30 - 6:00 PM). Sundays are great for brunch on Darby Street or Beaumont Street, the Bathers Way coastal walk, Blackbutt Reserve, Fort Scratchley tours, or the Newcastle City Farmers Market. There is also excellent hiking at Glenrock and Awabakal Nature Reserve, plus galleries, dining, and live music across the city.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">What sports can I play on Saturday in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Saturdays in Newcastle offer plenty of sport. Table tennis at PCYC Broadmeadow runs from 2:30 PM to 6:00 PM and welcomes all levels — no booking needed. In the morning, parkrun events start at 8:00 AM at several locations. You can also join social tennis at local clubs, try lawn bowls, go surfing at any of Newcastle's beaches, or ride with one of the local cycling groups. It is a great city for staying active on weekends.
+      </p>
+
+      <h3 class="text-xl font-bold text-neutral-900 mt-6 mb-3">Are there family-friendly weekend activities in Newcastle?</h3>
+      <p class="text-neutral-700">
+        Absolutely. Newcastle is one of the most family-friendly cities in NSW for weekends. The beaches are safe and patrolled, Blackbutt Reserve offers free wildlife encounters, and the Hunter Wetlands Centre has nature walks and activities for kids. Table tennis at PCYC Broadmeadow welcomes all ages at the Saturday session, so the whole family can play together. There are also excellent playgrounds along the foreshore, bike paths including the Fernleigh Track, and the Bathers Way walk is pram-friendly from end to end.
+      </p>
+
+      <!-- CTA -->
+      <div class="bg-brand-50 border-2 border-brand-200 rounded-lg p-6 mt-8">
+        <h3 class="text-xl font-bold text-brand-800 mb-2">Make table tennis part of your weekend</h3>
+        <p class="text-brand-700 mb-4">Join us on Saturday from 2:30 PM at PCYC Broadmeadow. Your first session is free, no booking required — just show up and play.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/timetable" class="bg-brand-600 text-white px-5 py-2 rounded-md font-medium hover:bg-brand-700 transition" data-track="timetable_view">See the Timetable</a>
+          <a href="/location" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="directions_click">Get Directions</a>
+          <a href="/expect" class="bg-white text-brand-700 border border-brand-300 px-5 py-2 rounded-md font-medium hover:bg-brand-50 transition" data-track="cta_click">What to Expect</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
