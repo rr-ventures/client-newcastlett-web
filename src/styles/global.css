@@ -5,3 +5,8 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Show thank-you message when redirected back from form submission */
+#thank-you:target {
+    display: block !important;
+}
